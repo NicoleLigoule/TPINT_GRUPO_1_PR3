@@ -18,3 +18,14 @@ header nav div .hl-nav {
 .card {
     margin: 20px;
 }
+
+/* Estilos para biografia */
+
+.social-media a {
+    font-size: 30px;
+    color: #455A64;
+}
+
+.social-media a:hover {
+    color: #009688;
+}
