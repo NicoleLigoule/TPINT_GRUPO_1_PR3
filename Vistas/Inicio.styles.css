@@ -19,6 +19,9 @@ header nav div .hl-nav {
     margin: 20px;
 }
 
+
+
+
 /* Estilos para biografia */
 
 .social-media a {
@@ -28,4 +31,37 @@ header nav div .hl-nav {
 
 .social-media a:hover {
     color: #009688;
+}
+
+
+/* estilos para carrousel */
+
+/* Custom styles for carousel controls */
+.custom-carousel-control {
+    width: 50px; /* Width of the control buttons */
+    height: 50px; /* Height of the control buttons */
+    background-color: rgba(0, 0, 0, 0.5); /* Background color with transparency */
+    border-radius: 50%; /* Make the buttons circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-carousel-icon {
+    width: 20px; /* Width of the icons */
+    height: 20px; /* Height of the icons */
+}
+
+.carousel-control-prev-icon.custom-carousel-icon,
+.carousel-control-next-icon.custom-carousel-icon {
+    background-size: 20px 20px; /* Size of the icons */
+}
+
+/* Change the color of the icons */
+.carousel-control-prev-icon.custom-carousel-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 8 8"><path d="M4.5 0L3 1.5 6.5 5 3 8.5 4.5 10 10 5.5 4.5 0z"/></svg>');
+}
+
+.carousel-control-next-icon.custom-carousel-icon {
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 8 8"><path d="M3.5 0L2 1.5 5.5 5 2 8.5 3.5 10 9 5.5 3.5 0z"/></svg>');
 }

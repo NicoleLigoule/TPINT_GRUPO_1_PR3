@@ -68,11 +68,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\icons\Cinema_UTN.png" />
-    <Content Include="images\slide\avatar.jpg" />
-    <Content Include="images\slide\Hellraiser.jpg" />
-    <Content Include="images\slide\mulan.jpg" />
-    <Content Include="images\slide\part_of_me.jpg" />
-    <Content Include="images\slide\smile.jpg" />
     <Content Include="Inicio-Cine.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Inicio.styles.css" />
@@ -104,6 +99,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\carrousel\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

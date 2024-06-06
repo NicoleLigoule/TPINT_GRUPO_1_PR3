@@ -15,7 +15,7 @@
         <form id="form1" runat="server">
         <header>
 
-            <%-- NAVBAR --%>
+            <%-- INICIO DE NAVBAR --%>
             <nav class="navbar">
               <div class="container-fluid">
                 <a class="navbar-brand" href="#">
@@ -34,9 +34,8 @@
               </div>
             </nav>
         </header>
-
         <%-- FORMULARIO DE ACCESO --%>
-        <section id="formulario-acceso" class="container float-right">
+        <section id="formulario-acceso" class="container">
             <div class="collapse" id="collapseLogin">
               <div class="card card-body">
                     <div class="mb-3">
@@ -63,7 +62,7 @@
                         <article>
                             <h1>Sobre los integrantes</h1>
                             <section class="">
-                                    <%-- bio de Guille --%>
+                                <%-- bio de Guille --%>
                                 <details>
                                     <summary>
                                         Guillermo Navarro
@@ -103,7 +102,7 @@
                                             </ul>
                                         </div>
                                 </details>
-                                    <%-- Bio de nicky --%>
+                                <%-- Bio de nicky --%>
                                 <details>
                                     <summary>
                                         Nicole Ligoule
@@ -225,6 +224,67 @@
                     </div>
                 </div>
             </section>
+            <%-- FIN DE NAVBAR --%>
+            <%-- INICIO DE CARROUSEL --%>
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/carrousel/bannervaintensamente.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/carrousel/matrix25.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/carrousel/garfield.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon custom-carousel-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon custom-carousel-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <%--<section>
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="images/carrousel/bannervaintensamente.jpg" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/carrousel/matrix25.jpg" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/carrousel/harrypotter.jpg" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/carrousel/garfield.jpg" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="images/carrousel/apes.jpg" class="d-block w-100" alt="...">
+		  </div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="visually-hidden">Next</span>
+		</button>
+	</div>
+</section>--%>
+
+
+            <%-- FIN DE CARROUSEL --%>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://popper.js.org/dist/umd/popper.min.js"></script>
