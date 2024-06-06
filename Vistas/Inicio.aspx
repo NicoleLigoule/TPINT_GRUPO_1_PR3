@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="~/Inicio.styles.css" />
 </head>
 <body>
+        <form id="form1" runat="server">
         <header>
 
             <%-- NAVBAR --%>
@@ -20,12 +21,14 @@
                   <img src="./images/icons/Cinema_UTN.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                   Cinema UTN
                 </a>
-                  <div class ="float-right">
+                  <div class ="float-right" id="btnINGRESAR-login">
 
-                      <button class="hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogin" aria-expanded="false" aria-controls="collapseExample">
                         INGRESAR
                       </button>
-                    <asp:HyperLink ID="hlSobreNosotros" CssClass="hl-nav" runat="server">SOBRE NOSOTROS</asp:HyperLink>
+                      <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+                        SOBRE NOSOTROS
+                      </button>
                   </div>
               </div>
             </nav>
@@ -33,10 +36,8 @@
 
         <%-- FORMULARIO DE ACCESO --%>
         <section id="formulario-acceso" class="container float-right">
-
-            <div class="collapse" id="collapseExample">
+            <div class="collapse" id="collapseLogin">
               <div class="card card-body">
-                <form id="Acceder">
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Dirección de correo electronico</label>
                         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
@@ -51,16 +52,24 @@
                         <label class="form-check-label" for="Check">Mantenerme en sesión</label>
                     </div>
                     <button type="submit" class="btn btn-primary">INGRESAR</button>
-                </form>
               </div>
             </div>
-
         </section>
+        <%-- SOBRE NOSOTROS --%>
+            <section>
+                <div class="collapse" id="collapseAboutUs">
+                    <div class="card card-body">
+
+                    </div>
+                </div>
+            </section>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://popper.js.org/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
         <script src="scripts.js"></script>
+
+        </form>
 
     </body>
 </html>
