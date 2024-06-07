@@ -1,18 +1,25 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
-    var collapseButtons = document.querySelectorAll("[data-bs-toggle='collapse']");
-        
-    collapseButtons.forEach(function(button) {
-        button.addEventListener("click", function(event) {
-            var target = document.querySelector(button.getAttribute("data-bs-target"));
-                
-            if (target.classList.contains("show")) {
-                target.classList.remove("show");
-            } else {
-                document.querySelectorAll(".collapse.show").forEach(function(openCollapse) {
-                    openCollapse.classList.remove("show");
-                });
-                target.classList.add("show");
-            }
-        });
-    });
+﻿document.addEventListener("DOMContentLoaded", function () {
+    // Texto que deseas mostrar
+    var texto = "console.log('Hola Cine!');";
+
+    // Elemento donde mostrarás el texto tipeado
+    var elemento = document.getElementById("texto-tipeado");
+
+    // Índice del carácter actual
+    var i = 0;
+
+    // Función para mostrar el texto gradualmente
+    function mostrarTexto() {
+        if (i < texto.length) {
+            elemento.innerHTML += texto.charAt(i);
+            i++;
+        } else {
+            // Reiniciar el índice y vaciar el contenido
+            i = 0;
+            elemento.innerHTML = "";
+        }
+    }
+
+    // Configurar el intervalo para repetir el efecto
+    setInterval(mostrarTexto, 200); // Velocidad de tipeo en milisegundos
 });

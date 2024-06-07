@@ -7,55 +7,63 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Cinema UTN</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%-- FUENTES GOOGLE --%>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <%-- FUENTES ÍCONOS --%>
     <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILO PROPIO ;) --%>
     <link rel="stylesheet" href="~/Inicio.styles.css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 58%;
+        }
+    </style>
 </head>
 <body>
         <form id="form1" runat="server">
-        <header>
-
             <%-- INICIO DE NAVBAR --%>
-            <nav class="navbar">
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                  <img src="./images/icons/Cinema_UTN.png" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
-                  Cinema UTN
-                </a>
-                  <div class ="float-right" id="btnINGRESAR-login">
-
-                      <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogin" aria-expanded="false" aria-controls="collapseExample">
-                        INGRESAR
-                      </button>
-                      <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+            <header>
+                <nav class="navbar">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                      <img src="./images/icons/Cinema_UTN.png" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
+                      Cinema UTN
+                    </a>
+                      <div class ="float-right" id="btnINGRESAR-login">
+                        <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogin" aria-expanded="false" aria-controls="collapseExample">
+                          INGRESAR
+                        </button>
+                        <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
                         SOBRE NOSOTROS
-                      </button>
+                        </button>
+                      </div>
                   </div>
-              </div>
-            </nav>
-        </header>
-        <%-- FORMULARIO DE ACCESO --%>
-        <section id="formulario-acceso" class="container">
-            <div class="collapse" id="collapseLogin">
-              <div class="card card-body">
-                    <div class="mb-3">
-                        <label for="InputEmail" class="form-label">Dirección de correo electronico</label>
-                        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"/>
-                        <div id="emailHelp" class="form-text">El correo con  el que te registraste.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="InputPassword" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="InputPassword"/>
-                    </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="Check"/>
-                        <label class="form-check-label" for="Check">Mantenerme en sesión</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">INGRESAR</button>
-              </div>
-            </div>
-        </section>
-        <%-- SOBRE NOSOTROS --%>
+                </nav>
+            </header>
+            <%-- FORMULARIO DE ACCESO --%>
+            <section id="formulario-acceso" class="container">
+                <div class="collapse" id="collapseLogin">
+                  <div class="card card-body">
+                        <div class="mb-3">
+                            <label for="InputEmail" class="form-label">Dirección de correo electronico</label>
+                            <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp"/>
+                            <div id="emailHelp" class="form-text">El correo con  el que te registraste.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="InputPassword" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="InputPassword"/>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="Check"/>
+                            <label class="form-check-label" for="Check">Mantenerme en sesión</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">INGRESAR</button>
+                  </div>
+                </div>
+            </section>
+            <%-- SOBRE NOSOTROS --%>
             <section id="about-us">
                 <div class="collapse" id="collapseAboutUs">
                     <div class="card card-body">
@@ -218,13 +226,12 @@
                                         </div>
                                 </details>
                             </section>
-                            <section>
-                            </section>
                         </article>
                     </div>
                 </div>
             </section>
             <%-- FIN DE NAVBAR --%>
+
             <%-- INICIO DE CARROUSEL --%>
             <div id="carouselExampleIndicators" class="carousel slide">
                 <div class="carousel-indicators">
@@ -245,53 +252,110 @@
                 </div>
                 <button class="carousel-control-prev custom-carousel-control" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon custom-carousel-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
+                    <span class="visually-hidden">Atras</span>
                 </button>
                 <button class="carousel-control-next custom-carousel-control" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                     <span class="carousel-control-next-icon custom-carousel-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
+                    <span class="visually-hidden">Siguiente</span>
                 </button>
             </div>
-
-            <%--<section>
-	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-		<div class="carousel-inner">
-		  <div class="carousel-item active">
-			<img src="images/carrousel/bannervaintensamente.jpg" class="d-block w-100" alt="...">
-		  </div>
-		  <div class="carousel-item">
-			<img src="images/carrousel/matrix25.jpg" class="d-block w-100" alt="...">
-		  </div>
-		  <div class="carousel-item">
-			<img src="images/carrousel/harrypotter.jpg" class="d-block w-100" alt="...">
-		  </div>
-		  <div class="carousel-item">
-			<img src="images/carrousel/garfield.jpg" class="d-block w-100" alt="...">
-		  </div>
-		  <div class="carousel-item">
-			<img src="images/carrousel/apes.jpg" class="d-block w-100" alt="...">
-		  </div>
-		</div>
-		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		  <span class="visually-hidden">Previous</span>
-		</button>
-		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		  <span class="visually-hidden">Next</span>
-		</button>
-	</div>
-</section>--%>
-
-
             <%-- FIN DE CARROUSEL --%>
+
+            <%-- INICIO DE CARTELERA --%>
+            <section id="cartelera">
+                <div class="container text-center">
+                    <div class="row">
+                        <div id="anuncio-1" class="col-sm-8">
+                            <p>
+                                Hay un sitio donde programar tu salida
+                                es mucho más facil...
+                            </p>
+                            <div id="texto-tipeado" class=""></div> <%-- Tipea: console.log('Hola Cine!'); --%>
+                            <img src="./images/icons/Cinema_UTN.png" alt="Alternate Text" id="CUNT" class="auto-style1" /> 
+                            <p id="cunt">Cinema UTN</p>
+                        </div>                    
+                        <div class="col-sm-4">
+                            <img src="./images/icons/pareja.png" alt="Alternate Text" id="pareja" /> 
+                        </div>
+                    </div>
+                </div>
+                <div id="contenedor-cartelera" class="container-fluid text-center">
+                  <div class="row">
+                    <div class="col">
+                        <div class="card w-50">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card w-50">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card w-50">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4">
+                        <div class="card w-50">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 ">
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Button</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+            </section>
+            <%-- FIN DE CARTELERA --%>
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://popper.js.org/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
         <script src="scripts.js"></script>
 
-        </form>
 
+            <table class="w-100">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>

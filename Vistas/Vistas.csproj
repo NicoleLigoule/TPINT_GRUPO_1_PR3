@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\icons\Cinema_UTN.png" />
+    <Content Include="images\icons\pareja.png" />
     <Content Include="Inicio-Cine.aspx" />
     <Content Include="Inicio.aspx" />
     <Content Include="Inicio.styles.css" />
