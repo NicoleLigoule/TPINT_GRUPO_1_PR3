@@ -67,16 +67,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Inicio-Cine.aspx" />
+    <Content Include="Inicio-Clinica.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inicio-Cine.aspx.cs">
-      <DependentUpon>Inicio-Cine.aspx</DependentUpon>
+    <Compile Include="Inicio-Clinica.aspx.cs">
+      <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Inicio-Cine.aspx.designer.cs">
-      <DependentUpon>Inicio-Cine.aspx</DependentUpon>
+    <Compile Include="Inicio-Clinica.aspx.designer.cs">
+      <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
