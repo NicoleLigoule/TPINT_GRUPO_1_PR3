@@ -33,7 +33,10 @@
         }
     }
     </script>
-
+        <%-- FUENTES ÍCONOS --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
 </head>
 <body>
     <form id="form1" runat="server">
