@@ -55,7 +55,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4"></td>
+                <td class="auto-style4">
+                    <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Debe ingresarse un DNI"></asp:RequiredFieldValidator>
+                </td>
                 <td class="auto-style4">
                     <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="229px" 
                         Text="Ingrese su documento" 
@@ -69,11 +71,15 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresarse una contrasenia"></asp:RequiredFieldValidator>
+                </td>
                 <td class="auto-style3">
                     <asp:TextBox ID="txtContrasenia" runat="server" ForeColor="Gray" TextMode="Password" Width="227px"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" />
+                </td>
             </tr>
         </table>
         
