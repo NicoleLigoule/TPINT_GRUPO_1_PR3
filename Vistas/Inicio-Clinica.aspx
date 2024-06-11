@@ -21,6 +21,15 @@
             height: 26px;
         }
     </style>
+    <script type="text/javascript">
+        function clearTextBoxOnClick(textBox) {
+            if (textBox.value == 'Ingrese su documento') {
+                textBox.value = '';
+                textBox.style.color = 'black';
+        }
+    }
+    </script>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -33,7 +42,11 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
+                <td class="auto-style3">
+                    <br />
+                    <br />
+                    <br />
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -44,7 +57,9 @@
             <tr>
                 <td class="auto-style4"></td>
                 <td class="auto-style4">
-                    <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False">Ingrese su documento</asp:TextBox>
+                    <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="229px" 
+                        Text="Ingrese su documento" 
+                        onfocus="clearTextBoxOnClick(this)">Ingrese su documento</asp:TextBox>
                 </td>
                 <td class="auto-style6"></td>
             </tr>
@@ -56,7 +71,7 @@
             <tr>
                 <td class="auto-style3">&nbsp;</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtContrasenia" runat="server" ForeColor="Gray" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtContrasenia" runat="server" ForeColor="Gray" TextMode="Password" Width="227px"></asp:TextBox>
                 </td>
                 <td>&nbsp;</td>
             </tr>
