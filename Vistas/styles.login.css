@@ -1,0 +1,29 @@
+﻿body {
+    background-image: url(Resources/img/background/clinicaUTN-portadaLogin.jpg);
+    background-repeat:no-repeat;
+    background-size:100%;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #BBDEFB;
+}
+
+/* FORM LOGIN */
+#form-body {
+    float: left;
+    margin: 100px;
+}
+
+#formLogin .card {
+    margin-top: 5%;
+    border-radius: 20px;
+    width: 350px;
+    padding: 50px;
+    background-color: #BBDEFB;
+}
+
+.tabla-login {
+    width: 200px
+}
+
