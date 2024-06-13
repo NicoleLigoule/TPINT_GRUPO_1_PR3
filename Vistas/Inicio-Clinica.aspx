@@ -79,13 +79,15 @@
         <%-- FIN DE NAVBAR --%>
         <%-- INICIO DE PANTALLA DE FORMULARIO --%>
         <section id="form-body" class="flex-grow-1">
+            <div class="card-container">
             <%-- INICIO DEL FORM DE LOGIN --%>
             <form id="formLogin" class="auto-style14" runat="server">
+                <%-- CARD DEL LOGIN --%>
                 <div class="card">
                     <table class="tabla-login">
                         <tr>
                             <td class="auto-style17" style="text-align:center">
-                                <asp:Label ID="lblTituloLogin" runat="server" Text="ACCEDER"></asp:Label>
+                                <asp:Label ID="lblTituloLogin" runat="server" Text="ACCEDER" Font-Bold="true"></asp:Label>
                             </td>
                         </tr>                   
                         <tr>
@@ -118,11 +120,15 @@
                         </tr>
                     </table>  
                 </div>
+            </form>  
+                 <%-- CARD AL LADO DEL LOGIN --%>
+                <div class="card">
+                    <%--<asp:Label ID="lblTituloLogin" runat="server" Text="Registrarse" Font-Bold="true"></asp:Label>--%>
+                </div>
+            </div>
             <%-- FIN DEL FORM DE LOGIN --%>
-            </form>
         </section>
         <%-- FIN DE PANTALLA DE FORMULARIO --%>
-    </div>
     <%-- INICIO DEL FOOTER --%>
     <footer>
         <section>
