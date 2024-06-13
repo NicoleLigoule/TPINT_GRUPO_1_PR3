@@ -78,7 +78,7 @@
         </header>
         <%-- FIN DE NAVBAR --%>
         <%-- INICIO DE PANTALLA DE FORMULARIO --%>
-        <section id="form-body">
+        <section id="form-body" class="flex-grow-1">
             <%-- INICIO DEL FORM DE LOGIN --%>
             <form id="formLogin" class="auto-style14" runat="server">
                 <div class="card">
