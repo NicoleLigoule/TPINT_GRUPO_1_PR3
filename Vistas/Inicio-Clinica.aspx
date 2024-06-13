@@ -15,12 +15,50 @@
     <%-- SCRIPTS --%>
     <script type="text/javascript">
         function clearTextBoxOnClick(textBox) {
-            if (textBox.value == 'Ingrese su documento') {
+            if (textBox.value == 'Ingrese su usuario') {
                 textBox.value = '';
                 textBox.style.color = 'black';
             }
         }
     </script>
+    <style type="text/css">
+        .auto-style1 {
+            height: 113px;
+        }
+    </style>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        
+        footer {
+            background: rgb(30, 30, 30); 
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .container-fluid button{
+            color: white;
+        }
+
+        .container-fluid button:hover{
+            color:paleturquoise;
+        }
+
+        .container-fluid a{
+            color: coral;
+        }
+        
+    </style>
 </head>
 <body>
     <%--<div id="main-content">--%>
@@ -51,14 +89,14 @@
                             </td>
                         </tr>                   
                         <tr>
-                            <td class="auto-style17">Ingrese su DNI:</td>
+                            <td class="auto-style17">Ingrese su usuario:</td>
                         </tr>
                         <tr>
-                            <td class="auto-style18">
+                            <td class="auto-style1">
                                 <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px" 
-                                    Text="Ingrese su documento" 
+                                    Text="Ingrese su usuario" 
                                     onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Debe ingresarse un DNI"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un usuario"></asp:RequiredFieldValidator>
                             </td>
                         </tr>
                         <tr>
