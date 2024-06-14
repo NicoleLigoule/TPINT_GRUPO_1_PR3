@@ -15,7 +15,7 @@
     <%-- SCRIPTS --%>
     <script type="text/javascript">
         function clearTextBoxOnClick(textBox) {
-            if (textBox.value == 'Ingrese su usuario') {
+            if (textBox.value != '') {
                 textBox.value = '';
                 textBox.style.color = 'black';
             }
