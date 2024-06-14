@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Inicio-Clinica.aspx" />
+    <Content Include="RegistroMed.aspx" />
     <Content Include="Resources\img\background\clinicaUTN-portadaLogin.jpg" />
     <Content Include="styles.login.css" />
     <Content Include="Web.config" />
@@ -81,6 +82,13 @@
       <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroMed.aspx.cs">
+      <DependentUpon>RegistroMed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistroMed.aspx.designer.cs">
+      <DependentUpon>RegistroMed.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

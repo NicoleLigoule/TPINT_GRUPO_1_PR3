@@ -55,7 +55,10 @@
         }
 
         .container-fluid a{
-            color: coral;
+            color:#607D8B;
+        }
+        .container-fluid a:hover{
+            color:paleturquoise;
         }
         
     </style>
@@ -115,16 +118,20 @@
                         </tr>
                         <tr>
                             <td class="auto-style19">
-                                <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" Width="233px" />
+                                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Width="233px" />
+                                <asp:HyperLink ID="hplRegistrarse" runat="server" NavigateUrl="~/RegistroMed.aspx">Crear nuevo usuario</asp:HyperLink>
                             </td>
+
+                             
                         </tr>
                     </table>  
                 </div>
             </form>  
                  <%-- CARD AL LADO DEL LOGIN --%>
-                <div class="card">
-                    <%--<asp:Label ID="lblTituloLogin" runat="server" Text="Registrarse" Font-Bold="true"></asp:Label>--%>
-                </div>
+           <%--     <div class="card">
+                   
+                    <asp:Label ID="lblRegistrarse" runat="server" Text="Registrarse" Font-Bold="true"></asp:Label>
+                </div>--%>
             </div>
             <%-- FIN DEL FORM DE LOGIN --%>
         </section>
