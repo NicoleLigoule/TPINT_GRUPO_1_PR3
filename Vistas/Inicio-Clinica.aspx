@@ -61,6 +61,10 @@
             color:paleturquoise;
         }
         
+        .auto-style2 {
+            height: 26px;
+        }
+        
     </style>
 </head>
 <body>
@@ -94,37 +98,53 @@
                             </td>
                         </tr>                   
                         <tr>
-                            <td class="auto-style17">Ingrese su usuario:</td>
+                            <td class="auto-style2">Ingrese su usuario:</td>
                         </tr>
                         <tr>
-                            <td class="auto-style1">
+                            <td class="auto-style19">
                                 <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px" 
                                     Text="Ingrese su usuario" 
                                     onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un usuario"></asp:RequiredFieldValidator>
                             </td>
+
+                             
                         </tr>
                         <tr>
-                            <td class="auto-style19">Contraseña:</td>
+                            <td class="auto-style19">
+                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+
+                             
                         </tr>
                         <tr>
-                            <td class="auto-style20">
+                            <td class="auto-style19">
+                                Contraseña</td>
+
+                             
+                        </tr>
+                        <tr>
+                            <td class="auto-style19">
                                 <asp:TextBox ID="txtContrasenia" runat="server" ForeColor="Gray" TextMode="Password" Width="230px"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresarse una contraseña"></asp:RequiredFieldValidator>
                             </td>
+
+                             
                         </tr>
                         <tr>
-                            <td class="auto-style19">&nbsp;</td>
+                            <td class="auto-style19">
+                                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresarse una contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
+
+                             
                         </tr>
                         <tr>
                             <td class="auto-style19">
                                 <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Width="233px" />
-                                <asp:HyperLink ID="hplRegistrarse" runat="server" NavigateUrl="~/RegistroMed.aspx">Crear nuevo usuario</asp:HyperLink>
                             </td>
 
                              
                         </tr>
                     </table>  
+                                <asp:HyperLink ID="hplRegistrarse" runat="server" NavigateUrl="~/RegistroMed.aspx">Crear nuevo usuario</asp:HyperLink>
                 </div>
             </form>  
                  <%-- CARD AL LADO DEL LOGIN --%>
