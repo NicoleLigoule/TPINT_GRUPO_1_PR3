@@ -82,46 +82,78 @@
                     <h3 class="text-center">REGISTRARSE</h3>
                     <table class="table">
                         <tr>
-                            <td class="auto-style2">Ingrese su DNI:</td>
+                            <td class="auto-style2">DNI:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Ingrese su nombre:</td>
+                            <td class="auto-style2">Nombre:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Ingrese su apellido:</td>
+                            <td class="auto-style2">Apellido:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Indique su sexo:</td>
+                            <td class="auto-style2">Sexo:</td>
                             <td class="auto-style3">
                                 <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Indique su nacionalidad:</td>
+                            <td class="auto-style2">Nacionalidad:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Indique su fecha de nacimiento:</td>
+                            <td class="auto-style2">Fecha de nacimiento:</td>
                             <td class="auto-style3">
                                 <asp:Calendar ID="calenFechaNac" runat="server" CssClass="form-control-calendar"></asp:Calendar>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Ingrese su dirección:</td>
+                            <td class="auto-style2">Provincia:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtProvincia" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Localidad:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Dirección:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td class="auto-style2">Correo electronico:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Nº Telefonico:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td class="auto-style2">Especialidad:</td>
+                            <td class="auto-style3">
+                               <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-control">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
