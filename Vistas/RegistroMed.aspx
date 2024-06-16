@@ -4,192 +4,165 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Registro Médico</title>
+    <link href="styles.login.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <style>
         .auto-style1 {
             width: 100%;
         }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        footer {
+            background: rgb(30, 30, 30); 
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container-fluid button {
+            color: white;
+        }
+        .container-fluid button:hover {
+            color: paleturquoise;
+        }
+        .container-fluid a {
+            color: #607D8B;
+        }
+        .container-fluid a:hover {
+            color: paleturquoise;
+        }
+        .card {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #e6ffed;
+            border-radius: 15px;
+        }
+        .table td {
+            vertical-align: middle;
+        }
         .auto-style2 {
-            width: 292px;
+            width: 150px;
         }
         .auto-style3 {
-            width: 408px;
+            width: 100%;
+        }
+        .form-control-calendar {
+            width: 100%;
+            background-color: white;
+        }
+        body, html {
+            overflow-y: auto; /* Ensure the page is scrollable */
         }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <strong>
-            <br />
-            REGISTRARSE</strong></div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Ingrese su DNI:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Ingrese su nombre:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Ingrese su apellido:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Indique su sexo:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:DropDownList ID="ddlSexo" runat="server">
-                    </asp:DropDownList>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Indique su nacionalidad:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtNacionalidad" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Indique su fecha de nacimiento:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:Calendar ID="calenFechaNac" runat="server" BackColor="White" BorderColor="#3366CC" BorderWidth="1px" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" VisibleDate="1989-03-10" Width="220px">
-                        <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
-                        <NextPrevStyle Font-Size="8pt" ForeColor="#CCCCFF" />
-                        <OtherMonthDayStyle ForeColor="#999999" />
-                        <SelectedDayStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
-                        <SelectorStyle BackColor="#99CCCC" ForeColor="#336666" />
-                        <TitleStyle BackColor="#003399" BorderColor="#3366CC" BorderWidth="1px" Font-Bold="True" Font-Size="10pt" ForeColor="#CCCCFF" Height="25px" />
-                        <TodayDayStyle BackColor="#99CCCC" ForeColor="White" />
-                        <WeekendDayStyle BackColor="#CCCCFF" />
-                    </asp:Calendar>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">Ingrese su direccion:</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">
-                    <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
-                </td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </form>
+    <header>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-regular fa-hospital"></i>
+                    Clinica UTN
+                </a>
+            </div>
+        </nav>
+    </header>
+    <section id="form-body" class="flex-grow-1">
+        <div class="card-container">
+            <form id="form1" runat="server">
+                <div class="card">
+                    <h3 class="text-center">REGISTRARSE</h3>
+                    <table class="table">
+                        <tr>
+                            <td class="auto-style2">Ingrese su DNI:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Ingrese su nombre:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Ingrese su apellido:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Indique su sexo:</td>
+                            <td class="auto-style3">
+                                <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Indique su nacionalidad:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Indique su fecha de nacimiento:</td>
+                            <td class="auto-style3">
+                                <asp:Calendar ID="calenFechaNac" runat="server" CssClass="form-control-calendar"></asp:Calendar>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Ingrese su dirección:</td>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2"></td>
+                            <td class="auto-style3">
+                                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <section>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <i class="fa-regular fa-hospital"></i>
+                    Clinica UTN
+                </a>
+                <button class="btn btn-unstyled hl-nav" type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+                    SOBRE NOSOTROS
+                </button>
+            </div>
+        </section>
+        <section id="about-us">
+            <div class="collapse" id="collapseAboutUs">
+                <div class="card card-body">
+                    <article>
+                        <h1 style="color: black;">Sobre los integrantes</h1>
+                        <section class="">
+                            <!-- Bio de los integrantes -->
+                            <!-- Puedes agregar más detalles aquí -->
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </footer>
 </body>
 </html>
