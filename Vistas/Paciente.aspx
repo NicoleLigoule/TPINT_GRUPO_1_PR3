@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroMed.aspx.cs" Inherits="Vistas.RegistroMed" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Paciente.aspx.cs" Inherits="Vistas.RegistroMed" %>
 
 <!DOCTYPE html>
 

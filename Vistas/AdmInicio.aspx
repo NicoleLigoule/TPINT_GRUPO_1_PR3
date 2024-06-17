@@ -22,6 +22,13 @@
             height: 33px;
             width: 221px;
         }
+        .auto-style5 {
+            width: 221px;
+            height: 32px;
+        }
+        .auto-style6 {
+            height: 32px;
+        }
     </style>
 </head>
 <body>
@@ -55,21 +62,21 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hplpacientes" runat="server">Pacientes</asp:HyperLink>
+                        <asp:HyperLink ID="hplpacientes" runat="server" NavigateUrl="~/Paciente.aspx">Pacientes</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="hplAsignarTurno" runat="server">Asignar Turnos</asp:HyperLink>
+                        <asp:HyperLink ID="hplAsignarTurno" runat="server">Asignar Turno</asp:HyperLink>
                     </td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hplMedicos" runat="server">Medicos</asp:HyperLink>
+                        <asp:HyperLink ID="hplMedicos" runat="server">Medico</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -87,9 +94,9 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style5"></td>
+                    <td class="auto-style6"></td>
+                    <td class="auto-style6"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
