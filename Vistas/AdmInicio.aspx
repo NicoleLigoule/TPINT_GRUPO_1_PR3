@@ -69,7 +69,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style4">
-                        <asp:HyperLink ID="hplAsignarTurno" runat="server">Asignar Turno</asp:HyperLink>
+                        <asp:HyperLink ID="hplAsignarTurno" runat="server" NavigateUrl="~/AsignarTurno.aspx">Asignar Turno</asp:HyperLink>
                     </td>
                     <td class="auto-style2"></td>
                     <td class="auto-style2"></td>
