@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Registro Médico</title>
-    <link href="styles.login.css" rel="stylesheet" />
+    <link href="./Resources/estilos/styles.login.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
     <style>

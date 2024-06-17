@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <%-- ESTILOS DE LOGIN --%>
-    <link href="styles.login.css" rel="stylesheet" />
+    <link href="./Resources/estilos/styles.login.css" rel="stylesheet" />
     <%-- FUENTES ÍCONOS --%>
     <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
     <%-- BOOTSTRAP --%>

@@ -6,6 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+       <%-- ESTILOS DE AdmInicio --%>
+    <link href="./Resources/estilos/styles.AdmInicio.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -43,7 +45,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hplHorariosMedicos" runat="server">Horarios de Medicos</asp:HyperLink>
+                        <asp:HyperLink ID="hplHorariosMedicos" runat="server" NavigateUrl="~/HorarioMed.aspx">Horarios de Medicos</asp:HyperLink>
                     </td>
                     <td>
                         <asp:GridView ID="GridView1" runat="server">

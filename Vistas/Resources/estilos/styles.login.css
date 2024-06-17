@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: url(Resources/img/background/clinicaUTN-portadaLogin.jpg);
+    background-image: url(/Resources/estilos/img/background/clinicaUTN-portadaLogin.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

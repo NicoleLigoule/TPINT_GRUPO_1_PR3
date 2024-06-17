@@ -68,10 +68,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdmInicio.aspx" />
+    <Content Include="HorarioMed.aspx" />
     <Content Include="Inicio-Clinica.aspx" />
     <Content Include="RegistroMed.aspx" />
-    <Content Include="Resources\img\background\clinicaUTN-portadaLogin.jpg" />
-    <Content Include="styles.login.css" />
+    <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
+    <Content Include="Resources\estilos\styles.AdmInicio.css" />
+    <Content Include="Resources\estilos\styles.login.css" />
+    <Content Include="Resources\estilos\styles.RegistroMed.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +84,13 @@
     </Compile>
     <Compile Include="AdmInicio.aspx.designer.cs">
       <DependentUpon>AdmInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HorarioMed.aspx.cs">
+      <DependentUpon>HorarioMed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HorarioMed.aspx.designer.cs">
+      <DependentUpon>HorarioMed.aspx</DependentUpon>
     </Compile>
     <Compile Include="Inicio-Clinica.aspx.cs">
       <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
@@ -100,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Resources\estilos\styles.HorarioMed.css" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
