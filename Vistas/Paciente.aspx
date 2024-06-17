@@ -100,7 +100,7 @@
                         <tr>
                             <td class="auto-style2"></td>
                             <td class="auto-style3">
-                                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" />
+                                <asp:Button ID="btnRegistrar" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" />
                             </td>
                         </tr>
                     </table>

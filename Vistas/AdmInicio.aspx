@@ -73,7 +73,7 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:HyperLink ID="hplpacientes" runat="server" NavigateUrl="~/Paciente.aspx">Pacientes</asp:HyperLink>
+                        <asp:HyperLink ID="hplpacientes" runat="server" NavigateUrl="~/MenuPacientes.aspx">Pacientes</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

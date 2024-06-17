@@ -69,11 +69,15 @@
   <ItemGroup>
     <Content Include="AdmInicio.aspx" />
     <Content Include="AsignarTurno.aspx" />
+    <Content Include="EliminarPaciente.aspx" />
+    <Content Include="GestionPacientes.aspx" />
     <Content Include="HorarioMed.aspx" />
     <Content Include="Inicio-Clinica.aspx" />
+    <Content Include="MenuPacientes.aspx" />
     <Content Include="Paciente.aspx" />
     <Content Include="RegistroMed.aspx" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
+    <Content Include="Resources\estilos\Styles.Admin.css" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
     <Content Include="Resources\estilos\styles.login.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
@@ -95,6 +99,20 @@
     <Compile Include="AsignarTurno.aspx.designer.cs">
       <DependentUpon>AsignarTurno.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EliminarPaciente.aspx.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarPaciente.aspx.designer.cs">
+      <DependentUpon>EliminarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GestionPacientes.aspx.cs">
+      <DependentUpon>GestionPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GestionPacientes.aspx.designer.cs">
+      <DependentUpon>GestionPacientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HorarioMed.aspx.cs">
       <DependentUpon>HorarioMed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +126,13 @@
     </Compile>
     <Compile Include="Inicio-Clinica.aspx.designer.cs">
       <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPacientes.aspx.cs">
+      <DependentUpon>MenuPacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MenuPacientes.aspx.designer.cs">
+      <DependentUpon>MenuPacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente.aspx.cs">
       <DependentUpon>Paciente.aspx</DependentUpon>
