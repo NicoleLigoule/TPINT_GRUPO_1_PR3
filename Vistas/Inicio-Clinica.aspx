@@ -14,14 +14,7 @@
     <%-- BOOTSTRAP --%>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <%-- SCRIPTS --%>
-    <script type="text/javascript">
-        function clearTextBoxOnClick(textBox) {
-            if (textBox.value != '') {
-                textBox.value = '';
-                textBox.style.color = 'black';
-            }
-        }
-    </script>
+    <script src="./utils.js" type="text/javascript"></script>
 </head>
 <body>
     <%-- Incluye el Header --%>

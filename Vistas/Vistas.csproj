@@ -88,6 +88,7 @@
     <Content Include="Resources\estilos\styles.login.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
     <Content Include="Resources\estilos\styles.RegistroMed.css" />
+    <Content Include="utils.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

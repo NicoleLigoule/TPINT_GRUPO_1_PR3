@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AdmInicio.aspx.cs" Inherits="Vistas.AdmInicio" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -8,6 +9,12 @@
     <title></title>
        <%-- ESTILOS DE AdmInicio --%>
     <link href="./Resources/estilos/styles.AdmInicio.css" rel="stylesheet" />
+    <%-- FUENTES ÍCONOS --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- SCRIPTS --%>
+    <script src="./utils.js" type="text/javascript"></script>
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -32,7 +39,7 @@
     </style>
 </head>
 <body>
-    <header>
+<%--    <header>
         <nav class="navbar">
             <div id="hoverNav" class="container-fluid">
                 <a class="navbar-brand" href="Inicio-Clinica.aspx">
@@ -42,25 +49,14 @@
                 <asp:Label ID="lblUsuario" runat="server" Text="xxxx"></asp:Label>
             </div>
         </nav>
-    </header>
+    </header>--%>
+
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
+
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:HyperLink ID="hplHorariosMedicos" runat="server" NavigateUrl="~/HorarioMed.aspx">Horarios de Medicos</asp:HyperLink>
@@ -69,13 +65,11 @@
                         <asp:GridView ID="GridView1" runat="server">
                         </asp:GridView>
                     </td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:HyperLink ID="hplpacientes" runat="server" NavigateUrl="~/MenuPacientes.aspx">Pacientes</asp:HyperLink>
                     </td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -83,13 +77,11 @@
                         <asp:HyperLink ID="hplAsignarTurno" runat="server" NavigateUrl="~/AsignarTurno.aspx">Asignar Turno</asp:HyperLink>
                     </td>
                     <td class="auto-style2"></td>
-                    <td class="auto-style2"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">
                         <asp:HyperLink ID="hplMedicos" runat="server" NavigateUrl="~/MenuMedico.aspx">Medico</asp:HyperLink>
                     </td>
-                    <td>&nbsp;</td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -97,109 +89,8 @@
                         <asp:HyperLink ID="hplReportes" runat="server">Reportes</asp:HyperLink>
                     </td>
                     <td class="auto-style2"></td>
-                    <td class="auto-style2"></td>
                 </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style5"></td>
-                    <td class="auto-style6"></td>
-                    <td class="auto-style6"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
+                </table>
         </div>
     </form>
 </body>
