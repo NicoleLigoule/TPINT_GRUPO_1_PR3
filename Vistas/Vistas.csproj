@@ -70,7 +70,9 @@
     <Content Include="AdmInicio.aspx" />
     <Content Include="AsignarTurno.aspx" />
     <Content Include="EliminarPaciente.aspx" />
+    <Content Include="Footer.ascx" />
     <Content Include="GestionPacientes.aspx" />
+    <Content Include="Header.ascx" />
     <Content Include="HorarioMed.aspx" />
     <Content Include="Inicio-Clinica.aspx" />
     <Content Include="MenuPacientes.aspx" />
@@ -106,12 +108,26 @@
     <Compile Include="EliminarPaciente.aspx.designer.cs">
       <DependentUpon>EliminarPaciente.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
     <Compile Include="GestionPacientes.aspx.cs">
       <DependentUpon>GestionPacientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="GestionPacientes.aspx.designer.cs">
       <DependentUpon>GestionPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
     </Compile>
     <Compile Include="HorarioMed.aspx.cs">
       <DependentUpon>HorarioMed.aspx</DependentUpon>
