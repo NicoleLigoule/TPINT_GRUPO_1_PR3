@@ -21,51 +21,6 @@
             }
         }
     </script>
-    <style type="text/css">
-        .auto-style1 {
-            height: 113px;
-        }
-    </style>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-        .main-container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        .content {
-            flex: 1;
-        }
-        
-        footer {
-            background: rgb(30, 30, 30); 
-            padding: 10px 0;
-            text-align: center;
-        }
-        
-        .container-fluid button{
-            color: white;
-        }
-
-        .container-fluid button:hover{
-            color:paleturquoise;
-        }
-
-        .container-fluid a{
-            color:#607D8B;
-        }
-        .container-fluid a:hover{
-            color:paleturquoise;
-        }
-        
-        .auto-style2 {
-            height: 26px;
-        }
-        
-    </style>
 </head>
 <body>
     <%--<div id="main-content">--%>
@@ -77,9 +32,6 @@
                         <i class="fa-regular fa-hospital"></i>
                         Clinica UTN
                     </a>
-<%--                    <button class="btn btn-unstyled hl-nav" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
-                        SOBRE NOSOTROS
-                    </button>--%>
                 </div>
             </nav>
         </header>
@@ -159,14 +111,14 @@
     <%-- INICIO DEL FOOTER --%>
     <footer>
         <section>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <i class="fa-regular fa-hospital"></i>
-                    Clinica UTN
-                </a>
-                <button class="btn btn-unstyled hl-nav" type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
-                    SOBRE NOSOTROS
-                </button>
+            <div class="container-fluid d-flex justify-content-center align-items-center">
+                    <a class="navbar-brand d-flex align-items-center" href="#">
+                        <i class="fa-regular fa-hospital"></i>
+                        Clinica UTN
+                    </a>
+                    <button class="btn btn-unstyled hl-nav ml-3" type="button" data-toggle="collapse" data-target="#collapseAboutUs" aria-expanded="false" aria-controls="collapseExample">
+                        SOBRE NOSOTROS
+                    </button>
             </div>
         </section>
         <section id="about-us">
@@ -190,8 +142,8 @@
                         </p>
                         <h3 style="color: black;">MIS REDES</h3>
                         <div class="social-media">
-                            <ul>
-                                <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                        <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                            <ul>    
                                 <li class="col-md-2 d-inline-block">
                                     <a href="https://www.linkedin.com/in/guillermo-navarro-61a4a5263/" class="link-text">
                                         <i class="fa-brands fa-linkedin fa-flip"></i>
@@ -230,8 +182,8 @@
                         </p>
                         <h3 style="color: black;">MIS REDES</h3>
                         <div class="social-media">
-                            <ul>
-                                <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                        <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                                <ul>
                                 <li class="col-md-2 d-inline-block">
                                     <a href="https://www.linkedin.com/in/nicoleligoule/" class="link-text">
                                         <i class="fa-brands fa-linkedin fa-flip"></i>
@@ -264,8 +216,8 @@
                         </p>
                         <h3 style="color: black;">MIS REDES</h3>
                         <div class="social-media">
-                            <ul>
-                                <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                        <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                                <ul>
                                 <li class="col-md-2 d-inline-block">
                                     <a href="https://www.linkedin.com/in/dante-luongo/" class="link-text">
                                         <i class="fa-brands fa-linkedin fa-flip"></i>
@@ -289,8 +241,8 @@
                         </p>
                         <h3 style="color: black;">MIS REDES</h3>
                         <div class="social-media">
-                            <ul>
-                                <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                        <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                                <ul>
                                 <li class="col-md-2 d-inline-block">
                                     <a href="https://www.linkedin.com/in/daniel-martin-rios-0a16522a3/" class="link-text">
                                         <i class="fa-brands fa-linkedin fa-flip"></i>
@@ -320,8 +272,8 @@
                         </p>
                         <h3 style="color: black;">MIS REDES</h3>
                         <div class="social-media">
-                            <ul>
-                                <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                        <p class="text-center" style="color: black;"><strong>¡Sigamos en contacto!</strong></p>
+                            <ul>    
                                 <li class="col-md-2 d-inline-block">
                                     <a href="https://www.linkedin.com/in/tomas-munguia-0242b72bb/" class="link-text">
                                                     <i class="fa-brands fa-linkedin fa-flip"></i>

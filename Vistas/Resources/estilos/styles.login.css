@@ -54,7 +54,6 @@ body {
     align-items: center;
 }
 
-
 .tabla-login {
     width: 100%;
 }
@@ -62,12 +61,31 @@ body {
 /* FOOTER */
 footer {
     color: white;
-    background-color: #607D8B;
+    background-color: #212121;
     width: 100%;
     height: auto;
     position: fixed;
     bottom: 0;
     left: 0;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fluid a.navbar-brand {
+    color: #607D8B;
+    display: flex;
+    align-items: center;
+    margin-right: 0.5%;
+}
+
+.container-fluid a.navbar-brand i {
+    margin-right: 5px; /* esta en px porque es la distancia entre el icono y el 'Clinica UTN'*/
 }
 
 .container-fluid button {
@@ -78,8 +96,8 @@ footer {
     color: paleturquoise;
 }
 
-.container-fluid a {
-    color: coral;
+.container-fluid a:hover {
+    color: paleturquoise;
 }
 
 #hoverNav a.navbar-brand {
@@ -88,4 +106,23 @@ footer {
 
 #hoverNav a.navbar-brand:hover {
     color: #1976D2;
+}
+
+/* Clases auto-style */
+.auto-style1 {
+    height: 113px;
+}
+
+.auto-style2 {
+    height: 26px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
 }
