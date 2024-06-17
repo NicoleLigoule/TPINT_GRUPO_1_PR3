@@ -12,6 +12,13 @@
         .auto-style2 {
             width: 525px;
         }
+        .auto-style3 {
+            width: 525px;
+            height: 33px;
+        }
+        .auto-style4 {
+            height: 33px;
+        }
     </style>
 </head>
 <body>
@@ -41,11 +48,11 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Ingrese DNI del paciente:</td>
-                    <td>
+                    <td class="auto-style3">Ingrese DNI del paciente:</td>
+                    <td class="auto-style4">
                         <asp:TextBox ID="txtEliminar" runat="server"></asp:TextBox>
                     </td>
-                    <td>
+                    <td class="auto-style4">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" />
                     </td>
                 </tr>

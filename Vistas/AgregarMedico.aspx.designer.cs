@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class Paciente
+    public partial class AgregarMedico
     {
 
         /// <summary>
@@ -33,103 +33,139 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control txtDniPac.
+        /// Control txtLegajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDniPac;
+        protected global::System.Web.UI.WebControls.TextBox txtLegajo;
 
         /// <summary>
-        /// Control txtNombrePac.
+        /// Control txtDniMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombrePac;
+        protected global::System.Web.UI.WebControls.TextBox txtDniMed;
 
         /// <summary>
-        /// Control txtApellidoPac.
+        /// Control txtNombreMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtApellidoPac;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreMed;
 
         /// <summary>
-        /// Control ddlSexoPac.
+        /// Control txtApellidoMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlSexoPac;
+        protected global::System.Web.UI.WebControls.TextBox txtApellidoMed;
 
         /// <summary>
-        /// Control txtNacionalidadPac.
+        /// Control ddlSexoMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNacionalidadPac;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSexoMed;
 
         /// <summary>
-        /// Control calenFechaNacPac.
+        /// Control txtNacionalidadMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calenFechaNacPac;
+        protected global::System.Web.UI.WebControls.TextBox txtNacionalidadMed;
 
         /// <summary>
-        /// Control txtProvinciaPac.
+        /// Control calenFechaNacMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtProvinciaPac;
+        protected global::System.Web.UI.WebControls.Calendar calenFechaNacMed;
 
         /// <summary>
-        /// Control txtLocalidadPac.
+        /// Control txtProvinciaMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLocalidadPac;
+        protected global::System.Web.UI.WebControls.TextBox txtProvinciaMed;
 
         /// <summary>
-        /// Control txtDireccionPac.
+        /// Control txtLocalidadMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDireccionPac;
+        protected global::System.Web.UI.WebControls.TextBox txtLocalidadMed;
 
         /// <summary>
-        /// Control txtCorreoElectronicoPac.
+        /// Control txtDireccionMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCorreoElectronicoPac;
+        protected global::System.Web.UI.WebControls.TextBox txtDireccionMed;
 
         /// <summary>
-        /// Control txtTelefonoPac.
+        /// Control txtCorreoElectronicoMed.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTelefonoPac;
+        protected global::System.Web.UI.WebControls.TextBox txtCorreoElectronicoMed;
+
+        /// <summary>
+        /// Control txtTelefonoMed.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTelefonoMed;
+
+        /// <summary>
+        /// Control ddlEspecialidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEspecialidad;
+
+        /// <summary>
+        /// Control ddlDias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDias;
+
+        /// <summary>
+        /// Control txtHorarios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHorarios;
 
         /// <summary>
         /// Control btnRegistrar.
