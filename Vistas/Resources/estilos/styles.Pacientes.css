@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 
-body.registro-medico {
+body.registro-medico-pac {
     background-color: #D3EEFF;
     background-size: cover;
     display: flex;
@@ -55,4 +55,12 @@ body.registro-medico {
 
 .tabla-login {
     width: 100%;
+}
+
+#hoverNav a.navbar-brand {
+    color: #607D8B;
+}
+
+#hoverNav a.navbar-brand:hover {
+    color: #1976D2;
 }

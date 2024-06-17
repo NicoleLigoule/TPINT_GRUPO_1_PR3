@@ -81,3 +81,11 @@ footer {
 .container-fluid a {
     color: coral;
 }
+
+#hoverNav a.navbar-brand {
+    color: #607D8B;
+}
+
+#hoverNav a.navbar-brand:hover {
+    color: #1976D2;
+}

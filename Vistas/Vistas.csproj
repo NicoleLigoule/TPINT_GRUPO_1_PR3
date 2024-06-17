@@ -70,10 +70,12 @@
     <Content Include="AdmInicio.aspx" />
     <Content Include="HorarioMed.aspx" />
     <Content Include="Inicio-Clinica.aspx" />
+    <Content Include="Pacientes.aspx" />
     <Content Include="RegistroMed.aspx" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
     <Content Include="Resources\estilos\styles.login.css" />
+    <Content Include="Resources\estilos\styles.Pacientes.css" />
     <Content Include="Resources\estilos\styles.RegistroMed.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -98,6 +100,13 @@
     </Compile>
     <Compile Include="Inicio-Clinica.aspx.designer.cs">
       <DependentUpon>Inicio-Clinica.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes.aspx.cs">
+      <DependentUpon>Pacientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pacientes.aspx.designer.cs">
+      <DependentUpon>Pacientes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroMed.aspx.cs">
