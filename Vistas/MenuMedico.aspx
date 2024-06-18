@@ -6,34 +6,8 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
+        <link href="./Resources/estilos/styles.MenuMedico.css" rel="stylesheet" />
 
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style3 {
-            height: 31px;
-            width: 357px;
-        }
-        .auto-style5 {
-            height: 31px;
-            width: 420px;
-            text-align: center;
-        }
-        .auto-style2 {
-            height: 31px;
-        }
-        .auto-style4 {
-            width: 357px;
-        }
-        .auto-style7 {
-            width: 420px;
-            text-align: center;
-        }
-        .auto-style6 {
-            width: 420px;
-        }
-        </style>
 </head>
 <body>
     <form id="form1" runat="server">

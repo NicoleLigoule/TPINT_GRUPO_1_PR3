@@ -9,6 +9,8 @@
     <link href="./Resources/estilos/styles.Pacientes.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- SCRIPTS --%>
+    <script src="./utils.js" type="text/javascript"></script>
 </head>
 <body class="registro-medico-pac">
     <header>
@@ -68,7 +70,9 @@
                         <tr>
                             <td class="auto-style2">Fecha de nacimiento:</td>
                             <td class="auto-style3">
-                                <asp:Calendar ID="calenFechaNacMed" runat="server" CssClass="form-control-calendar"></asp:Calendar>
+                                <asp:TextBox ID="txtFechaNac" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px" 
+                                    Text="DD/MM/AAAA" 
+                                    onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>

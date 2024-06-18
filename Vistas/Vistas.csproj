@@ -82,18 +82,22 @@
     <Content Include="MenuPacientes.aspx" />
     <Content Include="Paciente.aspx" />
     <Content Include="RegistroMed.aspx" />
+    <Content Include="Reportes.aspx" />
     <Content Include="Resources\estilos\Footer.css" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
     <Content Include="Resources\estilos\Header.css" />
-    <Content Include="Resources\estilos\Styles.Admin.css" />
+    <Content Include="Resources\estilos\styles.EliminarMedico.css" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
     <Content Include="Resources\estilos\styles.AsignarTurno.css" />
     <Content Include="Resources\estilos\styles.EliminarPaciente.css" />
+    <Content Include="Resources\estilos\styles.GestionMedico.css" />
     <Content Include="Resources\estilos\styles.GestionPacientes.css" />
     <Content Include="Resources\estilos\styles.login.css" />
+    <Content Include="Resources\estilos\styles.MenuMedico.css" />
     <Content Include="Resources\estilos\styles.MenuPacientes.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
     <Content Include="Resources\estilos\styles.RegistroMed.css" />
+    <Content Include="Resources\estilos\styles.Reportes.css" />
     <Content Include="utils.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -203,6 +207,13 @@
     </Compile>
     <Compile Include="RegistroMed.aspx.designer.cs">
       <DependentUpon>RegistroMed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes.aspx.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reportes.aspx.designer.cs">
+      <DependentUpon>Reportes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

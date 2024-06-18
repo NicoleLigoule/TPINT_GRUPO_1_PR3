@@ -13,6 +13,7 @@
             <h2>Gestión Pacientes</h2>
             <asp:GridView ID="GridView1" runat="server">
             </asp:GridView>
+            <asp:HyperLink ID="hplPacientes" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver al menú Pacientes</asp:HyperLink>
         </div>
     </form>
 </body>
