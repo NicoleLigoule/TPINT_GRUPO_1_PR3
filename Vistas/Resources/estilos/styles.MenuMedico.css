@@ -21,10 +21,10 @@
     box-sizing: border-box;
 }
 
-.menu-container h2 {
-    font-size: 35px;
-    color: #1976D2;
-}
+    .menu-container h2 {
+        font-size: 35px;
+        color: #1976D2;
+    }
 
 .back-link {
     width: 100%;
@@ -46,44 +46,16 @@
     box-sizing: border-box;
 }
 
-.menu-link:hover {
-    color: #BBDEFB;
-    background-color: #1976D2;
-}
-
-.auto-style7 {
-    text-align: center;
-    padding: 10px 0;
-}
+    .menu-link:hover {
+        color: #BBDEFB;
+        background-color: #1976D2;
+    }
 
 .auto-style1 {
     width: 100%;
 }
 
-.auto-style3 {
-    height: 31px;
-    width: 357px;
-}
-
-.auto-style5 {
-    height: 31px;
-    width: 420px;
-    text-align: center;
-}
-
-.auto-style2 {
-    height: 31px;
-}
-
-.auto-style4 {
-    width: 357px;
-}
-
 .auto-style7 {
-    width: 420px;
     text-align: center;
-}
-
-.auto-style6 {
-    width: 420px;
+    padding: 10px 0;
 }
