@@ -78,6 +78,7 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtNacionalidadPac;
 
         /// <summary>
+        /// Control txtFechaNac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
@@ -138,5 +139,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnRegistrar;
+
+        /// <summary>
+        /// Control hplVolverAMenuPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplVolverAMenuPaciente;
     }
 }
