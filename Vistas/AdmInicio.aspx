@@ -15,22 +15,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <%-- SCRIPTS --%>
     <script src="./utils.js" type="text/javascript"></script>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style3 {
-            width: 221px;
-        }
-        .auto-style4 {
-            height: 33px;
-            width: 221px;
-        }
-        .auto-style5 {
-            width: 90%;
-            height: 714px;
-        }
-        </style>
 </head>
 <body>
     <%-- Incluye el Header --%>
