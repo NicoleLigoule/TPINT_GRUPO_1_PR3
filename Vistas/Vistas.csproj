@@ -85,6 +85,7 @@
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
     <Content Include="Resources\estilos\Styles.Admin.css" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
+    <Content Include="Resources\estilos\styles.EliminarPaciente.css" />
     <Content Include="Resources\estilos\styles.login.css" />
     <Content Include="Resources\estilos\styles.MenuPacientes.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
