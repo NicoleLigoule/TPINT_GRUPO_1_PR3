@@ -1,0 +1,77 @@
+﻿body {
+    background-color: #BBDEFB;
+    height: 100vh;
+    margin: 10%;
+}
+
+form {
+    margin-top: 20px;
+}
+
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 100%;
+}
+
+.auto-style3 {
+    height: 33px;
+}
+
+.auto-style4 {
+    height: 33px;
+    padding-left: 5px;
+}
+
+#HyperLink1 {
+    color: #448AFF;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.auto-style2 strong {
+    font-size: 24px;
+    color: #1976D2;
+}
+
+#txtEliminar {
+    width: calc(100% - 10px);
+    padding: 5px;
+}
+
+#btnEliminar {
+    padding: 8px 15px;
+    background-color: #1976D2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnEliminar:hover {
+    background-color: #1565C0;
+}
+
+#lblMensaje {
+    color: #FF3300;
+}
+
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 525px;
+}
+
+.auto-style3 {
+    width: 525px;
+    height: 33px;
+}
+
+.auto-style4 {
+    height: 33px;
+}
