@@ -53,6 +53,7 @@
                                 <li>Utilice las herramientas de exportación para descargar los reportes en formato PDF o Excel.</li>
                                 <li>Los reportes se actualizan automáticamente con los datos más recientes de nuestra base de datos.</li>
                             </ul>
+                            <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
                         </div>
                     </div>
                 </div>

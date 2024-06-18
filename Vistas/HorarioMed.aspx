@@ -107,7 +107,9 @@
                     <asp:GridView ID="GridView1" runat="server" Height="327px" Width="636px">
                     </asp:GridView>
                 </td>
-                <td class="auto-style3"></td>
+                <td class="auto-style3">  
+                   <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
+                </td>
                 <td class="auto-style3"></td>
             </tr>
             <tr>

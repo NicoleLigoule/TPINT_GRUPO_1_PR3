@@ -110,10 +110,11 @@
                             <td class="auto-style2"></td>
                             <td class="auto-style3">
                                 <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" />
-                            </td>
+                            </td>    
                         </tr>
                     </table>
                 </div>
+                 <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
             </form>
         </div>
     </section>
