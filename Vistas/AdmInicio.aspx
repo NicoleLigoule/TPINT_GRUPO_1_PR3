@@ -19,9 +19,6 @@
         .auto-style1 {
             width: 100%;
         }
-        .auto-style2 {
-            height: 33px;
-        }
         .auto-style3 {
             width: 221px;
         }
@@ -30,13 +27,10 @@
             width: 221px;
         }
         .auto-style5 {
-            width: 221px;
-            height: 32px;
+            width: 90%;
+            height: 714px;
         }
-        .auto-style6 {
-            height: 32px;
-        }
-    </style>
+        </style>
 </head>
 <body>
 <%--    <header>
@@ -55,42 +49,46 @@
     <uc:Header runat="server" />
 
     <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style3">
-                        <asp:HyperLink ID="hplHorariosMedicos" runat="server" NavigateUrl="~/HorarioMed.aspx">Horarios de Medicos</asp:HyperLink>
-                    </td>
-                    <td>
-                        <asp:GridView ID="GridView1" runat="server">
-                        </asp:GridView>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">
-                        <asp:HyperLink ID="hplpacientes" runat="server" NavigateUrl="~/MenuPacientes.aspx">Pacientes</asp:HyperLink>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:HyperLink ID="hplAsignarTurno" runat="server" NavigateUrl="~/AsignarTurno.aspx">Asignar Turno</asp:HyperLink>
-                    </td>
-                    <td class="auto-style2"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">
-                        <asp:HyperLink ID="hplMedicos" runat="server" NavigateUrl="~/MenuMedico.aspx">Medico</asp:HyperLink>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style4">
-                        <asp:HyperLink ID="hplReportes" runat="server">Reportes</asp:HyperLink>
-                    </td>
-                    <td class="auto-style2"></td>
-                </tr>
+        <div class="row contaniner-fluid">
+            <aside class="menu-container col-md-3">
+                <table class="auto-style5">
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:HyperLink ID="hplHorariosMedicos" class="menu-link" runat="server" NavigateUrl="~/HorarioMed.aspx">Horarios de Medicos</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:HyperLink ID="hplpacientes" class="menu-link" runat="server" NavigateUrl="~/MenuPacientes.aspx">Pacientes</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:HyperLink ID="hplAsignarTurno" class="menu-link" runat="server" NavigateUrl="~/AsignarTurno.aspx">Asignar Turno</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:HyperLink ID="hplMedicos" class="menu-link" runat="server" NavigateUrl="~/MenuMedico.aspx">Medico</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="auto-style3">
+                            <asp:HyperLink ID="hplReportes" class="menu-link" runat="server">Reportes</asp:HyperLink>
+                        </td>
+                    </tr>
                 </table>
+            </aside>
+            <main class="col-md-9">
+                <table class="auto-style1">
+                    <tr>
+                        <td>
+                            <asp:GridView ID="GridView1" runat="server">
+                            </asp:GridView>
+                        </td>
+                    </tr>
+                </table>
+            </main>
         </div>
     </form>
 </body>

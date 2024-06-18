@@ -82,7 +82,9 @@
     <Content Include="MenuPacientes.aspx" />
     <Content Include="Paciente.aspx" />
     <Content Include="RegistroMed.aspx" />
+    <Content Include="Resources\estilos\Footer.css" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
+    <Content Include="Resources\estilos\Header.css" />
     <Content Include="Resources\estilos\Styles.Admin.css" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
     <Content Include="Resources\estilos\styles.EliminarPaciente.css" />

@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Vistas.Header" %>
+<link href="./Resources/estilos/Header.css" rel="stylesheet" />
 
 <header>
     <nav class="navbar">

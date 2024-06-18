@@ -14,10 +14,6 @@ body {
     flex-direction: column;
 }
 
-/* NAVBAR */
-.navbar {
-    background: #BBDEFB;
-}
 
 /* FORM LOGIN */
 #form-body {
@@ -58,8 +54,14 @@ body {
     width: 100%;
 }
 
+/*
+
+    CÓDIGO REPETIDO EN HEADER.CSS Y EN FOOTER.CSS.
+    YA ESTÁ ANEXADO EN HEADER.ASPX Y EN FOOTER.ASPX
+
+*/
 /* FOOTER */
-footer {
+/*footer {
     color: white;
     background-color: #212121;
     width: 100%;
@@ -85,8 +87,8 @@ footer {
 }
 
 .container-fluid a.navbar-brand i {
-    margin-right: 5px; /* esta en px porque es la distancia entre el icono y el 'Clinica UTN'*/
-}
+    margin-right: 5px;*/ /* esta en px porque es la distancia entre el icono y el 'Clinica UTN'*/
+/*}
 
 .container-fluid button {
     color: white;
@@ -106,10 +108,10 @@ footer {
 
 #hoverNav a.navbar-brand:hover {
     color: #1976D2;
-}
+}*/
 
 /* Clases auto-style */
-.auto-style1 {
+/*.auto-style1 {
     height: 113px;
 }
 
@@ -125,4 +127,4 @@ footer {
 
 .content {
     flex: 1;
-}
+}*/

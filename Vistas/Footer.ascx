@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Footer.ascx.cs" Inherits="Vistas.Footer" %>
+<link href="./Resources/estilos/Footer.css" rel="stylesheet" />
 
 <footer>
     <section>
