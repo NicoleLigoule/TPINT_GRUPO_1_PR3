@@ -87,6 +87,7 @@
     <Content Include="Resources\estilos\Header.css" />
     <Content Include="Resources\estilos\Styles.Admin.css" />
     <Content Include="Resources\estilos\styles.AdmInicio.css" />
+    <Content Include="Resources\estilos\styles.AsignarTurno.css" />
     <Content Include="Resources\estilos\styles.EliminarPaciente.css" />
     <Content Include="Resources\estilos\styles.GestionPacientes.css" />
     <Content Include="Resources\estilos\styles.login.css" />

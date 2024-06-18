@@ -1,0 +1,32 @@
+﻿body {
+    background-color: #BBDEFB;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.auto-style1 {
+    width: 100%;
+}
+
+.auto-style2 {
+    width: 159px;
+}
+
+.auto-style3 {
+    width: 97px;
+}
+
+.auto-style4 {
+    width: 158px;
+}
+
+.auto-style6 {
+    width: 156px;
+}
+
+label,
+select {
+    font-size: 35px;
+    color: #1976D2;
+}

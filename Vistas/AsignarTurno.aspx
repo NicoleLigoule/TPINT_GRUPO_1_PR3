@@ -6,6 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link href="./Resources/estilos/styles.AsignarTurno.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
