@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Gestionar Medico</title>
+    <link href="./Resources/estilos/styles.GestionMedico.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -14,22 +15,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td>
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al menu de Medicos</asp:HyperLink>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>
-                        <asp:GridView ID="GridView2" runat="server">
-                        </asp:GridView>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-            </table>
+        <div class="GridViewMedico">
+            <h2>Gestión Medico</h2>
+            <asp:GridView ID="GridViewMedicos1" runat="server">
+            </asp:GridView>
+            <asp:HyperLink ID="hplMedico" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al menú Medico</asp:HyperLink>
         </div>
     </form>
 </body>

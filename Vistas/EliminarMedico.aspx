@@ -5,30 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
+     <title>Eliminar Medico</title>
+    <link href="./Resources/estilos/styles.EliminarMedico.css" rel="stylesheet" />
 
-        .auto-style1 {
-            width: 100%;
-        }
-        .auto-style2 {
-            width: 525px;
-        }
-        .auto-style3 {
-            width: 525px;
-            height: 33px;
-        }
-        .auto-style4 {
-            height: 33px;
-        }
-        .auto-style5 {
-            width: 525px;
-            height: 26px;
-        }
-        .auto-style6 {
-            height: 26px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">

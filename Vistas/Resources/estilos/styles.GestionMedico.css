@@ -4,26 +4,26 @@
     margin: 10%;
 }
 
-.GridViewPacientes {
+.GridViewMedico {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra verticalmente los elementos */
+    justify-content: center;
+    align-items: center;
     border-radius: 20px;
     width: 100%;
     padding: 10px;
     background-color: #FFFFFF;
-    align-items: center;
-    margin-left: auto; /* Necesario para centrar horizontalmente el gridview */
-    margin-right: auto; /* Necesario para centrar horizontalmente el gridview */
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.GridViewPacientes h2 {
+.GridViewMedico h2 {
     font-size: 35px;
     color: #1976D2;
     text-align: center;
 }
 
-#hplPacientes {
+#hplMedico {
     font-size: 15px;
     color: #1976D2;
     text-align: center;
