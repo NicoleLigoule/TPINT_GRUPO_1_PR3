@@ -1,0 +1,21 @@
+﻿body {
+    background-color: #BBDEFB;
+    height: 100vh;
+    margin: 10%;
+}
+
+.GridViewPacientes {
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFFFFF;
+    align-items: center;
+    margin-left: auto; /* Necesario para centrar horizontalmente el gridview */
+    margin-right: auto; /* Necesario para centrar horizontalmente el gridview */
+}
+
+.GridViewPacientes h2 {
+    font-size: 35px;
+    color: #1976D2;
+    text-align: center;
+}

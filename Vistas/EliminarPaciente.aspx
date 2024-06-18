@@ -13,7 +13,7 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
-                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver a menu Paciente</asp:HyperLink>
+                        <asp:HyperLink ID="hlMenuPaciente" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver a menu Paciente</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

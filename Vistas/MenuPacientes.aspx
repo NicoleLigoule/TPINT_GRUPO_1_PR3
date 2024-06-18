@@ -32,7 +32,7 @@
             </tr>
         </table>
         <div class="back-link">
-            <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
+            <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
         </div>
     </div>
 </form>
