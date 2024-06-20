@@ -45,18 +45,134 @@ namespace Entidades
             Telefono_me = telefono_me;
         }
 
-        public int Legajo_me1 { get => Legajo_me; set => Legajo_me = value; }
-        public string DNI_me1 { get => DNI_me; set => DNI_me = value; }
-        public string Nombre_me1 { get => Nombre_me; set => Nombre_me = value; }
-        public string Apellido_me1 { get => Apellido_me; set => Apellido_me = value; }
-        public int Localidad_me1 { get => Localidad_me; set => Localidad_me = value; }
-        public int Provincia_me1 { get => Provincia_me; set => Provincia_me = value; }
-        public int Especialidad_me1 { get => Especialidad_me; set => Especialidad_me = value; }
-        public string Sexo_me1 { get => Sexo_me; set => Sexo_me = value; }
-        public string Nacionalidad_me1 { get => Nacionalidad_me; set => Nacionalidad_me = value; }
-        public string FechaNacimiento_me1 { get => FechaNacimiento_me; set => FechaNacimiento_me = value; }
-        public string Direccion_me1 { get => Direccion_me; set => Direccion_me = value; }
-        public string CorreoElectronico_me1 { get => CorreoElectronico_me; set => CorreoElectronico_me = value; }
-        public string Telefono_me1 { get => Telefono_me; set => Telefono_me = value; }
+        public void setLegajoMed(int legajo)
+        {
+            this.Legajo_me = legajo;
+        }
+
+        public int getLegajoMed()
+        {
+            return Legajo_me;
+        }
+
+        public void setDniMed(string dni)
+        {
+            this.DNI_me = dni;
+        }
+
+        public string getDNIMed()
+        {
+            return DNI_me;
+        }
+
+        public void setNombreMed(string nombre)
+        {
+            this.Nombre_me = nombre;
+        }
+
+        public string getNombreMed()
+        {
+            return Nombre_me;
+        }
+
+        public void setApeMed(string apellido)
+        {
+            this.Apellido_me = apellido;
+        }
+
+        public string getApellidoMed()
+        {
+            return Apellido_me;
+        }
+
+        public void setLocalidadMed(int localidad)
+        {
+            this.Localidad_me = localidad;
+        }
+
+        public int getLocaMed()
+        {
+            return Localidad_me;
+        }
+
+        public void setProvMed(int prov)
+        {
+            this.Provincia_me = prov;
+        }
+
+        public int getProvMed()
+        {
+            return Provincia_me;
+        }
+
+        public void setEspecialidadMed(int especialidad)
+        {
+            this.Especialidad_me = especialidad;
+        }
+
+        public int getEspecialidadMed()
+        {
+            return Especialidad_me;
+        }
+
+        public void setSexoMed(string sexo)
+        {
+            this.Sexo_me = sexo;
+        }
+
+        public string getSexoMed()
+        {
+            return Sexo_me;
+        }
+
+        public void setNacionalidadMed(string nacionalidad)
+        {
+            this.Nacionalidad_me = nacionalidad;
+        }
+
+        public string getNacionalidadMed()
+        {
+            return Nacionalidad_me;
+        }
+
+        public void setFechaMed(string fecha)
+        {
+            this.FechaNacimiento_me= fecha;
+        }
+
+        public string getFechaMed()
+        {
+            return FechaNacimiento_me;
+        }
+
+        public void setDireccionMed(string direccion)
+        {
+            this.Direccion_me = direccion;
+        }
+
+        public string getDireccionMed()
+        {
+            return CorreoElectronico_me;
+        }
+
+        public void setCorreoMed(string correo)
+        {
+            this.CorreoElectronico_me = correo;
+        }
+
+        public string getCorreoMed()
+        {
+            return CorreoElectronico_me;
+        }
+
+        public void setTelefonoMed(string telefono)
+        {
+            this.Telefono_me = telefono;
+        }
+
+        public string getTelefonoMed()
+        {
+            return Telefono_me;
+        }
     }
 }

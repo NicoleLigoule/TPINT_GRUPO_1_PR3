@@ -42,17 +42,17 @@ namespace Entidades
             Telefono_pc = telefono_pc;
         }
 
-        public void setDni(string dni)
+        public void setDniPac(string dni)
         {
             this.DNI_pc = dni;
         }
 
-        public string getDNI()
+        public string getDNIPac()
         {
             return DNI_pc;
         }
 
-        public void setNombre(string nombrePac)
+        public void setNombrePac(string nombrePac)
         {
             this.Nombre_pc = nombrePac;
         }
@@ -62,41 +62,95 @@ namespace Entidades
             return Nombre_pc;
         }
 
-        public void setApe(string apelllidoPac)
+        public void setApePac(string apelllidoPac)
         {
             this.Apellido_pc = apelllidoPac;
         }
 
-        public string getApellido()
+        public string getApellidoPac()
         {
             return Apellido_pc;
         }
 
-        public void setLocalidad(int loca)
+        public void setLocalidadPac(int loca)
         {
             this.Localidad_pc = loca;
         }
 
-        public int getLoca()
+        public int getLocaPac()
         {
             return Localidad_pc;
         }
 
-        public void setProv(int prov)
+        public void setProvPac(int prov)
         {
             this.Provincia_pc = prov;
         }
 
-        public int getProv()
+        public int getProvPac()
         {
             return Provincia_pc;
         }
 
-        public string Sexo_pc1 { get => Sexo_pc; set => Sexo_pc = value; }
-        public string Nacionalidad_pc1 { get => Nacionalidad_pc; set => Nacionalidad_pc = value; }
-        public string FechaNacimiento_pc1 { get => FechaNacimiento_pc; set => FechaNacimiento_pc = value; }
-        public string Direccion_pc1 { get => Direccion_pc; set => Direccion_pc = value; }
-        public string CorreoElectronico_pc1 { get => CorreoElectronico_pc; set => CorreoElectronico_pc = value; }
-        public string Telefono_pc1 { get => Telefono_pc; set => Telefono_pc = value; }
+        public void setSexoPac(string sexoPac)
+        {
+            this.Sexo_pc = sexoPac;
+        }
+
+        public string getSexoPac()
+        {
+            return Sexo_pc;
+        }
+
+        public void setNacionalidadPac(string nacionalidad)
+        {
+            this.Nacionalidad_pc = nacionalidad;
+        }
+
+        public string getNacionalidadPac()
+        {
+            return Nacionalidad_pc;
+        }
+
+        public void setFechaPac(string fechaPc)
+        {
+            this.FechaNacimiento_pc = fechaPc;
+        }
+
+        public string getFechaPac()
+        {
+            return FechaNacimiento_pc;
+        }
+
+        public void setDireccionPac(string direccionpc)
+        {
+            this.Direccion_pc = direccionpc;
+        }
+
+        public string getDireccionPac()
+        {
+            return Direccion_pc;
+        }
+
+        public void setCorreoPac(string correopc)
+        {
+            this.CorreoElectronico_pc = correopc;
+        }
+
+        public string getCorreoPac()
+        {
+            return CorreoElectronico_pc;
+        }
+
+        public void setTelefonoPac(string telefonopc)
+        {
+            this.Telefono_pc = telefonopc;
+        }
+
+        public string getTelefonoPac()
+        {
+            return Telefono_pc;
+        }
+
     }
 }
