@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
+    <Compile Include="DatoLocalidad.cs" />
     <Compile Include="DatoProvincia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
