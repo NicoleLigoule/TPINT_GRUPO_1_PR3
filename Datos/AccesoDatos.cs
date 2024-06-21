@@ -31,6 +31,32 @@ namespace Datos
             }
         }
 
+        public SqlDataAdapter ObtenerAdaptador(string consulta)
+        {
+            SqlDataAdapter adapta;
+
+            try
+            {
+                adapta = new SqlDataAdapter(consulta, ObtenerConexion());
+
+                return adapta;
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public DataTable getTabla(String nombre, String consulta)
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adp = ObtenerAdaptador(consulta);
+            adp.Fill(ds, nombre);
+            return ds.Tables[nombre];
+        }
+
+
         public SqlDataReader obtenerReadDDLEspecialidad()
         {
             try
@@ -90,5 +116,7 @@ namespace Datos
                 return null;
             }
         }
+
+
     }
 }
