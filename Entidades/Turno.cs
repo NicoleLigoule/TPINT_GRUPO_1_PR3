@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Turno
+   public class Turno
     {
-        int _Legajo;
-        /// hace falta hacer una clase fecha  Fecha
-        int _Horario;
-        string _Asistencia;
-        string _Descripcion;
+        private int _Legajo;
+        private Fecha _fecha;
+        private int _Horario;
+        private string _Asistencia;
+        private string _Descripcion;
 
-        public Turno(string Legajo, string Horario, string Asistencia, string Descripcion)
+        public Turno(string Legajo, string Horario, string Asistencia, string Descripcion, string dia, string mes, string anio)
         {
-            ///falta agregar la clase fecha para poder terminar esto!!!
+            _fecha =new Fecha(dia, mes, anio);
             _Legajo= int.Parse(Legajo);
             _Horario= int.Parse(Horario);
             _Asistencia = Asistencia;
             _Descripcion = Descripcion;
+        }
+        public Fecha GetFecha()
+        {
+            return _fecha;
         }
         public int GetLegajo()
         {
