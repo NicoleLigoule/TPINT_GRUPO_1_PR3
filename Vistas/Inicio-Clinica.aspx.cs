@@ -10,6 +10,8 @@ namespace Vistas
 {
     public partial class Inicio_Cine : System.Web.UI.Page
     {
+        bool usuarioAdmin = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -35,7 +37,7 @@ namespace Vistas
         {
             Negocio.Login log = new Negocio.Login();
             string usuario = txtUsuario.Text;
-            bool contrasenia = log.LogearUsuario(usuario, args.Value);
+            bool contrasenia = log.LogearUsuario(usuario, args.Value, ref usuarioAdmin);
 
             if (!string.IsNullOrEmpty(args.Value) && contrasenia == true)
             {
@@ -44,14 +46,23 @@ namespace Vistas
             else
             {
                 args.IsValid = false;
+                usuarioAdmin = false;
             }
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
+            Negocio.Login log = new Negocio.Login();
             if (Page.IsValid)
             {
-                Response.Redirect("MenuMedico.aspx"); // TO-DO: En caso de ser administrador, esto deberia redireccionar a la pagina admin
+                if (usuarioAdmin)
+                {
+                    Response.Redirect("AdmInicio.aspx"); // Si es admin, nos redirige a AdmInicio.aspx
+                }
+                else
+                {
+                    Response.Redirect("MenuMedico.aspx"); // TO-DO: En caso de ser administrador, esto deberia redireccionar a la pagina admin
+                }
             }
         }
     }
