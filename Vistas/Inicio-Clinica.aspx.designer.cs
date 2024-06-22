@@ -33,22 +33,22 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.Label lblTituloLogin;
 
         /// <summary>
-        /// Control txtDNI.
+        /// Control txtUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDNI;
+        protected global::System.Web.UI.WebControls.TextBox txtUsuario;
 
         /// <summary>
-        /// Control rfvDNI.
+        /// Control cvUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDNI;
+        protected global::System.Web.UI.WebControls.CustomValidator cvUsuario;
 
         /// <summary>
         /// Control txtContrasenia.
@@ -60,13 +60,13 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtContrasenia;
 
         /// <summary>
-        /// Control rfvContrasenia.
+        /// Control cvContrasenia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContrasenia;
+        protected global::System.Web.UI.WebControls.CustomValidator cvContrasenia;
 
         /// <summary>
         /// Control btnIngresar.

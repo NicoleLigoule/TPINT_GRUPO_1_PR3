@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <%-- SCRIPTS --%>
     <script src="./utils.js" type="text/javascript"></script>
+    <style type="text/css">
+        .auto-style3 {
+            height: 29px;
+        }
+    </style>
 </head>
 <body>
     <%-- Incluye el Header --%>
@@ -37,35 +42,33 @@
                             <td class="auto-style2">Ingrese su usuario:</td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
-                                <asp:TextBox ID="txtDNI" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px" 
-                                    Text="Ingrese su usuario" 
-                                    onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
+                            <td class="auto-style3">
+                                <asp:TextBox ID="txtUsuario" runat="server" ForeColor="Gray" MaxLength="30" Wrap="False" Width="230px" Placeholder="Ingrese su usuario"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
-                                <asp:RequiredFieldValidator ID="rfvDNI" runat="server" ControlToValidate="txtDNI" ErrorMessage="Ingrese un usuario" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td>
+                                <asp:CustomValidator ID="cvUsuario" runat="server" ControlToValidate="txtUsuario" ErrorMessage="Ingrese un usuario" ForeColor="Red" OnServerValidate="cvUsuario_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True">Ingrese un usuario</asp:CustomValidator>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
+                            <td>
                                 Contraseña
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
+                            <td class="auto-style3">
                                 <asp:TextBox ID="txtContrasenia" runat="server" ForeColor="Gray" TextMode="Password" Width="230px"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
-                                <asp:RequiredFieldValidator ID="rfvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresarse una contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <td>
+                                <asp:CustomValidator ID="cvContrasenia" runat="server" ControlToValidate="txtContrasenia" ErrorMessage="Debe ingresar una contrasenia" ForeColor="Red" OnServerValidate="cvContrasenia_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True">Debe ingresar una contrasenia</asp:CustomValidator>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style19">
-                                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Width="233px" />
+                            <td>
+                                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Width="233px" CausesValidation="true" OnClick="btnIngresar_Click"/>
                             </td>
                         </tr>
                     </table>  
@@ -74,9 +77,6 @@
             </form>  
         </div>
     </section>
-    <%-- FIN DE PANTALLA DE FORMULARIO --%>
-
-    <%-- Incluye el footer --%>
-    <uc:Footer runat="server" />
+    <%-- FIN DE PANTALLA DE FORMULARIO --%>  <%-- Incluye el footer --%>    <%-- <uc:Footer runat="server" />--%>
 </body>
 </html>

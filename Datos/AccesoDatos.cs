@@ -56,6 +56,14 @@ namespace Datos
             return ds.Tables[nombre];
         }
 
+        public DataTable getSimpleTable(String nombre)
+        {
+            DataSet ds = new DataSet();
+            string consulta = "SELECT * FROM " + nombre;
+            SqlDataAdapter adp = ObtenerAdaptador(consulta);
+            adp.Fill(ds, nombre);
+            return ds.Tables[nombre];
+        }
 
         public SqlDataReader obtenerReadDDLEspecialidad()
         {

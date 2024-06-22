@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ABMLMedico.cs" />
     <Compile Include="ABMLPaciente.cs" />
+    <Compile Include="Negocio-Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

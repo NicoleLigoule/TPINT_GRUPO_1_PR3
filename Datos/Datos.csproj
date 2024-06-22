@@ -44,6 +44,7 @@
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="AccesoDatosMedico.cs" />
     <Compile Include="AccesoDatosPacientes.cs" />
+    <Compile Include="AccesoDatosUsuario.cs" />
     <Compile Include="DatoLocalidad.cs" />
     <Compile Include="DatoProvincia.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
