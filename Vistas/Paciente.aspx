@@ -103,9 +103,11 @@
                         </tr>
                          
                         <tr>
-                            <td class="auto-style2"></td>
+                            <td class="auto-style2">
+                                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                            </td>
                             <td class="auto-style3">
-                                <asp:Button ID="btnRegistrar" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" />
+                                <asp:Button ID="btnRegistrar" runat="server" Text="Agregar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" />
                                 <asp:HyperLink ID="hplVolverAMenuPaciente" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver</asp:HyperLink>
                             </td>
                         </tr>
