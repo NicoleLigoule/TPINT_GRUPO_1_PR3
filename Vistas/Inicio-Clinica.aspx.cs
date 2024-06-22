@@ -23,11 +23,11 @@ namespace Vistas
 
             if (!string.IsNullOrEmpty(args.Value) && nombreUsuario == true)
             {
-                args.IsValid = true; // No deberia saltar el RFV
+                args.IsValid = true;
             }
             else
             {
-                args.IsValid = false; // Deberia saltar el RFV
+                args.IsValid = false;
             }
         }
 
@@ -39,11 +39,11 @@ namespace Vistas
 
             if (!string.IsNullOrEmpty(args.Value) && contrasenia == true)
             {
-                args.IsValid = true; // No deberia saltar el RFV
+                args.IsValid = true;
             }
             else
             {
-                args.IsValid = false; // Deberia saltar el RFV
+                args.IsValid = false;
             }
         }
 

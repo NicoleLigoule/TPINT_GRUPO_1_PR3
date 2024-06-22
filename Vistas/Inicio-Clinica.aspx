@@ -77,6 +77,8 @@
             </form>  
         </div>
     </section>
-    <%-- FIN DE PANTALLA DE FORMULARIO --%>  <%-- Incluye el footer --%>    <%-- <uc:Footer runat="server" />--%>
+    <%-- FIN DE PANTALLA DE FORMULARIO --%>
+    <%-- Incluye el footer --%>  
+     <uc:Footer runat="server" />
 </body>
 </html>
