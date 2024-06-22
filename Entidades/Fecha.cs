@@ -14,7 +14,7 @@ namespace Entidades
         {
             _dia = int.Parse(dia);
             _mes = int.Parse(mes);
-            _anio=int.Parse(anio):
+            _anio = int.Parse(anio);
         }
        public int getDia()
         {
