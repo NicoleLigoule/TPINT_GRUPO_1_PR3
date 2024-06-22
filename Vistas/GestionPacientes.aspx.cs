@@ -24,5 +24,20 @@ namespace Vistas
             grvPacientes.DataSource = tabla.cargartablaPaciente();
             grvPacientes.DataBind();
         }
+
+        protected void grvPacientes_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            ABMLPaciente tabla = new ABMLPaciente();
+            grvPacientes.EditIndex = e.NewEditIndex;
+            grvPacientes.DataSource = tabla.cargartablaPaciente();
+        }
+
+        protected void grvPacientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grvPacientes.EditIndex = -1;
+            ABMLPaciente tabla = new ABMLPaciente();
+            grvPacientes.DataSource = tabla.cargartablaPaciente();
+        }
+
     }
 }
