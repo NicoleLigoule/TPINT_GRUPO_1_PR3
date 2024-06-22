@@ -24,7 +24,7 @@ namespace Datos
         }
         public DataTable Todos_Los_Productos()
         {
-            return Traer_tabla("Medicos", "SELECT Legajo_me ,DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me , FechaNacimiento_me , Direccion_me , Nombre_loca , Nombre_prov, CorreoElectronico_me, Telefono_me, Nombre_esp FROM (((Medico INNER JOIN Provincia on Medico.Provincia_me = Provincia.ID_prov) INNER JOIN Localidad on Medico.Localidad_me = Localidad.IDProv_loca) INNER JOIN Especialidad on Medico.Especialidad_me = Especialidad.ID_esp)");
+            return Traer_tabla("Medicos", "SELECT Legajo_me ,DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me , FechaNacimiento_me , Direccion_me , Nombre_loca , Nombre_prov, CorreoElectronico_me,  Telefono_me,  Nombre_esp FROM (((Medico INNER JOIN Localidad on Medico.Localidad_me = Localidad.ID_loca)INNER JOIN Provincia on Localidad.IDProv_loca = Provincia.ID_prov)INNER JOIN Especialidad on Medico.Especialidad_me = Especialidad.ID_esp)WHERE Medico.Estado_me=1");
         }
     }
 }

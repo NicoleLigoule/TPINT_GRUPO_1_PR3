@@ -7,7 +7,6 @@ CREATE PROCEDURE INSERTAR_PACIENTE
     @FechaNacimiento_pc DATE,
     @Direccion_pc VARCHAR(50),
     @Localidad_pc INT,
-    @Provincia_pc INT,
     @CorreoElectronico_pc VARCHAR(50),
     @Telefono_pc VARCHAR(50)
 AS
@@ -17,6 +16,6 @@ BEGIN
         RAISERROR ('El paciente con el DNI proporcionado ya existe.', 16, 1);
         RETURN;
     END
-    INSERT INTO Paciente (DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Localidad_pc, Provincia_pc, CorreoElectronico_pc, Telefono_pc)
-    VALUES (@DNI_pc, @Nombre_pc, @Apellido_pc, @Sexo_pc, @Nacionalidad_pc, @FechaNacimiento_pc, @Direccion_pc, @Localidad_pc, @Provincia_pc, @CorreoElectronico_pc, @Telefono_pc);
+    INSERT INTO Paciente (DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Localidad_pc, CorreoElectronico_pc, Telefono_pc)
+    VALUES (@DNI_pc, @Nombre_pc, @Apellido_pc, @Sexo_pc, @Nacionalidad_pc, @FechaNacimiento_pc, @Direccion_pc, @Localidad_pc, @CorreoElectronico_pc, @Telefono_pc);
 END
