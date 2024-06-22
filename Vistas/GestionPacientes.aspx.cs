@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace Vistas
 {
@@ -11,7 +12,17 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            ABMLPaciente pac = new ABMLPaciente();
+            grvPacientes.DataSource = pac.cargartablaPaciente();
+            grvPacientes.DataBind();
+        }
 
+        protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grvPacientes.PageIndex = e.NewPageIndex;
+            ABMLPaciente tabla = new ABMLPaciente();
+            grvPacientes.DataSource = tabla.cargartablaPaciente();
+            grvPacientes.DataBind();
         }
     }
 }
