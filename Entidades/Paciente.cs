@@ -12,7 +12,6 @@ namespace Entidades
         private string Nombre_pc;
         private string Apellido_pc;
         private int Localidad_pc;
-        private int Provincia_pc;
         private string Sexo_pc;
         private string Nacionalidad_pc;
         private string FechaNacimiento_pc;
@@ -27,13 +26,12 @@ namespace Entidades
 
         }
 
-        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, int localidad_pc, int provincia_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
+        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, int localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
         {
             DNI_pc = dNI_pc;
             Nombre_pc = nombre_pc;
             Apellido_pc = apellido_pc;
             Localidad_pc = localidad_pc;
-            Provincia_pc = provincia_pc;
             Sexo_pc = sexo_pc;
             Nacionalidad_pc = nacionalidad_pc;
             FechaNacimiento_pc = fechaNacimiento_pc;
@@ -44,13 +42,12 @@ namespace Entidades
         /*
             Recibe strings:
          */
-        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, string localidad_pc, string provincia_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
+        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, string localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
         {
             DNI_pc = dNI_pc;
             Nombre_pc = nombre_pc;
             Apellido_pc = apellido_pc;
             Localidad_pc = int.Parse(localidad_pc);
-            Provincia_pc = int.Parse(provincia_pc);
             Sexo_pc = sexo_pc;
             Nacionalidad_pc = nacionalidad_pc;
             FechaNacimiento_pc = fechaNacimiento_pc;
@@ -96,16 +93,6 @@ namespace Entidades
         public int getLocaPac()
         {
             return Localidad_pc;
-        }
-
-        public void setProvPac(int prov)
-        {
-            this.Provincia_pc = prov;
-        }
-
-        public int getProvPac()
-        {
-            return Provincia_pc;
         }
 
         public void setSexoPac(string sexoPac)

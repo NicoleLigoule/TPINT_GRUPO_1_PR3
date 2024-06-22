@@ -71,12 +71,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2">Provincia:</td>
-                            <td class="auto-style3">
-                                <asp:TextBox ID="txtProvinciaPac" runat="server" CssClass="form-control"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="auto-style2">Localidad:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtLocalidadPac" runat="server" CssClass="form-control"></asp:TextBox>
@@ -88,7 +82,6 @@
                                 <asp:TextBox ID="txtDireccionPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
-
                         <tr>
                             <td class="auto-style2">Correo electronico:</td>
                             <td class="auto-style3">
@@ -101,7 +94,6 @@
                                 <asp:TextBox ID="txtTelefonoPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
-                         
                         <tr>
                             <td class="auto-style2">
                                 <asp:Label ID="lblMensaje" runat="server"></asp:Label>
@@ -111,7 +103,12 @@
                                 <asp:HyperLink ID="hplVolverAMenuPaciente" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver</asp:HyperLink>
                             </td>
                         </tr>
-
+                        <tr>
+                            <td class="auto-style2">&nbsp;</td>
+                            <td class="auto-style3">
+                                &nbsp;</td>
+                        </tr>
+                        
                     </table>
                 </div>
             </form>

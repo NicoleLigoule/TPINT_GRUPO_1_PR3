@@ -30,7 +30,6 @@ namespace Vistas
                     txtNombrePac.Text,
                     txtApellidoPac.Text,
                     "1", // localidad
-                    "1", // provincia
                     "Masculino", // Sexo (ddl)
                     "Argentina",
                     "1990-05-20", // Fecha Nac.

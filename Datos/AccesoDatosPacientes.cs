@@ -32,7 +32,10 @@ namespace Datos
         }
         public DataTable Todos_Los_Pacientes()
         {
-            return Traer_tablaPaciente("Medicos", "SELECT DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Nombre_loca, Nombre_prov, CorreoElectronico_pc, Telefono_pc FROM Paciente INNER JOIN Provincia ON Paciente.Provincia_pc = Provincia.ID_prov INNER JOIN Localidad ON Paciente.Localidad_pc = Localidad.ID_loca;");
+            /*
+                TODO: corregir query (provincia):
+             */
+            return Traer_tablaPaciente("Medicos", "SELECT DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Nombre_loca,Nombre_prov, CorreoElectronico_pc, Telefono_pc FROM Paciente INNER JOIN Provincia ON Paciente.Provincia_pc = Provincia.ID_prov INNER JOIN Localidad ON Paciente.Localidad_pc = Localidad.ID_loca;");
         }
 
         public int sp_insertar_paciente(Paciente paciente)
@@ -72,9 +75,6 @@ namespace Datos
 
             sqlParameter = cmd.Parameters.Add("@Localidad_pc", SqlDbType.Int);
             sqlParameter.Value = p.getLocaPac();
-
-            sqlParameter = cmd.Parameters.Add("@Provincia_pc", SqlDbType.Int);
-            sqlParameter.Value = p.getProvPac();
 
             sqlParameter = cmd.Parameters.Add("@CorreoElectronico_pc", SqlDbType.VarChar);
             sqlParameter.Value = p.getCorreoPac();
