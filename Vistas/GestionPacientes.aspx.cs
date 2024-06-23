@@ -25,19 +25,11 @@ namespace Vistas
             grvPacientes.DataBind();
         }
 
-        protected void grvPacientes_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void grvPacientes_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            ABMLPaciente tabla = new ABMLPaciente();
-            grvPacientes.EditIndex = e.NewEditIndex;
-            grvPacientes.DataSource = tabla.cargartablaPaciente();
-        }
+            Session["Editar"] = ((Label)grvPacientes.Rows[e.NewSelectedIndex].FindControl("lbl_DNIpc")).Text;
+            
 
-        protected void grvPacientes_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            grvPacientes.EditIndex = -1;
-            ABMLPaciente tabla = new ABMLPaciente();
-            grvPacientes.DataSource = tabla.cargartablaPaciente();
         }
-
     }
 }
