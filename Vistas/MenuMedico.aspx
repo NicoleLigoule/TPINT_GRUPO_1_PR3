@@ -1,18 +1,23 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MenuMedico.aspx.cs" Inherits="Vistas.MenuMedico" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-        <link href="./Resources/estilos/styles.MenuMedico.css" rel="stylesheet" />
+    <%-- FONT AWESOME --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILOS --%>
+    <link href="./Resources/estilos/styles.MenuMedico.css" rel="stylesheet" />
 </head>
-<body>
-    <p>
-        <br />
-    </p>
+<body class="medico">
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
    <form id="form1" runat="server">
-    <div class="menu-container">
+        <div class="card-container card">
         <h2>MENU MEDICOS</h2>
         <table class="auto-style1">
             <tr>

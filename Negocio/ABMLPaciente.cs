@@ -39,7 +39,7 @@ namespace Negocio
 
         public bool eliminarPaciente(string DNI_pc)
         { 
-            return dato.sp_eliminar_paciente(DNI_pc) == -1;
+            return dato.sp_eliminar_paciente(DNI_pc) == 1;
         }
     }
 }

@@ -8,6 +8,7 @@
                 <i class="fa-regular fa-hospital"></i>
                 Clinica UTN
             </a>
+            <div id="usuario" runat="server"></div>
         </div>
     </nav>
 </header>

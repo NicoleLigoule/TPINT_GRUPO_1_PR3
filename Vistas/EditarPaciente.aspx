@@ -1,49 +1,55 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistroMed.aspx.cs" Inherits="Vistas.RegistroMed" %>
-<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarPaciente.aspx.cs" Inherits="Vistas.EditarPaciente" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Registro Médico</title>
-    <link href="./Resources/estilos/styles.RegistroMed.css" rel="stylesheet" />
+    <title>Pacientes</title>
+    <link href="./Resources/estilos/styles.EditarPaciente.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
-    <%-- SCRIPTS --%>
     <script src="./utils.js" type="text/javascript"></script>
 </head>
-<body class="registro-medico">
-    <%-- Incluye el Header --%>
-    <uc:Header runat="server" />
+<body class="registro-medico-pac">
+    <header>
+        <nav class="navbar">
+            <div id="hoverNav" class="container-fluid">
+                <a class="navbar-brand" href="Inicio-Clinica.aspx">
+                    <i class="fa-regular fa-hospital"></i>
+                    Clinica UTN
+                </a>
+                <asp:Label ID="lblUsuario" runat="server" Text="xxxx"></asp:Label>
+            </div>
+        </nav>
+    </header>
     <section id="form-body" class="flex-grow-1">
         <div class="card-container">
             <form id="form1" runat="server">
                 <div class="card">
-                    <h3 class="text-center">REGISTRARSE</h3>
+                    <h3 class="text-center">CARGAR PACIENTE</h3>
                     <table class="table">
                         <tr>
                             <td class="auto-style2">DNI:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtDni" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:Label ID="lblDni" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Nombre:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtNombrePac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Apellido:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtApellidoPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Sexo:</td>
                             <td class="auto-style3">
-                                <asp:DropDownList ID="ddlSexo" runat="server" CssClass="form-control">
+                                <asp:DropDownList ID="ddlSexoPac" runat="server" CssClass="form-control">
                                 </asp:DropDownList>
                             </td>
                         </tr>
@@ -71,46 +77,45 @@
                         <tr>
                             <td class="auto-style2">Localidad:</td>
                             <td class="auto-style3">
-                                <asp:DropDownList ID="ddlLocalidades" runat="server">
+                                <asp:DropDownList ID="ddlLocalidad" runat="server">
                                 </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Dirección:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtDireccionPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
-
                         <tr>
                             <td class="auto-style2">Correo electronico:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtCorreoElectronicoPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Nº Telefonico:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
-                            </td>
-                        </tr>
-                         <tr>
-                            <td class="auto-style2">Especialidad:</td>
-                            <td class="auto-style3">
-                               <asp:DropDownList ID="ddlEspecialidad" runat="server" CssClass="form-control">
-                                </asp:DropDownList>
+                                <asp:TextBox ID="txtTelefonoPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
-                            <td class="auto-style2"></td>
-                            <td class="auto-style3">
-                                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" />
+                            <td class="auto-style2">
                                 <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                            </td>    
+                            </td>
+                            <td class="auto-style3">
+                                <asp:Button ID="btnRegistrar" runat="server" Text="Guardar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" />
+                                <asp:HyperLink ID="hplVolverAMenuPaciente" runat="server" NavigateUrl="~/MenuPacientes.aspx">Volver</asp:HyperLink>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">&nbsp;</td>
+                            <td class="auto-style3">
+                                &nbsp;
+                            </td>
                         </tr>
                     </table>
                 </div>
-                 <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
             </form>
         </div>
     </section>

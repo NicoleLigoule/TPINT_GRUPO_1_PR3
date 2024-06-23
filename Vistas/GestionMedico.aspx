@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GestionMedico.aspx.cs" Inherits="Vistas.GestionMedico" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -6,6 +7,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Gestionar Medico</title>
+    <%-- FONT AWESOME --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.GestionMedico.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
@@ -14,6 +20,8 @@
     </style>
 </head>
 <body>
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
     <form id="form1" runat="server">
         <div class="GridViewMedico">
             <h2>Gestión Medico</h2>

@@ -12,6 +12,15 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (Session["NombreUsuario"] != null)
+            {
+                string nombreUsuario = Session["NombreUsuario"].ToString();
+                usuario.InnerText = "Bienvenido, " + nombreUsuario;
+            }
+            else
+            {
+                usuario.InnerText = "Bienvenido, Invitado";
+            }
         }
     }
 }
