@@ -11,6 +11,11 @@ namespace Entidades
         private int id_provincia;
         private string descripcion_Provincia;
 
+        public Provincia(string id, string descripcion)
+        {
+            id_provincia = int.Parse(id);
+            descripcion_Provincia = descripcion;
+        }
         public Provincia(int id, string descripcion)
         {
             id_provincia = id;

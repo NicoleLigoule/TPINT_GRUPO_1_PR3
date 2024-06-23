@@ -58,7 +58,7 @@
                         <tr>
                             <td class="auto-style2">Nacionalidad:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtNacionalidadPac" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtNacionalidad" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -71,9 +71,17 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="auto-style2">Provincia:</td>
+                            <td class="auto-style3">
+                                <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True">
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                                                <tr>
                             <td class="auto-style2">Localidad:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtLocalidadPac" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:DropDownList ID="ddlLocalidad" runat="server">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>

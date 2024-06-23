@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Entidades;
 
 namespace Datos
 {
@@ -64,7 +65,34 @@ namespace Datos
             adp.Fill(ds, nombre);
             return ds.Tables[nombre];
         }
+        public List<Especialidad> ObtenerEspecialidad()
+        {
+            List<Especialidad> Especialidades = new List<Especialidad>();
+            string consulta = "SELECT ID_esp, Nombre_esp FROM dbo.Especialidad";
 
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int id_especialidad = reader.GetInt32(0);
+                    string nombre_especialidad = reader.GetString(1);
+                    Especialidad prov = new Especialidad(id_especialidad, nombre_especialidad);
+
+                    if (!Especialidades.Contains(prov))
+                    {
+                        Especialidades.Add(prov);
+
+                    }
+                }
+            }
+            return Especialidades;
+        }
         public SqlDataReader obtenerReadDDLEspecialidad()
         {
             try
@@ -84,46 +112,65 @@ namespace Datos
                 return null;
             }
         }
-
-        public SqlDataReader obtenerReadDDLProvincia()
+        public List<Provincia> ObtenerProvincias()
         {
-            try
+            List<Provincia> provincias = new List<Provincia>();
+            string consulta = "SELECT ID_prov,Nombre_prov FROM dbo.Provincia";
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
             {
-                string consulta = "SELECT Nombre_prov,ID_prov FROM dbo.Provincia";
-                AccesoDatos acceso = new AccesoDatos();
-                SqlConnection conexion = acceso.ObtenerConexion();
+                while (reader.Read())
+                {
+                    int id_provincia = reader.GetInt32(0);
+                    string DescripcionProvincia = reader.GetString(1);
+                    Provincia prov = new Provincia(id_provincia, DescripcionProvincia);
 
-                SqlCommand commandprov = new SqlCommand(consulta, conexion);
+                    if (!provincias.Contains(prov))
+                    {
+                        provincias.Add(prov);
 
-                SqlDataReader reader = commandprov.ExecuteReader();
-                return reader;
+                    }
+                }
             }
-            catch (Exception e)
-            {
-
-                return null;
-            }
+            return provincias;
         }
 
-        public SqlDataReader obtenerReadDDLLocalidad()
+        public List<Localidad> ObtenerLocalidad(string ID_prov)
         {
-            try
+            List<Localidad> Localidades = new List<Localidad>();
+            string consulta = "SELECT ID_loca,Nombre_loca FROM dbo.Localidad WHERE dbo.Localidad.IDProv_loca=" + ID_prov;
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
             {
-                string consulta = "SELECT Nombre_loca,ID_loca FROM dbo.Localidad";
-                AccesoDatos acceso = new AccesoDatos();
-                SqlConnection conexion = acceso.ObtenerConexion();
+                while (reader.Read())
+                {
+                    int id_localidad = reader.GetInt32(0);
+                    string DescripcionProvincia = reader.GetString(1);
+                    Localidad prov = new Localidad(id_localidad.ToString(), DescripcionProvincia);
 
-                SqlCommand commandLoca = new SqlCommand(consulta, conexion);
+                    if (!Localidades.Contains(prov))
+                    {
+                        Localidades.Add(prov);
 
-                SqlDataReader reader = commandLoca.ExecuteReader();
-                return reader;
+                    }
+                }
             }
-            catch (Exception e)
-            {
-
-                return null;
-            }
+            return Localidades;
         }
+
+       
 
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {

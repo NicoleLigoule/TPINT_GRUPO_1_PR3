@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Vistas
 {
     public partial class Paciente : System.Web.UI.Page
@@ -15,24 +16,53 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            ABMLPaciente = new ABMLPaciente();
-
-            /*
-             * TODO: Cargar los DropDownList y sumarlos al agregar paciente.
-             */
+            if (!IsPostBack)
+            {
+                ABMLPaciente = new ABMLPaciente();
+                CargarDropDown();
+            }
+            else
+            {
+                CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
+            }
         }
+        private void CargarDropDown()
+        {
+            CargadoDDL negocioProvincia = new CargadoDDL();
+            List<Provincia> list = negocioProvincia.ObtenerProvinciasDDL();
 
+            foreach (Provincia provincia in list)
+            {
+                ddlProvincia.Items.Add(new ListItem(provincia.GetDescripcionProvincia(), provincia.GetIdProvincia().ToString()));
+            }
+            List<genero> list3 = negocioProvincia.CargarListaGeneros();
+
+            foreach (genero genero in list3)
+            {
+                ddlSexoPac.Items.Add(new ListItem(genero.GetNombreGenero(), genero.GetIndice().ToString()));
+            }
+        }
+        private void CargarDropDownLocalidad(string id)
+        {
+            ddlLocalidad.Items.Clear();
+            CargadoDDL negocioProvincia = new CargadoDDL();
+            List<Localidad> list = negocioProvincia.ObtenerLOcalidadesDDL(id);
+
+            foreach (Localidad provincia in list)
+            {
+                ddlLocalidad.Items.Add(new ListItem(provincia.getNombre_localidad(), provincia.getId_localidad().ToString()));
+            }
+        }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             Entidades.Paciente paciente = new Entidades.Paciente(
                     txtDniPac.Text,
                     txtNombrePac.Text,
                     txtApellidoPac.Text,
-                    "1", // localidad
-                    "Masculino", // Sexo (ddl)
-                    "Argentina",
-                    "1990-05-20", // Fecha Nac.
+                  int.Parse( ddlLocalidad.SelectedItem.Value), // localidad
+                    ddlSexoPac.SelectedItem.Text, // Sexo (ddl)
+                    txtNacionalidad.Text,
+                    txtFechaNac.Text, // Fecha Nac.
                     txtDireccionPac.Text,
                     txtCorreoElectronicoPac.Text,
                     txtTelefonoPac.Text

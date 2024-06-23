@@ -1,0 +1,39 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Datos;
+using Entidades;
+
+namespace Negocio
+{
+    public class CargadoDDL
+    {
+
+        public List<Provincia> ObtenerProvinciasDDL()
+        {
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerProvincias();
+        }
+        public List<Localidad> ObtenerLOcalidadesDDL(string id)
+        {
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerLocalidad(id);
+        }
+        public List<Especialidad> ObtenerEspecialidadDDL()
+        {
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerEspecialidad();
+        }
+        public List<genero> CargarListaGeneros()
+        {
+            
+            List<genero> generos = new List<genero>();
+            generos.Add(new genero("0", "Femenino")); 
+            generos.Add(new genero("1", "Masculino"));
+            generos.Add(new genero("2", "Otros"));
+            return generos;
+        }
+    }
+}

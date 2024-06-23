@@ -71,13 +71,15 @@
                         <tr>
                             <td class="auto-style2">Provincia:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtProvincia" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Localidad:</td>
                             <td class="auto-style3">
-                                <asp:TextBox ID="txtLocalidad" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:DropDownList ID="ddlLocalidades" runat="server">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
