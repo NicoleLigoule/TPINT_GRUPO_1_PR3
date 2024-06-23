@@ -114,8 +114,8 @@ namespace Datos
         {
             AccesoDatos ds = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
-            ParametrosAltaMedica(ref comando, legajo);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "");
+            ParametrosBajaMedica(ref comando, legajo);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_Baja_Medico");
         }
     }
 
