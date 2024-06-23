@@ -88,5 +88,14 @@ namespace Datos
             string consulta = "SELECT * FROM Paciente p WHERE p.DNI_pc = '" + paciente.getDNIPac() + "';";
             return Datos.existe(consulta);
         }
+
+        public int sp_eliminar_paciente(string DNI_pc)
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Parameters.Add("@DNI_pc", SqlDbType.VarChar).Value = DNI_pc;
+
+            // Baja lógica:
+            return Datos.EjecutarProcedimientoAlmacenado(cmd, "SP_ELIMINAR_PACIENTE");
+        }
     }
 }

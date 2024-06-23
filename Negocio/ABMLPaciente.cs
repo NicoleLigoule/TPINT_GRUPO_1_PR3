@@ -36,6 +36,11 @@ namespace Negocio
 
             return cantFilas == 1;
         }
+
+        public bool eliminarPaciente(string DNI_pc)
+        { 
+            return dato.sp_eliminar_paciente(DNI_pc) == -1;
+        }
     }
 }
 
