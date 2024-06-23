@@ -41,6 +41,22 @@ namespace Negocio
         { 
             return dato.sp_eliminar_paciente(DNI_pc) == 1;
         }
+
+        public Entidades.Paciente traerPaciente(string dni)
+        {
+            Entidades.Paciente paciente = new Entidades.Paciente();
+            AccesoDatosPacientes pac = new AccesoDatosPacientes();
+            paciente=pac.TraerPacienteSegunDNI( dni);
+            paciente.setDniPac(dni);
+            return paciente;
+        }
+
+        public bool ActuPac(Entidades.Paciente paciente)
+        {
+           
+            return dato.ActualizarPaciente(paciente) == 1;
+        }
+
     }
 }
 

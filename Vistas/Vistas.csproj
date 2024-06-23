@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -56,7 +57,6 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AdmInicio.aspx" />
     <Content Include="AsignarTurno.aspx" />
+    <Content Include="EditarPaciente.aspx" />
     <Content Include="EliminarMedico.aspx" />
     <Content Include="EliminarPaciente.aspx" />
     <Content Include="Footer.ascx" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="AsignarTurno.aspx.designer.cs">
       <DependentUpon>AsignarTurno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditarPaciente.aspx.cs">
+      <DependentUpon>EditarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditarPaciente.aspx.designer.cs">
+      <DependentUpon>EditarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="EliminarMedico.aspx.cs">
       <DependentUpon>EliminarMedico.aspx</DependentUpon>
