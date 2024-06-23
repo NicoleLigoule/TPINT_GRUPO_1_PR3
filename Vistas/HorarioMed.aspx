@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HorarioMed.aspx.cs" Inherits="Vistas.HorariosDeMedicos" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -6,7 +7,11 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-       <%-- ESTILOS DE HORARIO MED --%>
+    <%-- FONT AWESOME --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.HorarioMed.css" rel="stylesheet" />
     <style type="text/css">
         .auto-style1 {
@@ -32,7 +37,9 @@
         }
     </style>
 </head>
-<body>
+<body class="horario">
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
     <form id="form1" runat="server">
         <div>
         </div>

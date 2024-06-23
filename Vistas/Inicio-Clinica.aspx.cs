@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -55,6 +56,9 @@ namespace Vistas
             Negocio.Login log = new Negocio.Login();
             if (Page.IsValid)
             {
+                Session["nombreUsuario"] = txtUsuario.Text;
+
+
                 if (usuarioAdmin)
                 {
                     Response.Redirect("AdmInicio.aspx"); // Si es admin, nos redirige a AdmInicio.aspx

@@ -1,25 +1,49 @@
-﻿body {
-    background-color: #BBDEFB;
+﻿
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body.paciente {
+    background-color: #D3EEFF;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+#form1 {
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.card-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    gap: 8%;
+    flex-wrap: nowrap;
+    padding: 20px;
+    border-radius: 20px;
 }
 
-.menu-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FFFFFF;
-    padding: 45px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+
+.card-container .card {
+    margin-top: 2%;
+    border-radius: 20px;
     width: 100%;
-    max-width: 600px;
-    box-sizing: border-box;
+    padding: 10px;
+    background-color: #BBDEFB;
+    align-items: center;
 }
+
 
 .menu-container h2 {
     font-size: 35px;

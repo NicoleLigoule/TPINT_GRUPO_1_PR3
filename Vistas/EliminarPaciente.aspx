@@ -1,13 +1,21 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarPaciente.aspx.cs" Inherits="Vistas.EliminarPaciente" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Eliminar Paciente</title>
+    <%-- FONT AWESOME --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.EliminarPaciente.css" rel="stylesheet" />
 </head>
 <body>
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">

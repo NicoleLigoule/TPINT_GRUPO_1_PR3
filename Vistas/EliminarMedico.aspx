@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EliminarMedico.aspx.cs" Inherits="Vistas.EliminarMedico" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -6,10 +7,17 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
      <title>Eliminar Medico</title>
+    <%-- FONT AWESOME --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.EliminarMedico.css" rel="stylesheet" />
 
 </head>
 <body>
+    <%-- Incluye el Header --%>
+    <uc:Header runat="server" />
     <form id="form1" runat="server">
         <div>
             <asp:HyperLink ID="hpVolver" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al menu de Medicos</asp:HyperLink>

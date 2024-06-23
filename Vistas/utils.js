@@ -4,3 +4,10 @@
         textBox.style.color = 'black';
     }
 }
+
+function usernameHeader() {
+
+    nombreUsuarioHeader = document.querySelector("header #usuario");
+
+    nombreUsuarioHeader.InnerText = "Bienvenido!";
+}

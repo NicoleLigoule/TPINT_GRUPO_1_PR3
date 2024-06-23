@@ -79,6 +79,6 @@
     </section>
     <%-- FIN DE PANTALLA DE FORMULARIO --%>
     <%-- Incluye el footer --%>  
-     <uc:Footer runat="server" />
+     <%--<uc:Footer runat="server" />--%>
 </body>
 </html>
