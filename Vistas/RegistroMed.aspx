@@ -111,7 +111,8 @@
                         <tr>
                             <td class="auto-style2"></td>
                             <td class="auto-style3">
-                                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" />
+                                <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" />
+                                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             </td>    
                         </tr>
                     </table>

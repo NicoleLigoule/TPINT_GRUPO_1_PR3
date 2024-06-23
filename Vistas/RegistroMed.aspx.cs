@@ -57,5 +57,50 @@ namespace Vistas
                 ddlLocalidades.Items.Add(new ListItem(provincia.getNombre_localidad(), provincia.getId_localidad().ToString()));
             }
         }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            ABMLMedico AgregarMedico = new ABMLMedico();
+            Medico Medico = new Medico
+                (
+                txtDni.Text,
+                txtNombre.Text,
+                txtApellido.Text,
+                ddlLocalidades.SelectedItem.Value, 
+                ddlEspecialidad.SelectedItem.Value,
+                ddlSexo.SelectedItem.Text, 
+                txtNacionalidad.Text,
+                txtFechaNac.Text, 
+                txtDireccion.Text, 
+                txtCorreoElectronico.Text, 
+                txtTelefono.Text);
+
+            if (AgregarMedico.agregarMedico(Medico))
+            {
+                
+                lblMensaje.Text =  "Se agrego correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = " No se pudo agregar";
+            }
+            limpiarcapos();
+
+        }
+        protected void limpiarcapos()
+        {
+            txtDni.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            ddlProvincia.SelectedIndex = 0;
+            ddlLocalidades.SelectedIndex = 0;
+            ddlEspecialidad.SelectedIndex = 0;
+            ddlSexo.SelectedItem.Text = "";
+            txtNacionalidad.Text = "";
+            txtFechaNac.Text = "";
+            txtDireccion.Text = "";
+            txtCorreoElectronico.Text = "";
+            txtTelefono.Text = "";
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using  System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,23 +28,36 @@ namespace Entidades
 
         }
 
-        public Medico(int legajo_me, string dNI_me, string nombre_me, string apellido_me, int localidad_me, int provincia_me, int especialidad_me, string sexo_me, string nacionalidad_me, string fechaNacimiento_me, string direccion_me, string correoElectronico_me, string telefono_me)
+        //public Medico(int legajo_me, string dNI_me, string nombre_me, string apellido_me, int localidad_me, int especialidad_me, string sexo_me, string nacionalidad_me, string fechaNacimiento_me, string direccion_me, string correoElectronico_me, string telefono_me)
+        //{
+        //    Legajo_me = legajo_me;
+        //    DNI_me = dNI_me;
+        //    Nombre_me = nombre_me;
+        //    Apellido_me = apellido_me;
+        //    Localidad_me = localidad_me;
+        //    Sexo_me = sexo_me;
+        //    Nacionalidad_me = nacionalidad_me;
+        //    FechaNacimiento_me = fechaNacimiento_me;
+        //    Direccion_me = direccion_me;
+        //    CorreoElectronico_me = correoElectronico_me;
+        //    Telefono_me = telefono_me;
+        //    Especialidad_me = especialidad_me;
+        //}
+        public Medico( string dNI_me, string nombre_me, string apellido_me, string localidad_me, string especialidad_me, string sexo_me, string nacionalidad_me, string fechaNacimiento_me, string direccion_me, string correoElectronico_me, string telefono_me)
         {
-            Legajo_me = legajo_me;
+            
             DNI_me = dNI_me;
             Nombre_me = nombre_me;
             Apellido_me = apellido_me;
-            Localidad_me = localidad_me;
-            Provincia_me = provincia_me;
-            Especialidad_me = especialidad_me;
+            Localidad_me = int.Parse(localidad_me);
             Sexo_me = sexo_me;
             Nacionalidad_me = nacionalidad_me;
             FechaNacimiento_me = fechaNacimiento_me;
             Direccion_me = direccion_me;
             CorreoElectronico_me = correoElectronico_me;
             Telefono_me = telefono_me;
+            Especialidad_me = int.Parse(especialidad_me);
         }
-
         public void setLegajoMed(int legajo)
         {
             this.Legajo_me = legajo;
