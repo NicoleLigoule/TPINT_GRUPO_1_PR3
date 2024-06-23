@@ -14,7 +14,7 @@ namespace Negocio
         public DataTable cargartabla()
         {
            AccesoDatosMedico datos = new AccesoDatosMedico();
-           return datos.Todos_Los_Productos();
+           return datos.Todos_Los_Medicos_Alta();
         }
         public bool agregarMedico(Medico medico)
         {
@@ -27,6 +27,25 @@ namespace Negocio
             }
 
             return cantFilas == 1;
+        }
+
+        public bool AltaMedico(Medico medico)
+        {
+            int cantFilas = 0;
+            AccesoDatosMedico datos = new AccesoDatosMedico();
+
+            if (!datos.existeMedico(medico))
+            {
+                cantFilas = datos.AltaMedico(medico);
+            }
+
+            return cantFilas == 1;
+        }
+
+        public DataTable cargartablaBaja()
+        {
+            AccesoDatosMedico datos = new AccesoDatosMedico();
+            return datos.Todos_Los_Medicos_Baja();
         }
     }
 

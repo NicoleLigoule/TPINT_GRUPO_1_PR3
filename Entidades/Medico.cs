@@ -58,6 +58,9 @@ namespace Entidades
             Telefono_me = telefono_me;
             Especialidad_me = int.Parse(especialidad_me);
         }
+
+
+
         public void setLegajoMed(int legajo)
         {
             this.Legajo_me = legajo;

@@ -23,9 +23,14 @@ namespace Datos
             return dts.Tables[Nombre];
 
         }
-        public DataTable Todos_Los_Productos()
+        public DataTable Todos_Los_Medicos_Alta()
         {
             return Traer_tabla("Medicos", "SELECT Legajo_me ,DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me , FechaNacimiento_me , Direccion_me , Nombre_loca , Nombre_prov, CorreoElectronico_me,  Telefono_me,  Nombre_esp FROM (((Medico INNER JOIN Localidad on Medico.Localidad_me = Localidad.ID_loca)INNER JOIN Provincia on Localidad.IDProv_loca = Provincia.ID_prov)INNER JOIN Especialidad on Medico.Especialidad_me = Especialidad.ID_esp)WHERE Medico.Estado_me=1");
+        }
+
+        public DataTable Todos_Los_Medicos_Baja()
+        {
+            return Traer_tabla("Medicos", "SELECT Legajo_me ,DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me , FechaNacimiento_me , Direccion_me , Nombre_loca , Nombre_prov, CorreoElectronico_me,  Telefono_me,  Nombre_esp FROM (((Medico INNER JOIN Localidad on Medico.Localidad_me = Localidad.ID_loca)INNER JOIN Provincia on Localidad.IDProv_loca = Provincia.ID_prov)INNER JOIN Especialidad on Medico.Especialidad_me = Especialidad.ID_esp)WHERE Medico.Estado_me=0");
         }
 
         public Boolean existeMedico( Medico med)
@@ -80,7 +85,22 @@ namespace Datos
             SqlParametros = Comando.Parameters.Add("@Especialidad_me", SqlDbType.Int);
             SqlParametros.Value = Medico.getEspecialidadMed();
 
+            
+            }
+        private void ParametrosAltaMedica(ref SqlCommand Comando, Medico Medico)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Legajo_me", SqlDbType.Int);
+            SqlParametros.Value = Medico.getLegajoMed();
+        }
 
+        public int AltaMedico(Medico med)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            SqlCommand comando = new SqlCommand();
+            ParametrosAltaMedica(ref comando, med);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_Alta_Medica");
         }
     }
+
 }
