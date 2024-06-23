@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
         <div class="GridViewPacientes">
             <h2>Gestión Pacientes</h2>
-            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" AutoGenerateEditButton="True" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" OnRowCancelingEdit="grvPacientes_RowCancelingEdit" OnRowEditing="grvPacientes_RowEditing" PageSize="1">
+            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" PageSize="1">
                 <Columns>
                     <asp:TemplateField HeaderText="DNI">
                         <EditItemTemplate>

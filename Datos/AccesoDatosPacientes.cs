@@ -32,10 +32,8 @@ namespace Datos
         }
         public DataTable Todos_Los_Pacientes()
         {
-            /*
-                TODO: corregir query (provincia):
-             */
-            return Traer_tablaPaciente("Medicos", "SELECT DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Nombre_loca,Nombre_prov, CorreoElectronico_pc, Telefono_pc FROM Paciente INNER JOIN Provincia ON Paciente.Provincia_pc = Provincia.ID_prov INNER JOIN Localidad ON Paciente.Localidad_pc = Localidad.ID_loca;");
+
+            return Traer_tablaPaciente("Medicos", "	SELECT P.DNI_pc, P.Nombre_pc, P.Apellido_pc, P.Sexo_pc, P.Nacionalidad_pc, P.FechaNacimiento_pc, P.Direccion_pc,Nombre_prov, l.Nombre_loca AS Nombre_loca, P.CorreoElectronico_pc, P.Telefono_pc FROM Paciente P INNER JOIN Localidad L ON p.Localidad_pc = l.ID_loca inner join Provincia on L.IDProv_loca= Provincia.ID_prov");
         }
 
         public int sp_insertar_paciente(Paciente paciente)
