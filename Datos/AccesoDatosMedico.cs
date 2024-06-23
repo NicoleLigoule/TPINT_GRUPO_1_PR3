@@ -87,19 +87,35 @@ namespace Datos
 
             
             }
-        private void ParametrosAltaMedica(ref SqlCommand Comando, Medico Medico)
+        private void ParametrosAltaMedica(ref SqlCommand Comando, int legajo)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Legajo_me", SqlDbType.Int);
-            SqlParametros.Value = Medico.getLegajoMed();
+            SqlParametros = Comando.Parameters.Add("@Legajo", SqlDbType.Int);
+            SqlParametros.Value = legajo;
+        
         }
 
-        public int AltaMedico(Medico med)
+        public int AltaMedico(int legajo)
         {
             AccesoDatos ds = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
-            ParametrosAltaMedica(ref comando, med);
+            ParametrosAltaMedica(ref comando, legajo);
             return ds.EjecutarProcedimientoAlmacenado(comando, "SP_Alta_Medica");
+        }
+        private void ParametrosBajaMedica(ref SqlCommand Comando, int legajo)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Legajo", SqlDbType.Int);
+            SqlParametros.Value = legajo;
+
+        }
+
+        public int bAJAMedico(int legajo)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            SqlCommand comando = new SqlCommand();
+            ParametrosAltaMedica(ref comando, legajo);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "");
         }
     }
 

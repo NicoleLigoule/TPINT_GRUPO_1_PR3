@@ -55,7 +55,7 @@
                 <table class="auto-style1">
                     <tr>
                         <td>
-                            <asp:GridView ID="GridViewMed" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMedicos1_PageIndexChanging" PageSize="1" AutoGenerateSelectButton="True" OnSelectedIndexChanging="GridViewMed_SelectedIndexChanging">
+                            <asp:GridView ID="GridViewMed" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMedicos1_PageIndexChanging" PageSize="5" AutoGenerateSelectButton="True" OnSelectedIndexChanging="GridViewMed_SelectedIndexChanging">
                 <Columns>
                     <asp:TemplateField HeaderText="Legajo">
                         <ItemTemplate>
@@ -133,8 +133,10 @@
                 <SortedDescendingCellStyle BackColor="#D6DFDF" />
                 <SortedDescendingHeaderStyle BackColor="#002876" />
             </asp:GridView>
+                            <asp:Button ID="AltaSeleccionado" runat="server" OnClick="AltaSeleccionado_Click" Text="Dar de Alta al SELECCIONADO" />
                             <%--<asp:GridView ID="GridView1" runat="server">
                             </asp:GridView>--%>
+                            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                         </td>
                     </tr>
                 </table>
@@ -142,7 +144,7 @@
 
             </main>
         </div>
-        <asp:Button ID="AltaSeleccionado" runat="server" OnClick="AltaSeleccionado_Click" Text="Dar Alta" />
+        
     </form>
 </body>
 </html>

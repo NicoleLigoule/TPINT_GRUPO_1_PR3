@@ -29,16 +29,22 @@ namespace Negocio
             return cantFilas == 1;
         }
 
-        public bool AltaMedico(Medico medico)
+        public bool AltaMedico(int legajo)
         {
             int cantFilas = 0;
             AccesoDatosMedico datos = new AccesoDatosMedico();
 
-            if (!datos.existeMedico(medico))
-            {
-                cantFilas = datos.AltaMedico(medico);
-            }
+              cantFilas = datos.AltaMedico(legajo);
+            
 
+            return cantFilas == 1;
+        }
+        public bool bajaMedico(int legajo)
+        {
+            int cantFilas = 0;
+            AccesoDatosMedico datos = new AccesoDatosMedico();
+
+            cantFilas = datos.bAJAMedico(legajo);
             return cantFilas == 1;
         }
 
