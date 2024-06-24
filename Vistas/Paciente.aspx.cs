@@ -59,14 +59,16 @@ namespace Vistas
                     txtDniPac.Text,
                     txtNombrePac.Text,
                     txtApellidoPac.Text,
-                  int.Parse( ddlLocalidad.SelectedItem.Value), // localidad
+                    1,
                     ddlSexoPac.SelectedItem.Text, // Sexo (ddl)
                     txtNacionalidad.Text,
                     txtFechaNac.Text, // Fecha Nac.
                     txtDireccionPac.Text,
                     txtCorreoElectronicoPac.Text,
-                    txtTelefonoPac.Text
-                );
+                    txtTelefonoPac.Text,
+                    int.Parse(ddlProvincia.SelectedItem.Value)
+                    
+                ) ;
 
             if (ABMLPaciente.agregarPaciente(paciente))
             {

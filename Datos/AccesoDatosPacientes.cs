@@ -81,6 +81,54 @@ namespace Datos
             sqlParameter.Value = p.getTelefonoPac();
         }
 
+        public int ActualizarPaciente(Paciente paciente)
+        {
+
+            SqlCommand cmd = new SqlCommand();
+
+            crearParametrosAgregar(ref cmd, paciente);
+
+            return Datos.EjecutarProcedimientoAlmacenado(cmd, "ACTUALIZAR_PACIENTE");
+        }
+
+        private void crearParametrosActualizar(ref SqlCommand cmd, Paciente p)
+        {
+            SqlParameter sqlParameter = new SqlParameter();
+
+            sqlParameter = cmd.Parameters.Add("@DNI_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getDNIPac();
+
+            sqlParameter = cmd.Parameters.Add("@Nombre_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getNombrePac();
+
+            sqlParameter = cmd.Parameters.Add("@Apellido_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getApellidoPac();
+
+            sqlParameter = cmd.Parameters.Add("@Sexo_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getSexoPac();
+
+            sqlParameter = cmd.Parameters.Add("@Nacionalidad_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getNacionalidadPac();
+
+            sqlParameter = cmd.Parameters.Add("@FechaNacimiento_pc", SqlDbType.Date);
+            sqlParameter.Value = p.getFechaPac();
+
+            sqlParameter = cmd.Parameters.Add("@Direccion_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getDireccionPac();
+
+            sqlParameter = cmd.Parameters.Add("@Localidad_pc", SqlDbType.Int);
+            sqlParameter.Value = p.getLocaPac();
+
+            sqlParameter = cmd.Parameters.Add("@Provincia_pc", SqlDbType.Int);
+            sqlParameter.Value = p.getProvPac();
+
+            sqlParameter = cmd.Parameters.Add("@CorreoElectronico_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getCorreoPac();
+
+            sqlParameter = cmd.Parameters.Add("@Telefono_pc", SqlDbType.VarChar);
+            sqlParameter.Value = p.getTelefonoPac();
+        }
+
         public Boolean existePaciente(Paciente paciente)
         {
             string consulta = "SELECT * FROM Paciente p WHERE p.DNI_pc = '" + paciente.getDNIPac() + "';";
@@ -95,5 +143,49 @@ namespace Datos
             // Baja lógica:
             return Datos.EjecutarProcedimientoAlmacenado(cmd, "SP_ELIMINAR_PACIENTE");
         }
+
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDClinica;Integrated Security=True";
+        public Paciente TraerPacienteSegunDNI(string dni)
+        {
+            Entidades.Paciente paciente = new Entidades.Paciente();
+
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("TraerPacientePorDNI", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@DNI_pc", dni));
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            
+                            
+                                paciente.setDniPac(reader["DNI_pc"].ToString());
+                                paciente.setNombrePac(reader["Nombre_pc"].ToString());
+                                paciente.setApePac(reader["Apellido_pc"].ToString());
+                                paciente.setLocalidadPac(Convert.ToInt32(reader["ID_loca"]));
+                                paciente.setSexoPac(reader["Sexo_pc"].ToString());
+                                paciente.setNacionalidadPac(reader["Nacionalidad_pc"].ToString());
+                                paciente.setFechaPac(reader["FechaNacimiento_pc"].ToString());
+                                paciente.setDireccionPac(reader["Direccion_pc"].ToString());
+                                paciente.setCorreoPac(reader["CorreoElectronico_pc"].ToString());
+                                paciente.setTelefonoPac(reader["Telefono_pc"].ToString());
+                                paciente.setProvinciaPac(Convert.ToInt32(reader["ID_prov"]));
+                        }
+                    }
+                }
+            }
+
+            return paciente;
+        }
+
+
+
+
     }
 }

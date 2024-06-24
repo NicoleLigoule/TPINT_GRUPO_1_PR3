@@ -18,6 +18,7 @@ namespace Entidades
         private string Direccion_pc;
         private string CorreoElectronico_pc;
         private string Telefono_pc;
+        private int Provincia_pc; 
 
         
 
@@ -26,7 +27,7 @@ namespace Entidades
 
         }
 
-        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, int localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
+        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, int localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc, int provincia_pc)
         {
             DNI_pc = dNI_pc;
             Nombre_pc = nombre_pc;
@@ -38,23 +39,11 @@ namespace Entidades
             Direccion_pc = direccion_pc;
             CorreoElectronico_pc = correoElectronico_pc;
             Telefono_pc = telefono_pc;
+            Provincia_pc = provincia_pc;
         }
-        /*
-            Recibe strings:
-         */
-        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, string localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc)
-        {
-            DNI_pc = dNI_pc;
-            Nombre_pc = nombre_pc;
-            Apellido_pc = apellido_pc;
-            Localidad_pc = int.Parse(localidad_pc);
-            Sexo_pc = sexo_pc;
-            Nacionalidad_pc = nacionalidad_pc;
-            FechaNacimiento_pc = fechaNacimiento_pc;
-            Direccion_pc = direccion_pc;
-            CorreoElectronico_pc = correoElectronico_pc;
-            Telefono_pc = telefono_pc;
-        }
+
+        
+        
         public void setDniPac(string dni)
         {
             this.DNI_pc = dni;
@@ -153,6 +142,16 @@ namespace Entidades
         public string getTelefonoPac()
         {
             return Telefono_pc;
+        }
+
+        public void setProvinciaPac(int prov)
+        {
+            this.Provincia_pc = prov;
+        }
+
+        public int getProvPac()
+        {
+            return Provincia_pc;
         }
 
     }
