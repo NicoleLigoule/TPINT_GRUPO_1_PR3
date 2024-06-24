@@ -51,6 +51,9 @@ namespace Datos
         private void ArmarParametrosAgregarMedico(ref SqlCommand Comando, Medico Medico)
         {
             SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Legajo_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getLegajoMed();
+
             SqlParametros = Comando.Parameters.Add("@DNI_me", SqlDbType.VarChar);
             SqlParametros.Value = Medico.getDNIMed();
 
@@ -117,6 +120,55 @@ namespace Datos
             ParametrosBajaMedica(ref comando, legajo);
             return ds.EjecutarProcedimientoAlmacenado(comando, "SP_Baja_Medico");
         }
+
+        public int ActualizarMedico(Medico medico)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            SqlCommand cmd = new SqlCommand();
+
+            ArmarParametrosAgregarMedico(ref cmd, medico);
+            return ds.EjecutarProcedimientoAlmacenado(cmd, "SP_Actualizar_Medico");
+        }
+
+        private string connectionString = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=BDClinica;Integrated Security=True";
+
+        public Medico TraerMedicoSegunDNI(string dni)
+        {
+            Medico medico = new Medico();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("TraerMedicoSegunDNI", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.Add(new SqlParameter("@DNI_me", dni));
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            medico.setDniMed(reader["DNI_me"].ToString());
+                            medico.setNombreMed(reader["Nombre_me"].ToString());
+                            medico.setApeMed(reader["Apellido_me"].ToString());
+                            medico.setLocalidadMed(Convert.ToInt32(reader["Localidad_me"]));
+                            medico.setSexoMed(reader["Sexo_me"].ToString());
+                            medico.setNacionalidadMed(reader["Nacionalidad_me"].ToString());
+                            medico.setFechaMed(reader["FechaNacimiento_me"].ToString());
+                            medico.setDireccionMed(reader["Direccion_me"].ToString());
+                            medico.setCorreoMed(reader["CorreoElectronico_me"].ToString());
+                            medico.setTelefonoMed(reader["Telefono_me"].ToString());
+                            medico.setEspecialidadMed(Convert.ToInt32(reader["Especialidad_me"]));
+                        }
+                    }
+                }
+            }
+
+            return medico;
+        }
+
+
     }
 
 }

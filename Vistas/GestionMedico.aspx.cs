@@ -27,5 +27,11 @@ namespace Vistas
             GridViewMedicos1.DataSource = tabla.cargartabla();
             GridViewMedicos1.DataBind();
         }
+
+        protected void GridViewMedicos1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+        {
+            Session["Editar"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblDni")).Text;
+            Session["LegajoMedico"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblLegajo")).Text;
+        }
     }
 }

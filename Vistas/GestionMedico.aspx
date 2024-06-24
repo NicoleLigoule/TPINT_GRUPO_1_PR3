@@ -14,8 +14,8 @@
     <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.GestionMedico.css" rel="stylesheet" />
     <style type="text/css">
-        .auto-style1 {
-            width: 100%;
+        .auto-style3 {
+            margin-right: 0px;
         }
     </style>
 </head>
@@ -25,7 +25,7 @@
     <form id="form1" runat="server">
         <div class="GridViewMedico">
             <h2>Gestión Medico</h2>
-            <asp:GridView ID="GridViewMedicos1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMedicos1_PageIndexChanging" PageSize="4">
+            <asp:GridView ID="GridViewMedicos1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMedicos1_PageIndexChanging" PageSize="1" AutoGenerateSelectButton="True" CssClass="auto-style3" OnSelectedIndexChanging="GridViewMedicos1_SelectedIndexChanging">
                 <Columns>
                     <asp:TemplateField HeaderText="Legajo">
                         <ItemTemplate>
@@ -104,6 +104,8 @@
                 <SortedDescendingHeaderStyle BackColor="#002876" />
             </asp:GridView>
             <asp:HyperLink ID="hplMedico" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al menú Medico</asp:HyperLink>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="hplEditarSeleccionado" runat="server" NavigateUrl="~/EditarMedico.aspx">Editar Seleccionado</asp:HyperLink>
         </div>
     </form>
 </body>

@@ -53,6 +53,19 @@ namespace Negocio
             AccesoDatosMedico datos = new AccesoDatosMedico();
             return datos.Todos_Los_Medicos_Baja();
         }
+        public Medico traerMedico(string dni)
+        {
+            Medico medico = new Medico();
+            AccesoDatosMedico med = new AccesoDatosMedico();
+            medico = med.TraerMedicoSegunDNI(dni);
+            medico.setDniMed(dni);
+            return medico;
+        }
+        public bool ActuMed(Entidades.Medico medico)
+        {
+            AccesoDatosMedico datos = new AccesoDatosMedico();
+            return datos.ActualizarMedico(medico) == 1;
+        }
     }
 
 }
