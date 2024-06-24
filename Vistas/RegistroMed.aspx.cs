@@ -30,10 +30,7 @@ namespace Vistas
                 }
                 
             }
-            else
-            {
-                CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
-            }
+            
             CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
         }
         private void CargarDropDown()

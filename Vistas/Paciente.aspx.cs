@@ -21,10 +21,7 @@ namespace Vistas
                 ABMLPaciente = new ABMLPaciente();
                 CargarDropDown();
             }
-            else
-            {
-                CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
-            }
+            
             CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
         }
         private void CargarDropDown()
