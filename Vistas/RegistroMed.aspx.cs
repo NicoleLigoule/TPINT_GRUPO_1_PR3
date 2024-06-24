@@ -16,7 +16,21 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarDropDown();
-            }else
+               
+                // Verificar si el usuario es administrador
+                bool esAdmin = false;
+                if (Session["esAdmin"] != null)
+                {
+                    esAdmin = (bool)Session["esAdmin"];
+                }
+
+                if (!esAdmin)
+                {
+                    hlMenuAdministrador.Visible = false;
+                }
+                
+            }
+            else
             {
                 CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
             }

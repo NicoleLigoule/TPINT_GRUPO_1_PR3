@@ -14,12 +14,18 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             CargarTABLA();
-            //// TO-DO: Necesitamos verificar si el usuario es administrador antes de mostrarle esta página ya que sino puede acceder desde cualquier lado
-            //if (!User.IsInRole("Administrador"))
-            //{
-            //    // TO-DO: Si no es admin, redireccionarlo a otra página que sea un aviso.
-            //    Response.Redirect("PaginaNoAutorizada.aspx");
-            //}
+
+            // Verificar si el usuario es administrador
+            bool esAdmin = false;
+            if (Session["esAdmin"] != null)
+            {
+                esAdmin = (bool)Session["esAdmin"];
+            }
+
+            if (!esAdmin)
+            {
+                Response.Redirect("~/NoAutorizado.aspx");
+            }
         }
         protected void CargarTABLA()
         {

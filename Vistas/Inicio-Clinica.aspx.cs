@@ -57,7 +57,7 @@ namespace Vistas
             if (Page.IsValid)
             {
                 Session["nombreUsuario"] = txtUsuario.Text;
-
+                Session["esAdmin"] = usuarioAdmin;
 
                 if (usuarioAdmin)
                 {

@@ -80,6 +80,7 @@
     <Content Include="Inicio-Clinica.aspx" />
     <Content Include="MenuMedico.aspx" />
     <Content Include="MenuPacientes.aspx" />
+    <Content Include="NoAutorizado.aspx" />
     <Content Include="Paciente.aspx" />
     <Content Include="RegistroMed.aspx" />
     <Content Include="Reportes.aspx" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="MenuPacientes.aspx.designer.cs">
       <DependentUpon>MenuPacientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoAutorizado.aspx.cs">
+      <DependentUpon>NoAutorizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoAutorizado.aspx.designer.cs">
+      <DependentUpon>NoAutorizado.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paciente.aspx.cs">
       <DependentUpon>Paciente.aspx</DependentUpon>

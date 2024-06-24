@@ -11,7 +11,20 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                // Verificar si el usuario es administrador
+                bool esAdmin = false;
+                if (Session["esAdmin"] != null)
+                {
+                    esAdmin = (bool)Session["esAdmin"];
+                }
 
+                if (!esAdmin)
+                {
+                    hlMenuAdministrador.Visible = false;
+                }
+            }
         }
     }
 }
