@@ -26,7 +26,7 @@
         <div class="card-container">
             <form id="form1" runat="server">
                 <div class="card">
-                    <h3 class="text-center">CARGAR PACIENTE</h3>
+                    <h3 class="text-center">EDITAR PACIENTE</h3>
                     <table class="table">
                         <tr>
                             <td class="auto-style2">DNI:</td>
