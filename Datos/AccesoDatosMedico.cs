@@ -51,8 +51,6 @@ namespace Datos
         private void ArmarParametrosAgregarMedico(ref SqlCommand Comando, Medico Medico)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Legajo_me", SqlDbType.VarChar);
-            SqlParametros.Value = Medico.getLegajoMed();
 
             SqlParametros = Comando.Parameters.Add("@DNI_me", SqlDbType.VarChar);
             SqlParametros.Value = Medico.getDNIMed();
@@ -90,6 +88,47 @@ namespace Datos
 
             
             }
+
+        private void ArmarParametrosModificarMedico(ref SqlCommand Comando, Medico Medico)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Legajo_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getLegajoMed();
+
+            SqlParametros = Comando.Parameters.Add("@DNI_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getDNIMed();
+
+            SqlParametros = Comando.Parameters.Add("@Nombre_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getNombreMed();
+
+            SqlParametros = Comando.Parameters.Add("@Apellido_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getApellidoMed();
+
+            SqlParametros = Comando.Parameters.Add("@Sexo_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getSexoMed();
+
+            SqlParametros = Comando.Parameters.Add("@Nacionalidad_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getNacionalidadMed();
+
+            SqlParametros = Comando.Parameters.Add("@FechaNacimiento_me", SqlDbType.Date);
+
+            SqlParametros.Value = Medico.getFechaMed();
+
+            SqlParametros = Comando.Parameters.Add("@Direccion_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getDireccionMed();
+
+            SqlParametros = Comando.Parameters.Add("@Localidad_me", SqlDbType.Int);
+            SqlParametros.Value = Medico.getLocaMed();
+
+            SqlParametros = Comando.Parameters.Add("@CorreoElectronico_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getCorreoMed();
+
+            SqlParametros = Comando.Parameters.Add("@Telefono_me", SqlDbType.VarChar);
+            SqlParametros.Value = Medico.getTelefonoMed();
+
+            SqlParametros = Comando.Parameters.Add("@Especialidad_me", SqlDbType.Int);
+            SqlParametros.Value = Medico.getEspecialidadMed();
+        }
         private void ParametrosAltaMedica(ref SqlCommand Comando, int legajo)
         {
             SqlParameter SqlParametros = new SqlParameter();
@@ -126,7 +165,7 @@ namespace Datos
             AccesoDatos ds = new AccesoDatos();
             SqlCommand cmd = new SqlCommand();
 
-            ArmarParametrosAgregarMedico(ref cmd, medico);
+            ArmarParametrosModificarMedico(ref cmd, medico);
             return ds.EjecutarProcedimientoAlmacenado(cmd, "SP_Actualizar_Medico");
         }
 

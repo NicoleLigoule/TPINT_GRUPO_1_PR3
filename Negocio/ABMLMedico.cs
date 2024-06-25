@@ -21,10 +21,10 @@ namespace Negocio
             int cantFilas = 0;
             AccesoDatosMedico datos = new AccesoDatosMedico();
 
-            if (!datos.existeMedico(medico))
-            {
+            //if (!datos.existeMedico(medico))
+            //{
                 cantFilas = datos.agregar(medico);
-            }
+           // }
 
             return cantFilas == 1;
         }
