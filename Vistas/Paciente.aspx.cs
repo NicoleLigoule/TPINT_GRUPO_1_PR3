@@ -21,7 +21,7 @@ namespace Vistas
                 ABMLPaciente = new ABMLPaciente();
                 CargarDropDown();
             }
-            
+
             CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
         }
         private void CargarDropDown()
@@ -53,22 +53,25 @@ namespace Vistas
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
+            ABMLPaciente pac = new ABMLPaciente();
             Entidades.Paciente paciente = new Entidades.Paciente(
-                    txtDniPac.Text,
-                    txtNombrePac.Text,
-                    txtApellidoPac.Text,
-                    1,
-                    ddlSexoPac.SelectedItem.Text, // Sexo (ddl)
-                    txtNacionalidad.Text,
-                    txtFechaNac.Text, // Fecha Nac.
-                    txtDireccionPac.Text,
-                    txtCorreoElectronicoPac.Text,
-                    txtTelefonoPac.Text,
-                    int.Parse(ddlProvincia.SelectedItem.Value)
-                    
-                ) ;
 
-            if (ABMLPaciente.agregarPaciente(paciente))
+                            txtDniPac.Text,
+                            txtNombrePac.Text,
+                            txtApellidoPac.Text,
+                            int.Parse(ddlLocalidad.SelectedItem.Value),
+                            ddlSexoPac.SelectedItem.Text,
+                            txtNacionalidad.Text,
+                            txtFechaNac.Text,
+                            txtDireccionPac.Text,
+                            txtCorreoElectronicoPac.Text,
+                            txtTelefonoPac.Text,
+                            int.Parse(ddlProvincia.SelectedItem.Value)
+
+
+                );
+
+            if (pac.agregarPaciente(paciente))
             {
                 lblMensaje.Text = "El paciente se agregó correctamente.";
             }
