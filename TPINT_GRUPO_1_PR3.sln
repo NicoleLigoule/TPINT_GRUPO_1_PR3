@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34728.123
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vistas", "Vistas\Vistas.csproj", "{13D7C248-5CD1-4085-A3CE-7106F65A4447}"
 EndProject
@@ -13,6 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D55F749F-01CD-4B4F-B60B-6AA9F6866E99}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\BDClinica.sql = ..\..\BDClinica.sql
 		DB\SP-INSERTAR_PACIENTE.sql = DB\SP-INSERTAR_PACIENTE.sql
 	EndProjectSection
 EndProject
