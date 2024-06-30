@@ -15,6 +15,7 @@ namespace Vistas
         {
             if (!IsPostBack)
             {
+                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
                 CargarDropDown();
                
                 // Verificar si el usuario es administrador
