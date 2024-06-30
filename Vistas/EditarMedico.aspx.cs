@@ -15,7 +15,7 @@ namespace Vistas
         {
             if (!IsPostBack)
             {
-
+                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
                 CargarDropDown();
                 if (Session["Editar"] != null)
                 {
