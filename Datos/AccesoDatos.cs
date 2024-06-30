@@ -70,6 +70,8 @@ namespace Datos
             List<Especialidad> Especialidades = new List<Especialidad>();
             string consulta = "SELECT ID_esp, Nombre_esp FROM dbo.Especialidad";
 
+            Especialidades.Add(new Especialidad(0, "--seleccione--"));
+
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 
@@ -93,29 +95,13 @@ namespace Datos
             }
             return Especialidades;
         }
-        public SqlDataReader obtenerReadDDLEspecialidad()
-        {
-            try
-            {
-                string consulta = "SELECT Nombre_esp,ID_esp FROM dbo.Especialidad";
-                AccesoDatos acceso = new AccesoDatos();
-                SqlConnection conexion = acceso.ObtenerConexion();
 
-                SqlCommand commandEsp = new SqlCommand(consulta, conexion);
-
-                SqlDataReader reader = commandEsp.ExecuteReader();
-                return reader;
-            }
-            catch (Exception e)
-            {
-
-                return null;
-            }
-        }
         public List<Provincia> ObtenerProvincias()
         {
             List<Provincia> provincias = new List<Provincia>();
             string consulta = "SELECT ID_prov,Nombre_prov FROM dbo.Provincia";
+
+            provincias.Add(new Provincia("0", "--seleccione--"));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -146,6 +132,7 @@ namespace Datos
             List<Localidad> Localidades = new List<Localidad>();
             string consulta = "SELECT ID_loca,Nombre_loca FROM dbo.Localidad WHERE dbo.Localidad.IDProv_loca=" + ID_prov;
 
+            Localidades.Add(new Localidad("0", "--seleccione--"));
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 

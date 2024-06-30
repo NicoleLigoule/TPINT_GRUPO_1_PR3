@@ -30,9 +30,10 @@ namespace Negocio
         {
             
             List<genero> generos = new List<genero>();
-            generos.Add(new genero("0", "Femenino")); 
-            generos.Add(new genero("1", "Masculino"));
-            generos.Add(new genero("2", "Otros"));
+            generos.Add(new genero("0", "--seleccione--"));
+            generos.Add(new genero("1", "Femenino")); 
+            generos.Add(new genero("2", "Masculino"));
+            generos.Add(new genero("3", "Otros"));
             return generos;
         }
     }
