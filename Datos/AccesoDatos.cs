@@ -186,5 +186,37 @@ namespace Datos
             }
             return estado;
         }
+       
+        public List<Medico> ObtenerMEdicos_horarios()
+        {
+            List<Medico> medicos = new List<Medico>();
+            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico";
+
+            medicos.Add(new Medico(0, "--seleccione--",""));
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int Legajo = reader.GetInt32(0);
+                    string Nombre = reader.GetString(1);
+                    string apellido = reader.GetString(2);
+                    Medico prov = new Medico(Legajo, Nombre,apellido);
+
+                    if (!medicos.Contains(prov))
+                    {
+                        medicos.Add(prov);
+
+                    }
+                }
+            }
+            return medicos;
+        }
     }
 }

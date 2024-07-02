@@ -136,7 +136,25 @@ namespace Datos
             SqlParametros.Value = legajo;
         
         }
+        public int agregarHorario(HorarioAtencion horario)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            SqlCommand comando = new SqlCommand();
+            ParametrosHorarioMed(ref comando, horario);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_INSERTAR_Horario_Atencion");
+        }
+        private void ParametrosHorarioMed(ref SqlCommand Comando, HorarioAtencion horario)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Legajo_med", SqlDbType.Int);
+            SqlParametros.Value = horario.getLegajo_ha();
 
+            SqlParametros = Comando.Parameters.Add("@DiaAtencion_ha", SqlDbType.VarChar);
+            SqlParametros.Value = horario.getDiaAtencion_ha();
+
+            SqlParametros = Comando.Parameters.Add("@HorarioAtencion", SqlDbType.Int);
+            SqlParametros.Value = horario.getHorarioAtencion();
+        }
         public int AltaMedico(int legajo)
         {
             AccesoDatos ds = new AccesoDatos();
