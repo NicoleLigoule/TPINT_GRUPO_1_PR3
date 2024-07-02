@@ -95,7 +95,9 @@
                 <td class="auto-style5">
                     <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:RegularExpressionValidator ID="revHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="valor invalido" ForeColor="Red">*</asp:RegularExpressionValidator>
+                </td>
                 <td>&nbsp;</td>
             </tr>
             <tr>

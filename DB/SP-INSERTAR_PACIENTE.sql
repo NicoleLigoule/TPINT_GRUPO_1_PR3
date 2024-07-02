@@ -46,3 +46,21 @@ BEGIN
     VALUES  (@DNI_me, @Nombre_me, @Apellido_me, @Sexo_me, @Nacionalidad_me,@FechaNacimiento_me, @Direccion_me, @Localidad_me,  @CorreoElectronico_me, @Telefono_me,@Especialidad_me);
 END
 Go
+
+
+CREATE OR ALTER PROCEDURE SP_INSERTAR_Horario_Atencion
+    @Legajo_med INT,
+    @DiaAtencion_ha varchar(20),
+	@HorarioAtencion INT
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Medico WHERE Legajo_me = @Legajo_med and Estado_me=1)
+    BEGIN
+	   INSERT INTO HorarioAtencion(Legajo_ha,DiaAtencion_ha,HorarioAtencion)
+    VALUES  (@Legajo_med,@DiaAtencion_ha,@HorarioAtencion);
+
+    END
+         RAISERROR ('El Medico proporcionado NO existe O esta dado de Baja.', 16, 1);
+        RETURN;
+	END
+Go
