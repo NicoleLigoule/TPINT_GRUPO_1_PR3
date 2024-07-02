@@ -27,6 +27,12 @@ namespace Entidades
         {
 
         }
+        public Medico(int legajo,string nombre, string apellido)
+        {
+            setLegajoMed(legajo);
+            setNombreMed(nombre);
+            setApeMed(apellido);
+        }
 
         //public Medico(int legajo_me, string dNI_me, string nombre_me, string apellido_me, int localidad_me, int especialidad_me, string sexo_me, string nacionalidad_me, string fechaNacimiento_me, string direccion_me, string correoElectronico_me, string telefono_me)
         //{
