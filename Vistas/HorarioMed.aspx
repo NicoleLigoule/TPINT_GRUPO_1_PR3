@@ -106,7 +106,7 @@
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style5">&nbsp;</td>
                 <td>
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -117,13 +117,15 @@
                     </asp:GridView>
                 </td>
                 <td class="auto-style3">  
-                   <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
+                    <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                 </td>
                 <td class="auto-style3"></td>
             </tr>
             <tr>
                 <td class="auto-style7"></td>
-                <td class="auto-style7"></td>
+                <td class="auto-style7">  
+                   <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
+                </td>
                 <td class="auto-style7"></td>
             </tr>
             <tr>

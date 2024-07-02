@@ -13,12 +13,12 @@ namespace Entidades
         private int horarioAtencion;
         private string estado_ha;
 
-        public HorarioAtencion(int legajo_ha, string diaAtencion_ha, int horarioAtencion, string estado_ha)
+        public HorarioAtencion(string legajo_ha, string diaAtencion_ha, string horarioAtencion)
         {
-            this.legajo_ha = legajo_ha;
+            this.legajo_ha = int.Parse(legajo_ha);
             this.diaAtencion_ha = diaAtencion_ha;
-            this.horarioAtencion = horarioAtencion;
-            this.estado_ha = estado_ha;
+            this.horarioAtencion = int.Parse(horarioAtencion);
+      
         }
 
         public int getLegajo_ha() {

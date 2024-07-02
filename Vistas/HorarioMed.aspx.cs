@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Entidades;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Negocio;
-using Entidades;
 
 namespace Vistas
 {
@@ -33,6 +33,29 @@ namespace Vistas
             }
 
 
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+            ABMLMedico AgregarMedico = new ABMLMedico();
+            HorarioAtencion horario = new HorarioAtencion(ddlMedico.SelectedItem.Value ,ddlDia.SelectedItem.Text,txtHora.Text);
+
+            if (AgregarMedico.agregarHorarioMedico(horario))
+            {
+
+                lblMensaje.Text = "Se agrego correctamente";
+            }
+            else
+            {
+                lblMensaje.Text = " No se pudo agregar";
+            }
+            limpiarcapos();
+
+        }
+        protected void limpiarcapos()
+        {
+            txtHora.Text = "";
         }
     }
 }
