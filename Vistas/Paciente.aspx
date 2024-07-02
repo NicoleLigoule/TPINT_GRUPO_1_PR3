@@ -91,8 +91,8 @@
                                     onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
                             </td>
                             <td class="auto-style3">
-                                <asp:RequiredFieldValidator ID="rfvfecha" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revfecha" runat="server" ControlToValidate="txtNacionalidad" ErrorMessage="La fecha debe ser yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="rfvfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="ingerse yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -122,7 +122,7 @@
                             </td>
                             <td class="auto-style3">
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9 ]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>

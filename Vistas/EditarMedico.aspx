@@ -79,8 +79,8 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                             </td>
                             <td class="auto-style1">
                                 <asp:RequiredFieldValidator ID="rfvFechaNac" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="ingerse yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revFecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="La fecha debe ser yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -111,7 +111,7 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                             <td class="auto-style1">
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revDire" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo números y letras" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revDire" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo números y letras" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9 ]+$">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
 
