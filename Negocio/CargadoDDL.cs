@@ -26,6 +26,11 @@ namespace Negocio
             AccesoDatos dp = new AccesoDatos();
             return dp.ObtenerEspecialidad();
         }
+        public List<Medico> ObtenerMEdicos()
+        {
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerMEdicos_horarios();
+        }
         public List<genero> CargarListaGeneros()
         {
             
@@ -35,6 +40,18 @@ namespace Negocio
             generos.Add(new genero("2", "Masculino"));
             generos.Add(new genero("3", "Otros"));
             return generos;
+        }
+        public List<Dias> CargarListaDias()
+        {
+
+            List<Dias> Dias = new List<Dias>();
+            Dias.Add(new Dias("0", "--seleccione--"));
+            Dias.Add(new Dias("1", "LUNES"));
+            Dias.Add(new Dias("2", "MARTES"));
+            Dias.Add(new Dias("3", "MIÉRCOLES"));
+            Dias.Add(new Dias("4", "JUEVES"));
+            Dias.Add(new Dias("5", "VIERNES"));
+            return Dias;
         }
     }
 }
