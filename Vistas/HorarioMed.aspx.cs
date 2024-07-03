@@ -13,7 +13,10 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarDropDown();
+            if (!IsPostBack)
+            {
+                CargarDropDown();
+            }
         }
         private void CargarDropDown()
         {

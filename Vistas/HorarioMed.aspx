@@ -96,7 +96,7 @@
                     <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RegularExpressionValidator ID="revHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="valor invalido" ForeColor="Red">*</asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="valor invalido" ForeColor="Red" ValidationExpression="^(0?[0-9]|1[0-9]|2[0-3])$">*</asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;</td>
             </tr>
