@@ -70,7 +70,7 @@ namespace Datos
             List<Especialidad> Especialidades = new List<Especialidad>();
             string consulta = "SELECT ID_esp, Nombre_esp FROM dbo.Especialidad";
 
-            Especialidades.Add(new Especialidad(0, "--seleccione--"));
+           // Especialidades.Add(new Especialidad(0, "--seleccione--"));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -101,7 +101,7 @@ namespace Datos
             List<Provincia> provincias = new List<Provincia>();
             string consulta = "SELECT ID_prov,Nombre_prov FROM dbo.Provincia";
 
-            provincias.Add(new Provincia("0", "--seleccione--"));
+           // provincias.Add(new Provincia("0", "--seleccione--"));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -132,7 +132,7 @@ namespace Datos
             List<Localidad> Localidades = new List<Localidad>();
             string consulta = "SELECT ID_loca,Nombre_loca FROM dbo.Localidad WHERE dbo.Localidad.IDProv_loca=" + ID_prov;
 
-            Localidades.Add(new Localidad("0", "--seleccione--"));
+          //  Localidades.Add(new Localidad("0", "--seleccione--"));
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 
@@ -192,7 +192,7 @@ namespace Datos
             List<Medico> medicos = new List<Medico>();
             string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico";
 
-            medicos.Add(new Medico(0, "--seleccione--",""));
+          //  medicos.Add(new Medico(0, "--seleccione--",""));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
