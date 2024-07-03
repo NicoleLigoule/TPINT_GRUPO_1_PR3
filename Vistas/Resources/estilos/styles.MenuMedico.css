@@ -34,14 +34,13 @@ html, body {
     flex-direction: column;
 }
 
-
-    body.medico {
-        background-color: #D3EEFF;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        overflow-y: auto;
-    }
+body.medico {
+    background-color: #D3EEFF;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
 
 #form1 {
     display: flex;
@@ -62,16 +61,14 @@ html, body {
     border-radius: 20px;
 }
 
-
-
-    .card-container .card {
-        margin-top: 2%;
-        border-radius: 20px;
-        width: 100%;
-        padding: 10px;
-        background-color: #BBDEFB;
-        align-items: center;
-    }
+.card-container .card {
+    margin-top: 2%;
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #BBDEFB;
+    align-items: center;
+}
 
 .back-link {
     width: 100%;
@@ -93,10 +90,10 @@ html, body {
     box-sizing: border-box;
 }
 
-    .menu-link:hover {
-        color: #BBDEFB;
-        background-color: #1976D2;
-    }
+.menu-link:hover {
+    color: #BBDEFB;
+    background-color: #1976D2;
+}
 
 .auto-style1 {
     width: 100%;

@@ -14,7 +14,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{D55F749F-01CD-4B4F-B60B-6AA9F6866E99}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\BDClinica.sql = ..\..\BDClinica.sql
-		DB\SP-INSERTAR_PACIENTE.sql = DB\SP-INSERTAR_PACIENTE.sql
 	EndProjectSection
 EndProject
 Global

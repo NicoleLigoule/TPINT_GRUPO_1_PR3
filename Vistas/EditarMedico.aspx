@@ -5,13 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <style type="text/css">
-a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::before{text-shadow:none!important;box-shadow:none!important}*,::after,::before{box-sizing:border-box}
-        .auto-style1 {
-            width: 224px;
-        }
-    </style>
+    <title>Editar Medico</title>
+    <link href="./Resources/estilos/styles.EditarMedico.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -153,7 +148,7 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                                 <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             </td>
                             <td class="auto-style3">
-                                <asp:Button ID="btnEditar" runat="server" Text="Editar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" Height="25px" />
+                                <asp:Button ID="btnEditar" runat="server" Text="Guardar" CssClass="btn btn-primary btn-block" OnClick="btnRegistrar_Click" Height="25px" />
                                 <asp:HyperLink ID="hplVolverAMenuPaciente" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver</asp:HyperLink>
                             </td>    
                             <td class="auto-style1">

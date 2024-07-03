@@ -84,7 +84,7 @@
     <Content Include="MenuPacientes.aspx" />
     <Content Include="NoAutorizado.aspx" />
     <Content Include="Paciente.aspx" />
-    <Content Include="RegistroMed.aspx" />
+    <Content Include="AgregarMedico.aspx" />
     <Content Include="Reportes.aspx" />
     <Content Include="Resources\estilos\Footer.css" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
@@ -99,9 +99,13 @@
     <Content Include="Resources\estilos\styles.MenuMedico.css" />
     <Content Include="Resources\estilos\styles.MenuPacientes.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
-    <Content Include="Resources\estilos\styles.RegistroMed.css" />
+    <Content Include="Resources\estilos\styles.AgregarMedico.css" />
     <Content Include="Resources\estilos\styles.Reportes.css" />
+    <Content Include="Resources\estilos\styles.EditarMedico.css" />
+    <Content Include="Resources\estilos\styles.EditarPaciente.css" />
+    <Content Include="Resources\estilos\styles.VistasMedico.css" />
     <Content Include="utils.js" />
+    <Content Include="VistasMedico.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -218,12 +222,12 @@
       <DependentUpon>Paciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistroMed.aspx.cs">
-      <DependentUpon>RegistroMed.aspx</DependentUpon>
+    <Compile Include="AgregarMedico.aspx.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="RegistroMed.aspx.designer.cs">
-      <DependentUpon>RegistroMed.aspx</DependentUpon>
+    <Compile Include="AgregarMedico.aspx.designer.cs">
+      <DependentUpon>AgregarMedico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes.aspx.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
@@ -231,6 +235,13 @@
     </Compile>
     <Compile Include="Reportes.aspx.designer.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VistasMedico.aspx.cs">
+      <DependentUpon>VistasMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VistasMedico.aspx.designer.cs">
+      <DependentUpon>VistasMedico.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

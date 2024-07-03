@@ -38,9 +38,6 @@ namespace Vistas
                     txtCorreoElectronicoPac.Text = paciente.getCorreoPac();
                     txtTelefonoPac.Text = paciente.getTelefonoPac();
                     lblMensaje.Text = paciente.getProvPac().ToString() + paciente.getLocaPac().ToString();
-                  
-
-
                 }
 
             }
@@ -82,26 +79,20 @@ namespace Vistas
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
-                ABMLPaciente pac = new ABMLPaciente();
+            ABMLPaciente pac = new ABMLPaciente();
             Entidades.Paciente paciente = new Entidades.Paciente(
-            lblDni.Text,
-            txtNombrePac.Text,
-            txtApellidoPac.Text,
-            int.Parse(ddlLocalidad.SelectedItem.Value),
-            ddlSexoPac.SelectedItem.Text,
-            txtNacionalidad.Text,
-            txtFechaNac.Text,
-            txtDireccionPac.Text,
-            txtCorreoElectronicoPac.Text,
-            txtTelefonoPac.Text,
-            int.Parse(ddlProvincia.SelectedItem.Value)
-            
-
-) ;
-
-
-
-
+                lblDni.Text,
+                txtNombrePac.Text,
+                txtApellidoPac.Text,
+                int.Parse(ddlLocalidad.SelectedItem.Value),
+                ddlSexoPac.SelectedItem.Text,
+                txtNacionalidad.Text,
+                txtFechaNac.Text,
+                txtDireccionPac.Text,
+                txtCorreoElectronicoPac.Text,
+                txtTelefonoPac.Text,
+                int.Parse(ddlProvincia.SelectedItem.Value)
+            );
 
             if (pac.ActuPac(paciente))
             {
