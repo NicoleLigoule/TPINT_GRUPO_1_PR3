@@ -37,7 +37,7 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                             <td class="auto-style1">
                                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Sólo letras" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="Sólo letras" ForeColor="Red" ValidationExpression="^[A-Za-zÁ-Úá-ú ]+$">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -48,7 +48,7 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                             <td class="auto-style1">
                                 <asp:RequiredFieldValidator ID="rfvApellido" runat="server" ErrorMessage="Campo Obligatorio" ForeColor="Red" ControlToValidate="txtApellido">*</asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" EnableTheming="True" ErrorMessage="Sólo letras" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revApellido" runat="server" ControlToValidate="txtApellido" EnableTheming="True" ErrorMessage="Sólo letras" ForeColor="Red" ValidationExpression="^[A-Za-zÁ-Úá-ú ]+$">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
@@ -112,7 +112,7 @@ a{color:#007bff;text-decoration:none;background-color:transparent}*,::after,::be
                             <td class="auto-style1">
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revDire" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo números y letras" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9 ]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revDire" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo números y letras" ForeColor="Red" ValidationExpression="^[A-Za-zÁ-Úá-ú ]+$">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
 
