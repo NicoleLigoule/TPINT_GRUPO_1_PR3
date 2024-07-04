@@ -42,7 +42,7 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">Ingrese DNI del paciente:</td>
+                    <td class="auto-style3">Seleccione un paciente:</td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddlPacientes" runat="server">
                         </asp:DropDownList>

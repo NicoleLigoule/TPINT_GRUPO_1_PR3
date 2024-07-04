@@ -41,7 +41,7 @@
                     <td class="auto-style6"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">Ingrese Legajo del medico:</td>
+                    <td class="auto-style2">Seleccione un medico:</td>
                     <td>
                         <asp:DropDownList ID="ddlMedico" runat="server">
                         </asp:DropDownList>

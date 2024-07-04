@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Negocio;
 
 namespace Vistas
 {
@@ -11,6 +12,10 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TurnoAtencion tabla = new TurnoAtencion();
+            grdTurnoMedico.DataSource = tabla.cargartablaTurnos();
+            grdTurnoMedico.DataBind();
+
 
         }
     }
