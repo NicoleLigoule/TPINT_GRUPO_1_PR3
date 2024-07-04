@@ -26,6 +26,12 @@ namespace Entidades
         {
 
         }
+        public Paciente(string dNI_pc, string nombre_pc, string apellido_pc)
+        {
+           setDniPac(dNI_pc);
+            setNombrePac(nombre_pc);
+            setApePac(apellido_pc);
+        }
 
         public Paciente(string dNI_pc, string nombre_pc, string apellido_pc, int localidad_pc, string sexo_pc, string nacionalidad_pc, string fechaNacimiento_pc, string direccion_pc, string correoElectronico_pc, string telefono_pc, int provincia_pc)
         {

@@ -44,7 +44,8 @@
                 <tr>
                     <td class="auto-style3">Ingrese DNI del paciente:</td>
                     <td class="auto-style4">
-                        <asp:TextBox ID="txtEliminar" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddlPacientes" runat="server">
+                        </asp:DropDownList>
                     </td>
                     <td class="auto-style4">
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />

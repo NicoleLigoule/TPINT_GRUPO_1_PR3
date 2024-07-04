@@ -190,7 +190,7 @@ namespace Datos
         public List<Medico> ObtenerMEdicos_horarios()
         {
             List<Medico> medicos = new List<Medico>();
-            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico";
+            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1";
 
           //  medicos.Add(new Medico(0, "--seleccione--",""));
 
@@ -217,6 +217,37 @@ namespace Datos
                 }
             }
             return medicos;
+        }
+        public List<Paciente> ObtenerPacientes_eliminar()
+        {
+            List<Paciente> Paciente = new List<Paciente>();
+            string consulta = "SELECT DNI_pc,Nombre_pc,Apellido_pc FROM dbo.Paciente where Estado_pc=1";
+
+    
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string Legajo = reader.GetString(0);
+                    string Nombre = reader.GetString(1);
+                    string apellido = reader.GetString(2);
+                    Paciente pac = new Paciente(Legajo, Nombre, apellido);
+
+                    if (!Paciente.Contains(pac))
+                    {
+                        Paciente.Add(pac);
+
+                    }
+                }
+            }
+            return Paciente;
         }
     }
 }

@@ -54,10 +54,15 @@ namespace Negocio
         public bool bajaMedico(int legajo)
         {
             int cantFilas = 0;
+            bool Ejecutada = false;
             AccesoDatosMedico datos = new AccesoDatosMedico();
 
             cantFilas = datos.bAJAMedico(legajo);
-            return cantFilas == 1;
+            if (cantFilas != 0)
+            {
+                Ejecutada = true;
+            }
+            return Ejecutada;
         }
 
         public DataTable cargartablaBaja()

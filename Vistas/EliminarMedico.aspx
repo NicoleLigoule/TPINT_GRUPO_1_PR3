@@ -43,7 +43,8 @@
                 <tr>
                     <td class="auto-style2">Ingrese Legajo del medico:</td>
                     <td>
-                        <asp:TextBox ID="txtEliminar" runat="server"></asp:TextBox>
+                        <asp:DropDownList ID="ddlMedico" runat="server">
+                        </asp:DropDownList>
                     </td>
                     <td>
                         <asp:Button ID="btnEliminar" runat="server" Text="Eliminar" OnClick="btnEliminar_Click" />

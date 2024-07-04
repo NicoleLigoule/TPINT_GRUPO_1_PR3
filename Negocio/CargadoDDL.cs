@@ -31,6 +31,11 @@ namespace Negocio
             AccesoDatos dp = new AccesoDatos();
             return dp.ObtenerMEdicos_horarios();
         }
+        public List<Paciente> ObtenerPaciente_el()
+        {
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerPacientes_eliminar();
+        }
         public List<genero> CargarListaGeneros()
         {
             
