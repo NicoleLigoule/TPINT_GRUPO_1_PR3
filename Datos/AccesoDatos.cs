@@ -218,6 +218,71 @@ namespace Datos
             }
             return medicos;
         }
+
+        public List<Medico> ObtenerMEdicoCargaTunros(int especialida)
+        {
+            List<Medico> medicos = new List<Medico>();
+            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1 and Especialidad_me="+especialida.ToString();
+
+            //  medicos.Add(new Medico(0, "--seleccione--",""));
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    int Legajo = reader.GetInt32(0);
+                    string Nombre = reader.GetString(1);
+                    string apellido = reader.GetString(2);
+                    Medico prov = new Medico(Legajo, Nombre, apellido);
+
+                    if (!medicos.Contains(prov))
+                    {
+                        medicos.Add(prov);
+
+                    }
+                }
+            }
+            return medicos;
+        }
+        public List<Turno> ObtenerFecha_cargaTurno(int Legajomed)
+        {
+            List<Turno> fecha = new List<Turno>();
+            string consulta = "select Fecha_tu,Legajo_tu,DiaAtencion_ha from Turnos where Legajo_tu=" + Legajomed.ToString()+" and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0)";
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                 
+
+                    DateTime fecha_ = reader.GetDateTime(0);
+                    string fechaComoString = fecha_.ToString("yyyy-MM-dd");
+                    int Legajo = reader.GetInt32(1);
+                    string dia = reader.GetString(2);
+
+                    Turno _fehca = new Turno(fechaComoString, Legajo,dia);
+
+                    if (!fecha.Contains(_fehca))
+                    {
+                        fecha.Add(_fehca);
+
+                    }
+                }
+            }
+            return fecha;
+        }
         public List<Paciente> ObtenerPacientes_eliminar()
         {
             List<Paciente> Paciente = new List<Paciente>();

@@ -67,14 +67,14 @@
                         <asp:Label ID="lblEspecialidad" runat="server" Text="Especialidad"></asp:Label>
                     </td>
                     <td class="auto-style4">
-                        <asp:DropDownList ID="ddlEspecialidad" runat="server">
+                        <asp:DropDownList ID="ddlEspecialidad" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style2">
                         <asp:Label ID="lblMedico" runat="server" Text="Medico"></asp:Label>
                     </td>
                     <td class="auto-style6">
-                        <asp:DropDownList ID="ddlMedico" runat="server">
+                        <asp:DropDownList ID="ddlMedico" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
                     <td>&nbsp;</td>
@@ -90,7 +90,7 @@
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:Label ID="LblDia" runat="server" Text="Dia de Atencion"></asp:Label>
+                        <asp:Label ID="LblDia" runat="server" Text="Fecha de Atencion"></asp:Label>
                     </td>
                     <td class="auto-style4">
                         <asp:DropDownList ID="ddlDiaDeAtencion" runat="server">
