@@ -18,9 +18,22 @@ namespace Vistas
                 CargarEspecialidad();
                 CargarPaciente();
             }
-            Cargarmedico(ddlEspecialidad.SelectedItem.Value);
-            CargaFecha(ddlMedico.SelectedItem.Value);
-            CargaHorario(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value);
+            limpiarDDl();
+            if (ddlEspecialidad.SelectedItem != null && !string.IsNullOrEmpty(ddlEspecialidad.SelectedItem.Value))
+            {
+                Cargarmedico(ddlEspecialidad.SelectedItem.Value);
+            }
+            if (ddlMedico.SelectedItem != null && !string.IsNullOrEmpty(ddlMedico.SelectedItem.Value))
+            {
+                CargaFecha(ddlMedico.SelectedItem.Value);
+            }
+            if (ddlMedico.SelectedItem != null && !string.IsNullOrEmpty(ddlMedico.SelectedItem.Value))
+            {
+                if (ddlDiaDeAtencion.SelectedItem != null && !string.IsNullOrEmpty(ddlDiaDeAtencion.SelectedItem.Value))
+                {
+                    CargaHorario(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value);
+                }
+            }
         }
 
         private void CargarEspecialidad()
@@ -52,7 +65,7 @@ namespace Vistas
 
             foreach (Turno fecha in list)
             {
-                ddlDiaDeAtencion.Items.Add(new ListItem(fecha.GetDiaAtencion() +" "+fecha.Getfecha(), fecha.Getfecha()));
+                ddlDiaDeAtencion.Items.Add(new ListItem(fecha.GetDiaAtencion()/* +" "+fecha.Getfecha()*/, fecha.Getfecha()));
             }
         }
         private void CargaHorario(string lejmed,string fecha_)
@@ -77,6 +90,12 @@ namespace Vistas
             {
                 ddlPaciente.Items.Add(new ListItem(pac.getNombrePac() + " " + pac.getApellidoPac(), pac.getDNIPac()));
             }
+        }
+        private void limpiarDDl()
+        {
+            ddlDiaDeAtencion.Items.Clear();
+            ddlMedico.Items.Clear();
+            ddlHorario.Items.Clear();
         }
     }
 }

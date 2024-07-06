@@ -45,9 +45,9 @@ namespace Negocio
         }
         public List<Turno> ObtenerHorario_Turnos(string Legmedico,string fecha)
         {
-            int especiali = int.Parse(Legmedico);
+            int leg = int.Parse(Legmedico);
             AccesoDatos dp = new AccesoDatos();
-            return dp.ObtenerHorarios_cargaTurno(especiali,fecha);
+            return dp.ObtenerHorarios_cargaTurno(leg,fecha);
         }
         public List<Paciente> ObtenerPaciente_el()
         {

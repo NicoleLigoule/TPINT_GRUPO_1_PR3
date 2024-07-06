@@ -70,8 +70,6 @@ namespace Datos
             List<Especialidad> Especialidades = new List<Especialidad>();
             string consulta = "SELECT ID_esp, Nombre_esp FROM dbo.Especialidad";
 
-           // Especialidades.Add(new Especialidad(0, "--seleccione--"));
-
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 
@@ -224,8 +222,6 @@ namespace Datos
             List<Medico> medicos = new List<Medico>();
             string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1 and Especialidad_me="+especialida.ToString();
 
-            //  medicos.Add(new Medico(0, "--seleccione--",""));
-
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 
@@ -271,7 +267,7 @@ namespace Datos
                     string fechaComoString = fecha_.ToString("yyyy-MM-dd");
                     int Legajo = reader.GetInt32(1);
                     string dia = reader.GetString(2);
-
+                    dia = dia +" "+ fecha_.ToString("dd-MM");
                     Turno _fehca = new Turno(fechaComoString, Legajo,dia);
 
                     if (!fecha.Contains(_fehca))
