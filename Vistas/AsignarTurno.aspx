@@ -84,7 +84,9 @@
                     <td class="auto-style2">&nbsp;</td>
                     <td class="auto-style4">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:Label ID="lblMedicos" runat="server"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -108,9 +110,13 @@
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
+                    <td class="auto-style4">
+                        <asp:Label ID="lblFechas" runat="server"></asp:Label>
+                    </td>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:Label ID="lblHorarios" runat="server"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
@@ -123,8 +129,12 @@
                         </asp:DropDownList>
                     </td>
                     <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style6">
+                        <asp:Button ID="btnAsignar" runat="server" OnClick="btnAsignar_Click" Text="Asignar Turno" />
+                    </td>
+                    <td>
+                        <asp:Label ID="lblMensajes" runat="server"></asp:Label>
+                    </td>
                 </tr>
                 <tr>
                     <td class="auto-style3">

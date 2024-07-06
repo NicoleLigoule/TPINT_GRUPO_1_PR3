@@ -16,5 +16,19 @@ namespace Negocio
             AccesoDatosTurno datos = new AccesoDatosTurno();
             return datos.Todos_Los_Turnos();
         }
+        public bool AsignarPaciente_Turno(Turno turnos)
+        {
+            bool cantFila = false;
+            int cantFilas=0;
+            AccesoDatosTurno datos = new AccesoDatosTurno();
+
+            cantFilas = datos.AsignarTurno(turnos);
+            if (cantFilas > 0)
+            {
+                cantFila = true;
+            }
+            return cantFila;
+        }
+
     }
 }

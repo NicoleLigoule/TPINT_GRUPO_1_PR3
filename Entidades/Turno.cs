@@ -15,7 +15,7 @@ namespace Entidades
         private bool _Asistencia;
         private string _DniPaciente_tu;
         private string _Descripcion;
-  
+
 
         public Turno(string Legajo, string fecha, string DiaAtencion_ha, string Horario, string Asistencia, string DniPaciente_tu, string Descripcion)
         {
@@ -38,6 +38,13 @@ namespace Entidades
             this._Legajo = legajo_ha;
             this._fecha = diaAtencion_ha;
             this._DiaAtencion_ha = dia; 
+        }
+        public Turno(string Legajo, string fecha, string Horario, string DniPaciente)
+        {
+            SetLegajo(int.Parse(Legajo));
+            Setfecha(fecha);
+            SetHorario(int.Parse(Horario));
+            SetDniPaciente_tu(DniPaciente);
         }
         public int GetLegajo()
         {
