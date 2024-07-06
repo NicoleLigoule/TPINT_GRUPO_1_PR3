@@ -283,6 +283,35 @@ namespace Datos
             }
             return fecha;
         }
+        public List<Turno> ObtenerHorarios_cargaTurno(int Legajomed,string fecha_)
+        {
+            List<Turno> fecha = new List<Turno>();
+            string consulta = "select Horario_tu, Legajo_tu from Turnos where Legajo_tu="+Legajomed.ToString()+" and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0) AND Fecha_tu='"+fecha_+"' ";
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                { 
+                    int Legajo = reader.GetInt32(1);
+                    int horario = reader.GetInt32(0);
+
+                    Turno _fehca = new Turno( Legajo, horario);
+
+                    if (!fecha.Contains(_fehca))
+                    {
+                        fecha.Add(_fehca);
+
+                    }
+                }
+            }
+            return fecha;
+        }
         public List<Paciente> ObtenerPacientes_eliminar()
         {
             List<Paciente> Paciente = new List<Paciente>();

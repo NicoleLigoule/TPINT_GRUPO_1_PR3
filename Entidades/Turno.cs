@@ -27,6 +27,12 @@ namespace Entidades
             _DniPaciente_tu = DniPaciente_tu;
             _Descripcion = Descripcion;
         }
+        public Turno(int legajo_ha, int Horario)
+        {
+            this._Legajo = legajo_ha;
+            this._Horario = Horario;
+            
+        }
         public Turno(string diaAtencion_ha, int legajo_ha, string dia)
         {
             this._Legajo = legajo_ha;

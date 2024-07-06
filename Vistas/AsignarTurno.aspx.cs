@@ -16,9 +16,11 @@ namespace Vistas
             if (!IsPostBack)
             {
                 CargarEspecialidad();
+                CargarPaciente();
             }
             Cargarmedico(ddlEspecialidad.SelectedItem.Value);
             CargaFecha(ddlMedico.SelectedItem.Value);
+            CargaHorario(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value);
         }
 
         private void CargarEspecialidad()
@@ -50,7 +52,30 @@ namespace Vistas
 
             foreach (Turno fecha in list)
             {
-                ddlDiaDeAtencion.Items.Add(new ListItem(fecha.GetDiaAtencion() +""+fecha.Getfecha(), fecha.Getfecha()));
+                ddlDiaDeAtencion.Items.Add(new ListItem(fecha.GetDiaAtencion() +" "+fecha.Getfecha(), fecha.Getfecha()));
+            }
+        }
+        private void CargaHorario(string lejmed,string fecha_)
+        {
+            ddlHorario.Items.Clear();
+            CargadoDDL negocio = new CargadoDDL();
+            List<Turno> list = negocio.ObtenerHorario_Turnos(lejmed,fecha_);
+
+            foreach (Turno fecha in list)
+            {
+                ddlHorario.Items.Add(new ListItem(fecha.GetHorario().ToString(), fecha.GetLegajo().ToString()));
+            }
+        }
+
+        private void CargarPaciente()
+        {
+            ddlPaciente.Items.Clear();
+            CargadoDDL negocio = new CargadoDDL();
+            List<Entidades.Paciente> list = negocio.ObtenerPaciente_el();
+
+            foreach (Entidades.Paciente pac in list)
+            {
+                ddlPaciente.Items.Add(new ListItem(pac.getNombrePac() + " " + pac.getApellidoPac(), pac.getDNIPac()));
             }
         }
     }

@@ -43,6 +43,12 @@ namespace Negocio
             AccesoDatos dp = new AccesoDatos();
             return dp.ObtenerFecha_cargaTurno(especiali);
         }
+        public List<Turno> ObtenerHorario_Turnos(string Legmedico,string fecha)
+        {
+            int especiali = int.Parse(Legmedico);
+            AccesoDatos dp = new AccesoDatos();
+            return dp.ObtenerHorarios_cargaTurno(especiali,fecha);
+        }
         public List<Paciente> ObtenerPaciente_el()
         {
             AccesoDatos dp = new AccesoDatos();
