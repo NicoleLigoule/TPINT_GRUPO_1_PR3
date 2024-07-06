@@ -22,7 +22,7 @@ namespace Datos
 
         }
 
-        public DataTable Todos_Los_Turnos_Alta()
+        public DataTable Todos_Los_Turnos()
         {
             return Traer_tabla_Turno("Turnos", "SELECT * FROM Turnos");
         }

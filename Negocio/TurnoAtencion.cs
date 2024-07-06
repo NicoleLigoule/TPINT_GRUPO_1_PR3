@@ -14,7 +14,7 @@ namespace Negocio
         public DataTable cargartablaTurnos()
         {
             AccesoDatosTurno datos = new AccesoDatosTurno();
-            return datos.Todos_Los_Turnos_Alta();
+            return datos.Todos_Los_Turnos();
         }
     }
 }
