@@ -87,25 +87,37 @@ namespace Vistas
         }
         private void verificarCarga()
         {
+            lblMedicos.Text = "";
+            lblFechas.Text = "";
+            lblHorarios.Text = "";
             if (ddlEspecialidad.SelectedItem != null && !string.IsNullOrEmpty(ddlEspecialidad.SelectedItem.Value))
             {
                 Cargarmedico(ddlEspecialidad.SelectedItem.Value);
-            }
-            else
-            {
-                lblMedicos.Text = "No se encuentran medicos de esa especialidad";
+                if (ddlMedico.SelectedItem == null || string.IsNullOrEmpty(ddlMedico.SelectedItem.Value))
+                {
+                    lblMedicos.Text = "No se encuentran medicos de esa especialidad";
+                }
             }
             if (ddlMedico.SelectedItem != null && !string.IsNullOrEmpty(ddlMedico.SelectedItem.Value))
             {
                 CargaFecha(ddlMedico.SelectedItem.Value);
+                if (ddlDiaDeAtencion.SelectedItem == null || string.IsNullOrEmpty(ddlDiaDeAtencion.SelectedItem.Value))
+                {
+                    lblFechas.Text = "No se encuentran Fecha desponible para ese medico";
+                }
             }
             else
             {
+
                 lblFechas.Text = "No se encuentran Fecha desponible para ese medico";
             }
             if (ddlMedico.SelectedItem != null && !string.IsNullOrEmpty(ddlMedico.SelectedItem.Value) && ddlDiaDeAtencion.SelectedItem != null && !string.IsNullOrEmpty(ddlDiaDeAtencion.SelectedItem.Value))
             {
                 CargaHorario(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value);
+                if (ddlMedico.SelectedItem == null || string.IsNullOrEmpty(ddlMedico.SelectedItem.Value))
+                {
+                    lblHorarios.Text = "No se encuentran horario disponible para esa fecha";
+                }
             }
             else
             {
