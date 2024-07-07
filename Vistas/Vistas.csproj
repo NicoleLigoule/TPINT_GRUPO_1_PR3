@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdmInicio.aspx" />
+    <Content Include="administrarUsuario.aspx" />
     <Content Include="AsignarTurno.aspx" />
     <Content Include="EditarMedico.aspx" />
     <Content Include="EditarPaciente.aspx" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="AdmInicio.aspx.designer.cs">
       <DependentUpon>AdmInicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administrarUsuario.aspx.cs">
+      <DependentUpon>administrarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administrarUsuario.aspx.designer.cs">
+      <DependentUpon>administrarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="AsignarTurno.aspx.cs">
       <DependentUpon>AsignarTurno.aspx</DependentUpon>
