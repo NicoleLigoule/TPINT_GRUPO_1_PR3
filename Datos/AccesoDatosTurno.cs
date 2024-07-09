@@ -11,20 +11,21 @@ namespace Datos
 {
     public class AccesoDatosTurno
     {
-        private DataTable Traer_tabla_Turno(string Nombre, string SQl)
-        {
-            DataSet dts = new DataSet();
-            AccesoDatos Datos = new AccesoDatos();
+        //private DataTable Traer_tabla_Turno(string Nombre, string SQl)
+        //{
+        //    DataSet dts = new DataSet();
+        //    AccesoDatos Datos = new AccesoDatos();
 
-            SqlDataAdapter adaptador = Datos.ObtenerAdaptador(SQl);
-            adaptador.Fill(dts, Nombre);
-            return dts.Tables[Nombre];
+        //    SqlDataAdapter adaptador = Datos.ObtenerAdaptador(SQl);
+        //    adaptador.Fill(dts, Nombre);
+        //    return dts.Tables[Nombre];
 
-        }
+        //}
 
         public DataTable Todos_Los_Turnos()
         {
-            return Traer_tabla_Turno("Turnos", "SELECT * FROM Turnos");
+            AccesoDatos Datos = new AccesoDatos();
+            return Datos.getSimpleTable("Turnos");
         }
 
 

@@ -49,14 +49,6 @@ namespace Datos
             }
         }
 
-        public DataTable getTabla(String nombre, String consulta)
-        {
-            DataSet ds = new DataSet();
-            SqlDataAdapter adp = ObtenerAdaptador(consulta);
-            adp.Fill(ds, nombre);
-            return ds.Tables[nombre];
-        }
-
         public DataTable getSimpleTable(String nombre)
         {
             DataSet ds = new DataSet();
@@ -65,6 +57,7 @@ namespace Datos
             adp.Fill(ds, nombre);
             return ds.Tables[nombre];
         }
+
         public List<Especialidad> ObtenerEspecialidad()
         {
             List<Especialidad> Especialidades = new List<Especialidad>();
