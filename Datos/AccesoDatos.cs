@@ -28,6 +28,7 @@ namespace Datos
             }
             catch (Exception ex)
             {
+                Console.WriteLine($"error: {ex.Message}");
                 return null;
             }
         }
@@ -45,6 +46,7 @@ namespace Datos
             }
             catch (Exception e)
             {
+                Console.WriteLine($"error: {e.Message}");
                 return null;
             }
         }
