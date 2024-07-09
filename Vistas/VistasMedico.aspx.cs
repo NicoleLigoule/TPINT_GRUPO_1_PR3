@@ -18,5 +18,12 @@ namespace Vistas
 
 
         }
+
+        protected void grdTurnoMedico_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdTurnoMedico.EditIndex = e.NewEditIndex;
+            TurnoAtencion tabla = new TurnoAtencion();
+            grdTurnoMedico.DataSource = tabla.cargartablaTurnos();
+        }
     }
 }
