@@ -19,7 +19,7 @@ namespace Negocio
         public bool AsignarPaciente_Turno(Turno turnos)
         {
             bool cantFila = false;
-            int cantFilas=0;
+            int cantFilas = 0;
             AccesoDatosTurno datos = new AccesoDatosTurno();
 
             cantFilas = datos.AsignarTurno(turnos);
@@ -30,5 +30,12 @@ namespace Negocio
             return cantFila;
         }
 
+        public bool ActualizarTurno(Turno turno)
+        {
+            AccesoDatosTurno datos = new AccesoDatosTurno();
+            return datos.ActualizarTurnoDatos(turno) == 1;
+        }
+
     }
 }
+

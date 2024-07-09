@@ -55,6 +55,30 @@ namespace Datos
             SqlParametros.Value = turno.GetDniPaciente_tu();
 
         }
-    }
 
+        private void ArmarParametrosModificarTurno(ref SqlCommand Comando, Turno turno)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+
+            SqlParametros = Comando.Parameters.Add("@Asistencia", SqlDbType.Bit);
+            SqlParametros.Value = turno.GetAsistencia();
+
+            SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
+            SqlParametros.Value = turno.Getfecha();
+
+            SqlParametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
+            SqlParametros.Value = turno.GetEstado();
+        }
+
+
+        public int ActualizarTurnoDatos(Turno turno)
+        {
+            AccesoDatos ds = new AccesoDatos();
+            SqlCommand cmd = new SqlCommand();
+
+            ArmarParametrosModificarTurno(ref cmd, turno);
+            return ds.EjecutarProcedimientoAlmacenado(cmd, "ACTUALIZAR_ESTADO_TURNO");
+        }
+    }
 }
+
