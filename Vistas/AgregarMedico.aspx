@@ -127,7 +127,7 @@
                                 <asp:TextBox ID="txtCorreoElectronico" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                             <td class="auto-style2">
-                                <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Solo deben ingresarse letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revCorreo" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Caracteres incorrectos" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">*</asp:RegularExpressionValidator>
                                 <br />
                                 <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ControlToValidate="txtCorreoElectronico" ErrorMessage="Campo Obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
                             </td>

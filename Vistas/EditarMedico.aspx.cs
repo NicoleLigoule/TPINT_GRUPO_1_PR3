@@ -119,5 +119,21 @@ namespace Vistas
                 lblMensaje.Text = "No se pudo actualizar el medico";
             }
         }
+
+        //protected void limpiarcampos()
+        //{
+        //    txtDni.Text = "";
+        //    txtNombre.Text = "";
+        //    txtApellido.Text = "";
+        //    ddlProvincia.SelectedIndex = 0;
+        //    ddlLocalidades.SelectedIndex = 0;
+        //    ddlEspecialidad.SelectedIndex = 0;
+        //    ddlSexo.SelectedItem.Text = "";
+        //    txtNacionalidad.Text = "";
+        //    txtFechaNac.Text = "";
+        //    txtDireccion.Text = "";
+        //    txtCorreoElectronico.Text = "";
+        //    txtTelefono.Text = "";
+        //}
     }
 }

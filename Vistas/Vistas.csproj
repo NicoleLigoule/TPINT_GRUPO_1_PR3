@@ -84,7 +84,7 @@
     <Content Include="MenuMedico.aspx" />
     <Content Include="MenuPacientes.aspx" />
     <Content Include="NoAutorizado.aspx" />
-    <Content Include="Paciente.aspx" />
+    <Content Include="AgregarPaciente.aspx" />
     <Content Include="AgregarMedico.aspx" />
     <Content Include="Reportes.aspx" />
     <Content Include="Resources\estilos\Footer.css" />
@@ -222,12 +222,12 @@
     <Compile Include="NoAutorizado.aspx.designer.cs">
       <DependentUpon>NoAutorizado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Paciente.aspx.cs">
-      <DependentUpon>Paciente.aspx</DependentUpon>
+    <Compile Include="AgregarPaciente.aspx.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Paciente.aspx.designer.cs">
-      <DependentUpon>Paciente.aspx</DependentUpon>
+    <Compile Include="AgregarPaciente.aspx.designer.cs">
+      <DependentUpon>AgregarPaciente.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AgregarMedico.aspx.cs">

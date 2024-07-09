@@ -22,7 +22,7 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style7">
-                    <asp:HyperLink ID="hplAgregarPaciente" runat="server" NavigateUrl="~/Paciente.aspx" CssClass="menu-link">Agregar Paciente</asp:HyperLink>
+                    <asp:HyperLink ID="hplAgregarPaciente" runat="server" NavigateUrl="~/AgregarPaciente.aspx" CssClass="menu-link">Agregar Paciente</asp:HyperLink>
                 </td>
             </tr>
             <tr>
