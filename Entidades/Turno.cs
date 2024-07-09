@@ -8,24 +8,28 @@ namespace Entidades
 {
    public class Turno
     {
-        private int _Legajo;
-        private string _fecha;
-        private string _DiaAtencion_ha;
-        private int _Horario;
-        private bool _Asistencia;
-        private string _DniPaciente_tu;
-        private string _Descripcion;
+        public int _Legajo;
+        public string _fecha;
+        public string _DiaAtencion_ha;
+        public int _Horario;
+        public bool _Asistencia;
+        public string _DniPaciente_tu;
+        public string _Descripcion;
+        public bool _Estado_ha;
 
 
-        public Turno(string Legajo, string fecha, string DiaAtencion_ha, string Horario, string Asistencia, string DniPaciente_tu, string Descripcion)
+        public Turno() { }
+
+        public Turno(int legajo, string fecha, string diaAtencion_ha, int horario, bool asistencia, string dniPaciente_tu, string descripcion, bool estado)
         {
+            _Legajo = legajo;
             _fecha = fecha;
-             _Legajo = int.Parse(Legajo);
-            _DiaAtencion_ha = DiaAtencion_ha;
-            _Horario = int.Parse(Horario);
-            SetAsistencia( Asistencia);
-            _DniPaciente_tu = DniPaciente_tu;
-            _Descripcion = Descripcion;
+            _DiaAtencion_ha = diaAtencion_ha;
+            _Horario = horario;
+            _Asistencia = asistencia;
+            _DniPaciente_tu = dniPaciente_tu;
+            _Descripcion = descripcion;
+            _Estado_ha = estado;
         }
         public Turno(int legajo_ha, int Horario)
         {
@@ -114,6 +118,21 @@ namespace Entidades
         public void SetDescripcion(string Descripcion)
         {
             _Descripcion = Descripcion;
+        }
+
+        public bool GetEstado()
+        {
+            return _Estado_ha;
+        }
+
+        public void SetEstado(string Estado)
+        {
+            if (Estado == "1")
+            {
+                _Estado_ha = true;
+            }
+            else { _Estado_ha = false; }
+
         }
 
     }
