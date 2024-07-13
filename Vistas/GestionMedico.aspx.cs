@@ -33,5 +33,19 @@ namespace Vistas
             Session["Editar"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblDni")).Text;
             Session["LegajoMedico"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblLegajo")).Text;
         }
+
+        protected void GridViewMedicos1_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                DateTime fechaNacimiento = Convert.ToDateTime(DataBinder.Eval(e.Row.DataItem, "FechaNacimiento_me"));
+                //e.Row.Cells[7].Text = fechaNacimiento.ToString("dd/MM/yyyy");
+                Label lblFechaNac = e.Row.FindControl("lblFechaNac") as Label;
+                if (lblFechaNac != null)
+                {
+                    lblFechaNac.Text = fechaNacimiento.ToString("dd/MM/yyyy");
+                }
+            }
+        }
     }
 }
