@@ -240,10 +240,15 @@ BEGIN
     IF EXISTS (SELECT 1 FROM Usuario WHERE Legajo_us = @Legajo_us)
     BEGIN
         UPDATE Usuario
-        SET Usuario_us = @NuevoUsuario_us,
-            Contrasenia_us = @NuevaContrasenia_us
+        SET Contrasenia_us = @NuevaContrasenia_us
         WHERE Legajo_us = @Legajo_us;
-        
+
+        IF EXISTS (SELECT 1 FROM Usuario WHERE Legajo_us = @Legajo_us AND Usuario_us != @NuevoUsuario_us)
+        BEGIN
+            UPDATE Usuario
+            SET Usuario_us = @NuevoUsuario_us
+            WHERE Legajo_us = @Legajo_us;
+        END
     END
 END
 GO

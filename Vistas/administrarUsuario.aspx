@@ -122,7 +122,7 @@
                     <td>&nbsp;</td>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:Button ID="btnAsignar" runat="server" Text="Confirmar" />
+                        <asp:Button ID="btnAsignar" runat="server" Text="Confirmar" OnClick="btnAsignar_Click" />
                     </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>

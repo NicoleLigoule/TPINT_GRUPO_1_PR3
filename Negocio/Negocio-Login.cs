@@ -56,18 +56,28 @@ namespace Negocio
 
 
         }
-        public int VerificarNombreUsuario(string nombreUsuario)
+
+        public int VerificarNombreUsuario(string nombreUsuario, int legajo)
         {
             AccesoDatos dp = new AccesoDatos();
             List<Usuario> usuarios = dp.Obtener_Usuarios();
+
             foreach (Usuario usuario in usuarios)
             {
                 if (usuario.getUsuario_usuario().Equals(nombreUsuario, StringComparison.OrdinalIgnoreCase))
                 {
-                    return 1;
+                    if (usuario.getLegajo_usuario() != legajo)
+                    {
+                        return 1; 
+                    }
+                    else
+                    {
+                        return 0;
+                    }
                 }
             }
-            return 0;
+
+            return 0; 
         }
     }
 }
