@@ -264,3 +264,28 @@ BEGIN
     END
 END
 GO
+
+-- SP para reportes:
+
+CREATE OR ALTER PROCEDURE SP_MedicoConMasAtenciones
+AS
+BEGIN
+   IF EXISTS (SELECT 1 FROM Turnos)
+    BEGIN
+        SELECT TOP 1 
+            M.Legajo_me [Legajo del médico],
+            M.Nombre_me [Nombre],
+            M.Apellido_me [Apellido],
+            COUNT(T.Legajo_tu) [Cantidad de atenciones]
+        FROM 
+            Turnos T
+        INNER JOIN 
+            Medico M ON T.Legajo_tu = M.Legajo_me
+        GROUP BY 
+            M.Legajo_me, M.Nombre_me, M.Apellido_me
+        ORDER BY 
+            [Cantidad de atenciones] DESC;
+    END
+END
+GO
+

@@ -423,6 +423,16 @@ VALUES
 (10, 'cfernandez', 'password123', 1, 'Activo'),
 (11, 'amartinez', 'password456', 0, 'Activo');
 
+INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Asistencia_tu, DniPaciente_tu, Descripcion_tu, Estado_ha)
+VALUES 
+(10, '2024-07-01', 'Lunes', 9, 0, '12345678', 'Consulta general', 1),
+(10, '2024-07-08', 'Lunes', 9, 0, '87654321', 'Chequeo de rutina', 1),
+(11, '2024-07-02', 'Martes', 14, 0, '12345678', 'Consulta especializada', 1),
+(11, '2024-07-09', 'Martes', 14, 0, '87654321', 'Consulta de seguimiento', 1),
+(11, '2024-07-10', 'Miércoles', 10, 0, '87654321', 'Consulta de seguimiento', 1);
+GO
+
+
 -- Insertar datos en la tabla HorarioAtencion
 --INSERT INTO HorarioAtencion (Legajo_ha, DiaAtencion_ha, HorarioAtencion)
 --VALUES 
