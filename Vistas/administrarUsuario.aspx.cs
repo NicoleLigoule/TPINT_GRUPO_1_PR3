@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Negocio;
+using Entidades;
 
 namespace Vistas
 {
@@ -34,7 +35,8 @@ namespace Vistas
            
             if(log.VerificarNombreUsuario(txtUsuario.Text, leg) == 0)
             {
-                // /aca tengo q meter la logica para cambiar todo
+                Usuario usuari = new Usuario(leg, txtUsuario.Text, txtRContrasenia.Text);
+                log.ACtualizarUs(usuari);
             }
             ///aca tengo que hacer la logica que informe q el nombre se repite
 

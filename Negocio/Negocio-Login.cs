@@ -79,5 +79,18 @@ namespace Negocio
 
             return 0; 
         }
+        public bool ACtualizarUs(Usuario usuario)
+        {
+            AccesoDatosUsuario datos = new AccesoDatosUsuario();
+            if (datos.ActualizarUsuario(usuario) == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+           
+        }
     }
 }
