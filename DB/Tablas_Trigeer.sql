@@ -106,6 +106,7 @@ CREATE TABLE Usuario
     Administrador_us bit NOT NULL,
     Estado_us varchar(10) NOT NULL CHECK (Estado_us IN ('Activo', 'Inactivo')),
     CONSTRAINT PK_usuario PRIMARY KEY (Legajo_us),
+	CONSTRAINT UQ_Nombre_ UNIQUE (Usuario_us),
     CONSTRAINT FK_usuario_medico FOREIGN KEY (Legajo_us) REFERENCES Medico(Legajo_me),
 
 )

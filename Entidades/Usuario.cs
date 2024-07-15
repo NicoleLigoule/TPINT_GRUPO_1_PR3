@@ -14,6 +14,13 @@ namespace Entidades
         private bool administrador_usuario;
         private string estado_usuario;
 
+        public Usuario(string legajo_us, string usuario_us )
+        {
+            this.legajo_usuario = int.Parse(legajo_us);
+            this.usuario_usuario = usuario_us;
+
+        }
+
         public Usuario(int legajo_us, string usuario_us, string contrasenia_us, bool administrador_us, string estado_usuario)
         {
             this.legajo_usuario = legajo_us;

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using Datos;
+using Entidades;
 
 namespace Negocio
 {
@@ -39,6 +40,34 @@ namespace Negocio
                 }
             }
             return false;
+        }
+        public int obtener_legajo(string nombreUsuario)
+        {
+            AccesoDatos dp = new AccesoDatos();
+            List<Usuario> usuarios = dp.Obtener_Usuarios();
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.getUsuario_usuario().Equals(nombreUsuario, StringComparison.OrdinalIgnoreCase))
+                {
+                    return usuario.getLegajo_usuario();
+                }
+            }
+            return -1;
+
+
+        }
+        public int VerificarNombreUsuario(string nombreUsuario)
+        {
+            AccesoDatos dp = new AccesoDatos();
+            List<Usuario> usuarios = dp.Obtener_Usuarios();
+            foreach (Usuario usuario in usuarios)
+            {
+                if (usuario.getUsuario_usuario().Equals(nombreUsuario, StringComparison.OrdinalIgnoreCase))
+                {
+                    return 1;
+                }
+            }
+            return 0;
         }
     }
 }

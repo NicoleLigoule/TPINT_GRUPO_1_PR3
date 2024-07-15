@@ -94,7 +94,7 @@ namespace Datos
             List<Provincia> provincias = new List<Provincia>();
             string consulta = "SELECT ID_prov,Nombre_prov FROM dbo.Provincia";
 
-           // provincias.Add(new Provincia("0", "--seleccione--"));
+            // provincias.Add(new Provincia("0", "--seleccione--"));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -125,7 +125,7 @@ namespace Datos
             List<Localidad> Localidades = new List<Localidad>();
             string consulta = "SELECT ID_loca,Nombre_loca FROM dbo.Localidad WHERE dbo.Localidad.IDProv_loca=" + ID_prov;
 
-          //  Localidades.Add(new Localidad("0", "--seleccione--"));
+            //  Localidades.Add(new Localidad("0", "--seleccione--"));
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
 
@@ -150,7 +150,7 @@ namespace Datos
             return Localidades;
         }
 
-       
+
 
         public int EjecutarProcedimientoAlmacenado(SqlCommand Comando, String NombreSP)
         {
@@ -179,13 +179,13 @@ namespace Datos
             }
             return estado;
         }
-       
+
         public List<Medico> ObtenerMEdicos_horarios()
         {
             List<Medico> medicos = new List<Medico>();
             string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1";
 
-          //  medicos.Add(new Medico(0, "--seleccione--",""));
+            //  medicos.Add(new Medico(0, "--seleccione--",""));
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -200,7 +200,7 @@ namespace Datos
                     int Legajo = reader.GetInt32(0);
                     string Nombre = reader.GetString(1);
                     string apellido = reader.GetString(2);
-                    Medico prov = new Medico(Legajo, Nombre,apellido);
+                    Medico prov = new Medico(Legajo, Nombre, apellido);
 
                     if (!medicos.Contains(prov))
                     {
@@ -215,7 +215,7 @@ namespace Datos
         public List<Medico> ObtenerMEdicoCargaTunros(int especialida)
         {
             List<Medico> medicos = new List<Medico>();
-            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1 and Especialidad_me="+especialida.ToString();
+            string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1 and Especialidad_me=" + especialida.ToString();
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -244,7 +244,7 @@ namespace Datos
         public List<Turno> ObtenerFecha_cargaTurno(int Legajomed)
         {
             List<Turno> fecha = new List<Turno>();
-            string consulta = "select Fecha_tu,Legajo_tu,DiaAtencion_ha from Turnos where Legajo_tu=" + Legajomed.ToString()+" and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0)";
+            string consulta = "select Fecha_tu,Legajo_tu,DiaAtencion_ha from Turnos where Legajo_tu=" + Legajomed.ToString() + " and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0)";
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -256,14 +256,14 @@ namespace Datos
             {
                 while (reader.Read())
                 {
-                 
+
 
                     DateTime fecha_ = reader.GetDateTime(0);
                     string fechaComoString = fecha_.ToString("yyyy-MM-dd");
                     int Legajo = reader.GetInt32(1);
                     string dia = reader.GetString(2);
-                    dia = dia +" "+ fecha_.ToString("dd-MM");
-                    Turno _fehca = new Turno(fechaComoString, Legajo,dia);
+                    dia = dia + " " + fecha_.ToString("dd-MM");
+                    Turno _fehca = new Turno(fechaComoString, Legajo, dia);
 
                     if (!fecha.Contains(_fehca))
                     {
@@ -274,10 +274,10 @@ namespace Datos
             }
             return fecha;
         }
-        public List<Turno> ObtenerHorarios_cargaTurno(int Legajomed,string fecha_)
+        public List<Turno> ObtenerHorarios_cargaTurno(int Legajomed, string fecha_)
         {
             List<Turno> fecha = new List<Turno>();
-            string consulta = "select Horario_tu, Legajo_tu from Turnos where Legajo_tu="+Legajomed.ToString()+" and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0) AND Fecha_tu='"+fecha_+"' ";
+            string consulta = "select Horario_tu, Legajo_tu from Turnos where Legajo_tu=" + Legajomed.ToString() + " and (DniPaciente_tu IS NULL OR LEN(DniPaciente_tu) = 0) AND Fecha_tu='" + fecha_ + "' ";
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -288,11 +288,11 @@ namespace Datos
             if (reader.HasRows)
             {
                 while (reader.Read())
-                { 
+                {
                     int Legajo = reader.GetInt32(1);
                     int horario = reader.GetInt32(0);
 
-                    Turno _fehca = new Turno( Legajo, horario);
+                    Turno _fehca = new Turno(Legajo, horario);
 
                     if (!fecha.Contains(_fehca))
                     {
@@ -308,7 +308,7 @@ namespace Datos
             List<Paciente> Paciente = new List<Paciente>();
             string consulta = "SELECT DNI_pc,Nombre_pc,Apellido_pc FROM dbo.Paciente where Estado_pc=1";
 
-    
+
 
             AccesoDatos acceso = new AccesoDatos();
             SqlConnection conexion = acceso.ObtenerConexion();
@@ -334,5 +334,37 @@ namespace Datos
             }
             return Paciente;
         }
+
+        public List<Usuario> Obtener_Usuarios()
+        {
+            List<Usuario> Paciente = new List<Usuario>();
+            string consulta = "SELECT Legajo_us, Usuario_us FROM dbo.Usuario ";
+
+
+
+            AccesoDatos acceso = new AccesoDatos();
+            SqlConnection conexion = acceso.ObtenerConexion();
+
+            SqlCommand commandprov = new SqlCommand(consulta, conexion);
+
+            SqlDataReader reader = commandprov.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string Legajo = reader.GetString(0);
+                    string Nombre = reader.GetString(1);
+                    Usuario us = new Usuario(Legajo, Nombre);
+
+                    if (!Paciente.Contains(us))
+                    {
+                        Paciente.Add(us);
+
+                    }
+                }
+            }
+            return Paciente;
+        }
     }
 }
+

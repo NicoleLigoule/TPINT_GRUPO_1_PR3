@@ -230,3 +230,32 @@ BEGIN
     END CATCH
 END;
 GO
+
+CREATE PROCEDURE SP_ActualizarUsuario
+    @Legajo_us INT,
+    @NuevoUsuario_us VARCHAR(50),
+    @NuevaContrasenia_us VARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Legajo_us = @Legajo_us)
+    BEGIN
+        UPDATE Usuario
+        SET Usuario_us = @NuevoUsuario_us,
+            Contrasenia_us = @NuevaContrasenia_us
+        WHERE Legajo_us = @Legajo_us;
+        
+    END
+END
+GO
+CREATE PROCEDURE SP_ObtenerLegajoPorUsuario
+    @Usuario_us VARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Usuario_us = @Usuario_us)
+    BEGIN
+        SELECT Legajo_us
+        FROM Usuario
+        WHERE Usuario_us = @Usuario_us;
+    END
+END
+GO
