@@ -283,11 +283,33 @@ BEGIN
         INNER JOIN 
             Medico M ON T.Legajo_tu = M.Legajo_me
         GROUP BY 
-            M.Legajo_me, M.Nombre_me, M.Apellido_me
+            M.Legajo_me, M.DNI_me, M.Nombre_me, M.Apellido_me
         ORDER BY 
             cant_atenciones DESC;
     END
 END
 GO
 
-exec SP_MedicoConMasAtenciones
+
+CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
+AS
+BEGIN
+    DECLARE @FechaActual DATE = GETDATE();
+
+    SELECT TOP 1 
+        P.DNI_pc,
+        P.Nombre_pc,
+        P.Apellido_pc,
+        COUNT(T.DniPaciente_tu) AS TurnosCancelados
+    FROM 
+        Turnos T
+    INNER JOIN 
+        Paciente P ON T.DniPaciente_tu = P.DNI_pc
+    WHERE 
+        T.Fecha_tu < @FechaActual AND T.Asistencia_tu = 0
+    GROUP BY 
+        P.DNI_pc, P.Nombre_pc, P.Apellido_pc
+    ORDER BY 
+        TurnosCancelados DESC;
+END
+GO
