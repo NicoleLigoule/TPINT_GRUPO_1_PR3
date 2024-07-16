@@ -346,8 +346,6 @@ BEGIN
 		Localidad l
 	INNER JOIN
 		Paciente p ON p.Localidad_pc = l.ID_loca
-	INNER JOIN
-		Turnos t ON t.DniPaciente_tu = p.DNI_pc
 	GROUP BY
 		l.Nombre_loca
 	ORDER BY

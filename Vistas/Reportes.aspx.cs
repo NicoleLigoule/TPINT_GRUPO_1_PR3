@@ -30,6 +30,7 @@ namespace Vistas
             lblMedicoConMasAtenciones.Text = medicoReportes.MedicoConMasAtenciones();
             lblEspecialidadQueMasSeUso.Text = medicoReportes.especialidadQueMasSeUso();
             lblapcienteConMasCancelaciones.Text = pacienteReportes.pacienteConMasCancelaciones();
+            lblLocalidadConMasPacientes.Text = pacienteReportes.pacienteLocalidadConMasPacientes();
         }
     }
 }

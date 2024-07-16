@@ -71,13 +71,27 @@ namespace Negocio
             if (pcReporte != null)
             {
                 respuesta = $"El paciente con más cancelaciones es {pcReporte.getNombrePac()} {pcReporte.getApellidoPac()}" +
-                    $"\nDNI {pcReporte.getDNIPac()}" +
-                    $"\tCantidad de cancelaciones: {pcReporte.getProvPac()}";
+                    $" DNI {pcReporte.getDNIPac()}" +
+                    $" Cantidad de cancelaciones: {pcReporte.getProvPac()}";
             }
 
             return respuesta;
         }
 
+        public String pacienteLocalidadConMasPacientes()
+        {
+            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+
+            Localidad loReporte = dato.SP_PacienteLocalidadConMasPacientes();
+
+            if (loReporte != null)
+            {
+                respuesta = $"La localidad con más pacientes es {loReporte.getNombre_localidad()}" +
+                    $", cantidad de pacientes: {loReporte.getId_localidad()}";
+            }
+
+            return respuesta;
+        }
     }
 }
 

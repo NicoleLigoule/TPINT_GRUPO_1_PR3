@@ -218,5 +218,33 @@ namespace Datos
             return paciente;
         }
 
+        public Localidad SP_PacienteLocalidadConMasPacientes()
+        {
+            Localidad localidad = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_PacienteLocalidadConMasPacientes", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            localidad = new Localidad(
+                                reader["cantidad"].ToString(),
+                                reader["Nombre_loca"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+
+
+            return localidad;
+        }
     }
 }
