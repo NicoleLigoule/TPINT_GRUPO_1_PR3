@@ -267,6 +267,8 @@ GO
 
 -- SP para reportes:
 
+-- Medicos:
+
 CREATE OR ALTER PROCEDURE SP_MedicoConMasAtenciones
 AS
 BEGIN
@@ -290,7 +292,7 @@ BEGIN
 END
 GO
 
-
+-- Pacientes:
 CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
 AS
 BEGIN

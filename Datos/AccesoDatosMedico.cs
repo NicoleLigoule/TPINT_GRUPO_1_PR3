@@ -231,15 +231,6 @@ namespace Datos
          * REPORTES
          */
 
-        //private AccesoDatos ad;
-        //public AccesoDatosMedico()
-        //{
-        //    if(ad == null)
-        //    {
-        //        ad = new AccesoDatos();
-        //    }
-        //}
-
         public Medico SP_medicoConMasAtencionesReportes()
         {
             Medico medico = new Medico();

@@ -185,7 +185,38 @@ namespace Datos
         }
 
 
+        /**
+         * REPORTES
+         */
 
+        public Paciente SP_pacienteConMasCancelacionesReportes()
+        {
+            Paciente paciente = new Paciente();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_PacienteConMasTurnosCancelados", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            paciente.setDniPac(reader["DNI_pc"].ToString());
+                            paciente.setNombrePac(reader["Nombre_pc"].ToString());
+                            paciente.setApePac(reader["Apellido_pc"].ToString());
+                            paciente.setProvinciaPac(Convert.ToInt32(reader["TurnosCancelados"]));// Guarda las cantidad de turnos cancelados.
+                        }
+                    }
+                }
+            }
+
+
+            return paciente;
+        }
 
     }
 }
