@@ -28,6 +28,7 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMedicoConMasAtenciones.Text = medicoReportes.MedicoConMasAtenciones();
+            lblEspecialidadQueMasSeUso.Text = medicoReportes.especialidadQueMasSeUso();
             lblapcienteConMasCancelaciones.Text = pacienteReportes.pacienteConMasCancelaciones();
         }
     }

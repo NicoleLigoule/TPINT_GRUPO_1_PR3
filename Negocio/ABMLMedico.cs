@@ -114,5 +114,21 @@ namespace Negocio
 
             return respuesta;
         }
+
+        public String especialidadQueMasSeUso()
+        {
+            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+
+            Especialidad esReporte = adm.SP_MedicoEspecialidadQueMasSeUso();
+
+            if (esReporte != null)
+            {
+                respuesta = $"La especialidad que más se usó es {esReporte.getNombre_especialidad()}" +
+                    $", cantidad de veces: {esReporte.getId_especialidad()}";
+            }
+
+            return respuesta;
+        }
+
     }
 }

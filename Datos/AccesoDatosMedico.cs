@@ -237,11 +237,10 @@ namespace Datos
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlCommand command = new SqlCommand("SP_MedicoConMasAtenciones     ", connection))
+                using (SqlCommand command = new SqlCommand("SP_MedicoConMasAtenciones", connection))
                 {
                     command.CommandType = CommandType.StoredProcedure;
-                    //command.Parameters.Add(new SqlParameter("@DNI_me", dni));
-
+                    
                     connection.Open();
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -261,6 +260,34 @@ namespace Datos
             return medico;
         }
 
+        public Especialidad SP_MedicoEspecialidadQueMasSeUso()
+        {
+            Especialidad especialidad = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_MedicoEspecialidadQueMasSeUso", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            especialidad = new Especialidad(
+                                Convert.ToInt32(reader["cantidad"]),
+                                reader["Nombre_esp"].ToString()
+                            );
+                        }
+                    }
+                }
+            }
+
+
+            return especialidad;
+        }
     }
 
 }
