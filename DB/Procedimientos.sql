@@ -314,6 +314,22 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER PROCEDURE SP_MedicoMesConMayorConcurrenciaPorEspecialidad
+AS
+BEGIN
+	SELECT
+		e.Nombre_esp, MONTH(t.Fecha_tu) mes
+	FROM
+		Turnos t
+	INNER JOIN
+		Medico m ON t.Legajo_tu = m.Legajo_me
+	INNER JOIN
+		Especialidad e ON m.Especialidad_me = e.ID_esp
+	GROUP BY
+		e.Nombre_esp, MONTH(t.Fecha_tu)
+END
+GO
+
 -- Pacientes:
 CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
 AS
@@ -354,3 +370,4 @@ BEGIN
 		cantidad DESC
 END
 GO
+
