@@ -273,10 +273,11 @@ BEGIN
    IF EXISTS (SELECT 1 FROM Turnos)
     BEGIN
         SELECT TOP 1 
-            M.Legajo_me [Legajo del médico],
-            M.Nombre_me [Nombre],
-            M.Apellido_me [Apellido],
-            COUNT(T.Legajo_tu) [Cantidad de atenciones]
+            M.Legajo_me,
+			M.DNI_me,
+            M.Nombre_me,
+            M.Apellido_me,
+            COUNT(T.Legajo_tu) cant_atenciones
         FROM 
             Turnos T
         INNER JOIN 
@@ -284,8 +285,9 @@ BEGIN
         GROUP BY 
             M.Legajo_me, M.Nombre_me, M.Apellido_me
         ORDER BY 
-            [Cantidad de atenciones] DESC;
+            cant_atenciones DESC;
     END
 END
 GO
 
+exec SP_MedicoConMasAtenciones

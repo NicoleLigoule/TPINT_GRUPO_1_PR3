@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
 using Entidades;
+using System.Net;
 
 namespace Datos
 {
@@ -225,6 +226,49 @@ namespace Datos
             return medico;
         }
 
+
+        /**
+         * REPORTES
+         */
+
+        //private AccesoDatos ad;
+        //public AccesoDatosMedico()
+        //{
+        //    if(ad == null)
+        //    {
+        //        ad = new AccesoDatos();
+        //    }
+        //}
+
+        public Medico SP_medicoConMasAtencionesReportes()
+        {
+            Medico medico = new Medico();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_MedicoConMasAtenciones     ", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    //command.Parameters.Add(new SqlParameter("@DNI_me", dni));
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            medico.setDniMed(reader["DNI_me"].ToString());
+                            medico.setNombreMed(reader["Nombre_me"].ToString());
+                            medico.setApeMed(reader["Apellido_me"].ToString());
+                            medico.setEspecialidadMed(Convert.ToInt32(reader["cant_atenciones"]));// Guarda las cantidad de atenciones.
+                        }
+                    }
+                }
+            }
+
+
+            return medico;
+        }
 
     }
 

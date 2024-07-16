@@ -83,6 +83,36 @@ namespace Negocio
             AccesoDatosMedico datos = new AccesoDatosMedico();
             return datos.ActualizarMedico(medico) == 1;
         }
-    }
 
+
+        /**
+         * REPORTES:
+         */
+
+        private AccesoDatosMedico adm;
+
+        public ABMLMedico()
+        {
+            if ( adm == null )
+            {
+                adm = new AccesoDatosMedico();
+            }
+        }
+
+        public String MedicoConMasAtenciones()
+        {
+            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+
+            Medico mdReporte = adm.SP_medicoConMasAtencionesReportes();
+
+            if( mdReporte != null)
+            {
+                respuesta = $"El médico con más atenciones es {mdReporte.getNombreMed()} {mdReporte.getApellidoMed()}" +
+                    $"\nDNI {mdReporte.getDNIMed()}" +
+                    $"\tCantidad de atenciones: {mdReporte.getEspecialidadMed()}";
+            }
+
+            return respuesta;
+        }
+    }
 }

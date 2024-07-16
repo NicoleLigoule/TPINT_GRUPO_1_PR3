@@ -32,34 +32,13 @@
                     </ul>
                 </div>
                 <div class="col-sm-9">
-                    <div class="row">
-                        <div class="col-8 col-sm-6">
-                            <!-- Aquí se incluiría un gráfico generado dinámicamente -->
-                            <asp:Chart ID="Chart1" runat="server">
-                                <Series>
-                                    <asp:Series Name="Series1" ChartType="Bar">
-                                    </asp:Series>
-                                </Series>
-                                <ChartAreas>
-                                    <asp:ChartArea Name="ChartArea1">
-                                    </asp:ChartArea>
-                                </ChartAreas>
-                            </asp:Chart>
-                        </div>
-                        <div class="col-4 col-sm-6 card">
-                            <p>
-                                En el gráfico anterior se visualizarán los datos correspondientes al reporte seleccionado. Utilice las opciones disponibles para cambiar el tipo de reporte y actualizar la visualización.
-                            </p>
-                            <h4>Por ejemplo:</h4>
+
                             <ul>
-                                <li>Seleccione un tipo de reporte del menú para actualizar el gráfico.</li>
-                                <li>Utilice las herramientas de exportación para descargar los reportes en formato PDF o Excel.</li>
-                                <li>Los reportes se actualizan automáticamente con los datos más recientes de nuestra base de datos.</li>
+                                <li><asp:Label ID="lblMedicoConMasAtenciones" BackColor="White" runat="server"></asp:Label></li>
                             </ul>
-                            <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
+                            
                         </div>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </form>
