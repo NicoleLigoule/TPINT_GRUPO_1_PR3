@@ -292,6 +292,27 @@ BEGIN
 END
 GO
 
+
+CREATE OR ALTER PROCEDURE SP_MedicoEspecialidadQueMasSeUso
+AS
+BEGIN
+	SELECT TOP 1
+		e.Nombre_esp,
+		COUNT(e.Nombre_esp) AS cantidad
+	FROM
+		Especialidad e
+	INNER JOIN
+		Medico m ON m.Especialidad_me = e.ID_esp
+	INNER JOIN
+		Turnos t ON t.Legajo_tu = m.Legajo_me
+	GROUP BY
+		e.Nombre_esp
+	ORDER BY
+		cantidad DESC;
+END
+GO
+
+
 -- Pacientes:
 CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
 AS
@@ -315,3 +336,4 @@ BEGIN
         TurnosCancelados DESC;
 END
 GO
+
