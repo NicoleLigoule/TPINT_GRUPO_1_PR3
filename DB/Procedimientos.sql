@@ -312,7 +312,6 @@ BEGIN
 END
 GO
 
-
 -- Pacientes:
 CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
 AS
@@ -337,3 +336,21 @@ BEGIN
 END
 GO
 
+CREATE OR ALTER PROCEDURE SP_PacienteLocalidadConMasPacientes
+AS
+BEGIN
+	SELECT TOP 1
+		l.Nombre_loca,
+		COUNT(l.ID_loca) cantidad
+	FROM
+		Localidad l
+	INNER JOIN
+		Paciente p ON p.Localidad_pc = l.ID_loca
+	INNER JOIN
+		Turnos t ON t.DniPaciente_tu = p.DNI_pc
+	GROUP BY
+		l.Nombre_loca
+	ORDER BY
+		cantidad DESC
+END
+GO
