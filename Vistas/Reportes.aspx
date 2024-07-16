@@ -37,6 +37,10 @@
                         <li><asp:Label ID="lblEspecialidadQueMasSeUso" BackColor="White" runat="server"></asp:Label></li>
                         <li><asp:Label ID="lblapcienteConMasCancelaciones" BackColor="White" runat="server"></asp:Label></li>
                         <li><asp:Label ID="lblLocalidadConMasPacientes" BackColor="White" runat="server"></asp:Label></li>
+                        <li><asp:Label ID="lblEspecialidadMes" BackColor="White" runat="server"></asp:Label>
+                            <br />
+                            <asp:Label ID="lblEspecialidadMesdata" BackColor="White" runat="server"></asp:Label>
+                            </li>
                     </ul>
                 </div>               
             </div>

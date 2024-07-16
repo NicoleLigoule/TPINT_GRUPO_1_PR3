@@ -288,6 +288,35 @@ namespace Datos
 
             return especialidad;
         }
-    }
 
+        public List<Especialidad> SP_MedicoMesConMayorConcurrenciaPorEspecialidad()
+        {
+            
+            List<Especialidad> especialidadList = new List<Especialidad>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_MedicoMesConMayorConcurrenciaPorEspecialidad", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            especialidadList.Add(new Especialidad(
+                                Convert.ToInt32(reader["mes"]),
+                                reader["Nombre_esp"].ToString()
+                            ));
+                        }
+                    }
+                }
+            }
+
+
+            return especialidadList;
+        }
+    }
 }

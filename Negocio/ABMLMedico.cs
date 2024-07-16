@@ -130,5 +130,27 @@ namespace Negocio
             return respuesta;
         }
 
+        public String mesConMayorConcurrenciaPorEspecialidad()
+        {
+            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+
+            List<Especialidad> especialidadList = adm.SP_MedicoMesConMayorConcurrenciaPorEspecialidad();
+            int tamList = especialidadList.Count();
+
+            if (especialidadList != null && tamList > 0) {
+
+                respuesta = "";
+
+                especialidadList.ForEach(e => {
+                    respuesta += $"{e.getNombre_especialidad()}" +
+                                    $", Mes: {e.getId_especialidad()}";
+                    respuesta += "\n";
+                });
+
+                
+            }
+
+            return respuesta;
+        }
     }
 }
