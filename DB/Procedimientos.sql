@@ -13,7 +13,7 @@ AS
 	END
 Go
 
-CREATE PROCEDURE INSERTAR_PACIENTE
+CREATE OR ALTER PROCEDURE INSERTAR_PACIENTE
     @DNI_pc VARCHAR(10),
     @Nombre_pc VARCHAR(50),
     @Apellido_pc VARCHAR(50),
@@ -37,7 +37,7 @@ END
 GO
 
 go
-CREATE PROCEDURE SP_INSERTAR_Medico
+CREATE OR ALTER PROCEDURE SP_INSERTAR_Medico
     @DNI_me VARCHAR(10),
     @Nombre_me VARCHAR(50),
     @Apellido_me VARCHAR(50),
@@ -89,7 +89,7 @@ BEGIN
 END
 GO
 
-CREATE  PROCEDURE SP_Alta_Medica
+CREATE OR ALTER PROCEDURE SP_Alta_Medica
     @Legajo int
 AS
 BEGIN
@@ -112,7 +112,7 @@ END
 GO
 
 
-CREATE PROCEDURE SP_ELIMINAR_PACIENTE
+CREATE OR ALTER PROCEDURE SP_ELIMINAR_PACIENTE
     @DNI_pc VARCHAR(10)
 AS
 BEGIN
@@ -123,7 +123,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_Actualizar_Medico
+CREATE OR ALTER PROCEDURE SP_Actualizar_Medico
     @Legajo_me int,
     @DNI_me varchar(10),
     @Nombre_me varchar(50),
@@ -184,7 +184,7 @@ BEGIN
 END
 go
 
-CREATE PROCEDURE TraerMedicoSegunDNI
+CREATE OR ALTER PROCEDURE TraerMedicoSegunDNI
     @DNI_me VARCHAR(10)
 AS
 BEGIN
@@ -208,7 +208,9 @@ BEGIN
     WHERE 
         M.DNI_me = @DNI_me;
 END
-CREATE PROCEDURE sp_ActualizarTurnoDniPaciente
+GO
+
+CREATE OR ALTER PROCEDURE sp_ActualizarTurnoDniPaciente
     @Legajo_tu INT,
     @Fecha_tu DATE,
     @Horario_tu INT,
@@ -231,7 +233,7 @@ BEGIN
 END;
 GO
 
-CREATE PROCEDURE SP_ActualizarUsuario
+CREATE OR ALTER PROCEDURE SP_ActualizarUsuario
     @Legajo_us INT,
     @NuevoUsuario_us VARCHAR(50),
     @NuevaContrasenia_us VARCHAR(50)
@@ -252,7 +254,7 @@ BEGIN
     END
 END
 GO
-CREATE PROCEDURE SP_ObtenerLegajoPorUsuario
+CREATE OR ALTER PROCEDURE SP_ObtenerLegajoPorUsuario
     @Usuario_us VARCHAR(50)
 AS
 BEGIN
