@@ -11,10 +11,10 @@ namespace Negocio
 {
     public class TurnoAtencion
     {
-        public DataTable cargartablaTurnos()
+        public DataTable cargartablaTurnos(int legajo)
         {
             AccesoDatosTurno datos = new AccesoDatosTurno();
-            return datos.Todos_Los_Turnos();
+            return datos.Todos_Los_Turnos(legajo.ToString());
         }
         public bool AsignarPaciente_Turno(Turno turnos)
         {

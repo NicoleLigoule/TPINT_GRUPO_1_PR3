@@ -111,6 +111,8 @@ CREATE TABLE Usuario
 
 )
 GO
+USE BDClinica
+GO
 create or alter trigger TR_carga_turnos
 on HorarioAtencion 
 after insert

@@ -154,6 +154,7 @@ CREATE TABLE Usuario
 )
 GO
 
+SELECT * FROM TURNOS WHERE Legajo_tu = 10 and Estado_ha = 1 and (DniPaciente_tu IS NOT NULL OR LEN(DniPaciente_tu) != 0)
 
 CREATE OR ALTER PROCEDURE SP_INSERTAR_HORARIO
     @Legajo_med INT,
@@ -352,7 +353,7 @@ BEGIN
 END
 go
 
-CREATE PROCEDURE TraerMedicoSegunDNI
+CREATE OR ALTER PROCEDURE TraerMedicoSegunDNI
     @DNI_me VARCHAR(10)
 AS
 BEGIN
@@ -432,7 +433,7 @@ VALUES
 (11, '2024-07-10', 'Miércoles', 10, 0, '87654321', 'Consulta de seguimiento', 1);
 GO
 
-
+SELECT * FROM Turnos
 -- Insertar datos en la tabla HorarioAtencion
 --INSERT INTO HorarioAtencion (Legajo_ha, DiaAtencion_ha, HorarioAtencion)
 --VALUES 

@@ -22,10 +22,10 @@ namespace Datos
 
         //}
 
-        public DataTable Todos_Los_Turnos()
+        public DataTable Todos_Los_Turnos(string leg)
         {
             AccesoDatos Datos = new AccesoDatos();
-            return Datos.getSimpleTable("Turnos");
+            return Datos.getSimpleTable("Turnos wHERE Legajo_tu ="+leg+ " and Estado_ha = 1 and (DniPaciente_tu IS NOT NULL OR LEN(DniPaciente_tu) != 0)");
         }
 
 

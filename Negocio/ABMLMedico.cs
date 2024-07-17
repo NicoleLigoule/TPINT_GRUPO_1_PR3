@@ -30,15 +30,16 @@ namespace Negocio
         }
         public bool agregarHorarioMedico(HorarioAtencion horario)
         {
-            int cantFilas = 0;
+            
             AccesoDatosMedico datos = new AccesoDatosMedico();
 
-            //if (!datos.existeMedico(medico))
-            //{
-            cantFilas = datos.agregarHorario(horario);
-            // }
+            bool estado = false;
+            if (datos.agregarHorario(horario) > 0)
+            {
+                estado = true;
+            }
 
-            return cantFilas == 1;
+            return estado;
         }
 
         public bool AltaMedico(int legajo)

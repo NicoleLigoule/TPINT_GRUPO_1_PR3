@@ -142,7 +142,7 @@ namespace Datos
             AccesoDatos ds = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
             ParametrosHorarioMed(ref comando, horario);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_INSERTAR_Horario_Atencion");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_INSERTAR_HORARIO");
         }
         private void ParametrosHorarioMed(ref SqlCommand Comando, HorarioAtencion horario)
         {

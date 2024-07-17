@@ -352,9 +352,9 @@ namespace Datos
             {
                 while (reader.Read())
                 {
-                    string Legajo = reader.GetString(0);
+                    int Legajo = reader.GetInt32(0);
                     string Nombre = reader.GetString(1);
-                    Usuario us = new Usuario(Legajo, Nombre);
+                    Usuario us = new Usuario(Legajo.ToString(), Nombre);
 
                     if (!Paciente.Contains(us))
                     {

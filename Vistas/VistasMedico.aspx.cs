@@ -11,14 +11,22 @@ namespace Vistas
         {
             if (!IsPostBack)
             {
-                UpdateGridView(); // 
+                UpdateGridView();  
             }
         }
 
         private void UpdateGridView()
         {
+            Negocio.Login log = new Negocio.Login();
+            string usuario;
+            int leg = 0;
+            if (Session["nombreUsuario"] != null)
+            {
+                usuario = Session["nombreUsuario"].ToString();
+                leg = log.obtener_legajo(usuario);
+            }
             TurnoAtencion tabla = new TurnoAtencion();
-            grdTurnoMedico.DataSource = tabla.cargartablaTurnos();
+            grdTurnoMedico.DataSource = tabla.cargartablaTurnos(leg);
             grdTurnoMedico.DataBind();
         }
 
@@ -38,7 +46,7 @@ namespace Vistas
         {
             GridViewRow row = grdTurnoMedico.Rows[e.RowIndex];
 
-            // valores de edit
+            // valores de editar
             int legajo = Convert.ToInt32(((Label)row.FindControl("lblLegajo1")).Text);
             string fecha = ((Label)row.FindControl("lblFecha")).Text;
             string diaAtencion = ((Label)row.FindControl("lblDiaTurno")).Text;

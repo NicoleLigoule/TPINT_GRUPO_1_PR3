@@ -51,7 +51,7 @@ namespace Vistas
             }
             else
             {
-                lblMensaje.Text = " No se pudo agregar";
+                lblMensaje.Text = "No se pudo agregar";
             }
             limpiarcapos();
 
