@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    internal class Reportes
+    public class Reportes
     {
         private AccesoDatosMedico accesoDatosMedico;
         private AccesoDatosPacientes accesoDatosPacientes;

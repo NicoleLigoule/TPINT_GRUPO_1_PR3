@@ -10,30 +10,25 @@ namespace Vistas
 {
     public partial class Reportes : System.Web.UI.Page
     {
-        private ABMLMedico medicoReportes;
-        private ABMLPaciente pacienteReportes;
+        private Negocio.Reportes reportes;
 
         public Reportes()
         {
-            if (medicoReportes == null)
+            if (reportes == null)
             {
-                medicoReportes = new ABMLMedico();
-            }
-            if (pacienteReportes == null)
-            {
-                pacienteReportes = new ABMLPaciente();
+                reportes = new Negocio.Reportes();
             }
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblMedicoConMasAtenciones.Text = medicoReportes.MedicoConMasAtenciones();
-            lblEspecialidadQueMasSeUso.Text = medicoReportes.especialidadQueMasSeUso();
-            lblapcienteConMasCancelaciones.Text = pacienteReportes.pacienteConMasCancelaciones();
-            lblLocalidadConMasPacientes.Text = pacienteReportes.pacienteLocalidadConMasPacientes();
+            lblMedicoConMasAtenciones.Text = reportes.MedicoConMasAtenciones();
+            lblEspecialidadQueMasSeUso.Text = reportes.especialidadQueMasSeUso();
+            lblapcienteConMasCancelaciones.Text = reportes.pacienteConMasCancelaciones();
+            lblLocalidadConMasPacientes.Text = reportes.pacienteLocalidadConMasPacientes();
 
             lblEspecialidadMes.Text = "Especialidades con mayor concurrencia por mes:";
-            lblEspecialidadMesdata.Text = medicoReportes.mesConMayorConcurrenciaPorEspecialidad();
+            lblEspecialidadMesdata.Text = reportes.mesConMayorConcurrenciaPorEspecialidad();
         }
     }
 }
