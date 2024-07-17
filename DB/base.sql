@@ -154,7 +154,6 @@ CREATE TABLE Usuario
 )
 GO
 
-SELECT * FROM TURNOS WHERE Legajo_tu = 10 and Estado_ha = 1 and (DniPaciente_tu IS NOT NULL OR LEN(DniPaciente_tu) != 0)
 
 CREATE OR ALTER PROCEDURE SP_INSERTAR_HORARIO
     @Legajo_med INT,

@@ -370,4 +370,15 @@ BEGIN
 		cantidad DESC
 END
 GO
-
+CREATE OR ALTER PROCEDURE ACTUALIZAR_ESTADO_TURNO
+    @Asistencia bit,
+    @Fecha date,
+    @Estado bit
+AS
+BEGIN
+    UPDATE Turnos
+    SET
+        Asistencia_tu = @Asistencia,
+        Estado_ha = @Estado
+    WHERE Fecha_tu = @Fecha;
+END
