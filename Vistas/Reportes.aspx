@@ -41,6 +41,9 @@
                             <br />
                             <asp:Label ID="lblEspecialidadMesdata" BackColor="White" runat="server"></asp:Label>
                             </li>
+                        <li>
+                            <asp:HyperLink ID="hplMenuAdmin" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
+                            </li>
                     </ul>
                 </div>               
             </div>

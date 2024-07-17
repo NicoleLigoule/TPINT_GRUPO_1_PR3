@@ -95,52 +95,7 @@ CREATE TABLE Turnos
 	CONSTRAINT UQ_Turno UNIQUE(Legajo_tu,Fecha_tu,Horario_tu)
 )
 GO
-create or alter trigger TR_carga_turnos
-on HorarioAtencion 
-after insert
-AS
-BEGIN
-    DECLARE @Legajo_ha INT;
-    DECLARE @DiaAtencion_ha VARCHAR(20);
-    DECLARE @HorarioAtencion INT;
-    DECLARE @FechaActual DATE;
-    DECLARE @DiaSemana INT;
 
-    SELECT @Legajo_ha = Legajo_ha, 
-           @DiaAtencion_ha = DiaAtencion_ha, 
-           @HorarioAtencion = HorarioAtencion
-    FROM inserted;
-
-
-    SET @DiaSemana = CASE 
-                        WHEN @DiaAtencion_ha = 'Lunes' THEN 1
-                        WHEN @DiaAtencion_ha = 'Martes' THEN 2
-                        WHEN @DiaAtencion_ha = 'Miércoles' THEN 3
-                        WHEN @DiaAtencion_ha = 'Jueves' THEN 4
-                        WHEN @DiaAtencion_ha = 'Viernes' THEN 5
-                        WHEN @DiaAtencion_ha = 'Sábado' THEN 6
-                        
-                     END;
-
-
-    SET @FechaActual = GETDATE();
-
-    SET @FechaActual = DATEADD(DAY, (@DiaSemana - DATEPART(WEEKDAY, @FechaActual) + 7) % 7, @FechaActual);
-
-    DECLARE @i INT = 0;
-    WHILE @i < 10
-    BEGIN
-        INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Estado_ha)
-        VALUES (@Legajo_ha, @FechaActual, @DiaAtencion_ha, @HorarioAtencion, 1);
-
-
-        SET @FechaActual = DATEADD(WEEK, 1, @FechaActual);
-        SET @i = @i + 1;
-		select * from inserted
-    END;
-END
-
-go
 CREATE TABLE Usuario
 (
     Legajo_us int NOT NULL,
@@ -154,25 +109,75 @@ CREATE TABLE Usuario
 )
 GO
 
+-- FIN DE CREACION DE TABLAS
+
+INSERT INTO Provincia (Nombre_prov)
+VALUES 
+('Buenos Aires'),
+('Córdoba'),
+('Santa Fe');
+
+-- Insertar datos en la tabla Localidad
+INSERT INTO Localidad (IDProv_loca, Nombre_loca)
+VALUES 
+(1, 'La Plata'),
+(1, 'Mar del Plata'),
+(2, 'Córdoba'),
+(2, 'Villa Carlos Paz'),
+(3, 'Rosario'),
+(3, 'Santa Fe');
+
+-- Insertar datos en la tabla Especialidad
+INSERT INTO Especialidad (Nombre_esp)
+VALUES 
+('Cardiología'),
+('Pediatría'),
+('Neurología'),
+('Dermatología');
+
+
+-- Insertar datos en la tabla Paciente
+INSERT INTO Paciente (DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Localidad_pc, CorreoElectronico_pc, Telefono_pc)
+VALUES 
+('12345678', 'Juan', 'Pérez', 'Masculino', 'Argentino', '1980-01-15', 'Calle Falsa 123', 1, 'juan.perez@example.com', '1234567890'),
+('87654321', 'María', 'García', 'Femenino', 'Argentino', '1990-05-20', 'Av. Siempre Viva 456', 3,  'maria.garcia@example.com', '0987654321');
+
+-- Insertar datos en la tabla Medico
+INSERT INTO Medico (DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me, FechaNacimiento_me, Direccion_me, Localidad_me, CorreoElectronico_me, Telefono_me, Especialidad_me)
+VALUES 
+('11223344', 'Carlos', 'Fernández', 'Masculino', 'Argentino', '1975-08-30', 'Calle Salud 789', 2,  'carlos.fernandez@example.com', '1122334455', 1),
+('55667788', 'Ana', 'Martínez', 'Femenino', 'Argentino', '1985-02-15', 'Av. Bienestar 101', 4,  'ana.martinez@example.com', '5566778899', 2);
+
+INSERT INTO Usuario (Legajo_us, Usuario_us, Contrasenia_us, Administrador_us, Estado_us)
+VALUES 
+(10, 'cfernandez', 'password123', 1, 'Activo'),
+(11, 'amartinez', 'password456', 0, 'Activo');
+
+INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Asistencia_tu, DniPaciente_tu, Descripcion_tu, Estado_ha)
+VALUES 
+(10, '2024-07-01', 'Lunes', 9, 0, '12345678', 'Consulta general', 1),
+(10, '2024-07-08', 'Lunes', 9, 0, '87654321', 'Chequeo de rutina', 1),
+(11, '2024-07-02', 'Martes', 14, 0, '12345678', 'Consulta especializada', 1),
+(11, '2024-07-09', 'Martes', 14, 0, '87654321', 'Consulta de seguimiento', 1),
+(11, '2024-07-10', 'Miércoles', 10, 0, '87654321', 'Consulta de seguimiento', 1);
+GO
+
+--FIN DE LAS INSERCIONES
 
 CREATE OR ALTER PROCEDURE SP_INSERTAR_HORARIO
     @Legajo_med INT,
     @DiaAtencion_ha varchar(20),
 	@HorarioAtencion INT
 AS
---BEGIN
---    IF EXISTS (SELECT 1 FROM Medico WHERE Legajo_me = @Legajo_med and Estado_me=1)
+
     BEGIN
 	   INSERT INTO HorarioAtencion(Legajo_ha,DiaAtencion_ha,HorarioAtencion)
     VALUES  (@Legajo_med,@DiaAtencion_ha,@HorarioAtencion);
 
-    --END
-    --     RAISERROR ('El Medico proporcionado NO existe O esta dado de Baja.', 16, 1);
-    --    RETURN;
 	END
 Go
 
-CREATE PROCEDURE INSERTAR_PACIENTE
+CREATE OR ALTER PROCEDURE INSERTAR_PACIENTE
     @DNI_pc VARCHAR(10),
     @Nombre_pc VARCHAR(50),
     @Apellido_pc VARCHAR(50),
@@ -196,7 +201,7 @@ END
 GO
 
 go
-CREATE PROCEDURE SP_INSERTAR_Medico
+CREATE OR ALTER PROCEDURE SP_INSERTAR_Medico
     @DNI_me VARCHAR(10),
     @Nombre_me VARCHAR(50),
     @Apellido_me VARCHAR(50),
@@ -220,7 +225,7 @@ BEGIN
 END
 Go
 
-CREATE OR ALTER PROCEDURE SP_ACTUALIZAR_PACIENTE
+CREATE or ALTER PROCEDURE ACTUALIZAR_PACIENTE
     @DNI_pc VARCHAR(50),
     @Nombre_pc VARCHAR(50),
     @Apellido_pc VARCHAR(50),
@@ -233,15 +238,6 @@ CREATE OR ALTER PROCEDURE SP_ACTUALIZAR_PACIENTE
     @Telefono_pc VARCHAR(50)
 AS
 BEGIN
- -- Verificar si la localidad existe antes de actualizar
-    IF NOT EXISTS (SELECT 1 FROM Localidad WHERE ID_loca = @Localidad_pc)
-    BEGIN
-        PRINT 'Localidades existentes:'
-        SELECT * FROM Localidad
-        RAISERROR ('La localidad especificada no existe.', 16, 1);
-        RETURN;
-    END
-
     UPDATE Paciente
     SET 
         Nombre_pc = @Nombre_pc,
@@ -257,7 +253,7 @@ BEGIN
 END
 GO
 
-CREATE  PROCEDURE SP_Alta_Medica
+CREATE OR ALTER PROCEDURE SP_Alta_Medica
     @Legajo int
 AS
 BEGIN
@@ -280,7 +276,7 @@ END
 GO
 
 
-CREATE PROCEDURE SP_ELIMINAR_PACIENTE
+CREATE OR ALTER PROCEDURE SP_ELIMINAR_PACIENTE
     @DNI_pc VARCHAR(10)
 AS
 BEGIN
@@ -291,7 +287,7 @@ BEGIN
 END
 GO
 
-CREATE PROCEDURE SP_Actualizar_Medico
+CREATE OR ALTER PROCEDURE SP_Actualizar_Medico
     @Legajo_me int,
     @DNI_me varchar(10),
     @Nombre_me varchar(50),
@@ -376,61 +372,337 @@ BEGIN
     WHERE 
         M.DNI_me = @DNI_me;
 END
+GO
+
+CREATE OR ALTER PROCEDURE sp_ActualizarTurnoDniPaciente
+    @Legajo_tu INT,
+    @Fecha_tu DATE,
+    @Horario_tu INT,
+    @DniPaciente_tu VARCHAR(10)
+AS
+BEGIN
+    BEGIN TRANSACTION;
+    BEGIN TRY
+        UPDATE Turnos
+        SET DniPaciente_tu = @DniPaciente_tu
+        WHERE Legajo_tu = @Legajo_tu AND Fecha_tu = @Fecha_tu AND Horario_tu = @Horario_tu;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+
+        THROW;
+    END CATCH
+END;
+GO
+
+CREATE OR ALTER PROCEDURE SP_ActualizarUsuario
+    @Legajo_us INT,
+    @NuevoUsuario_us VARCHAR(50),
+    @NuevaContrasenia_us VARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Legajo_us = @Legajo_us)
+    BEGIN
+        UPDATE Usuario
+        SET Contrasenia_us = @NuevaContrasenia_us
+        WHERE Legajo_us = @Legajo_us;
+
+        IF EXISTS (SELECT 1 FROM Usuario WHERE Legajo_us = @Legajo_us AND Usuario_us != @NuevoUsuario_us)
+        BEGIN
+            UPDATE Usuario
+            SET Usuario_us = @NuevoUsuario_us
+            WHERE Legajo_us = @Legajo_us;
+        END
+    END
+END
+GO
+CREATE OR ALTER PROCEDURE SP_ObtenerLegajoPorUsuario
+    @Usuario_us VARCHAR(50)
+AS
+BEGIN
+    IF EXISTS (SELECT 1 FROM Usuario WHERE Usuario_us = @Usuario_us)
+    BEGIN
+        SELECT Legajo_us
+        FROM Usuario
+        WHERE Usuario_us = @Usuario_us;
+    END
+END
+GO
+
+-- SP para reportes:
+
+-- Medicos:
+
+CREATE OR ALTER PROCEDURE SP_MedicoConMasAtenciones
+AS
+BEGIN
+   IF EXISTS (SELECT 1 FROM Turnos)
+    BEGIN
+        SELECT TOP 1 
+            M.Legajo_me,
+			M.DNI_me,
+            M.Nombre_me,
+            M.Apellido_me,
+            COUNT(T.Legajo_tu) cant_atenciones
+        FROM 
+            Turnos T
+        INNER JOIN 
+            Medico M ON T.Legajo_tu = M.Legajo_me
+        GROUP BY 
+            M.Legajo_me, M.DNI_me, M.Nombre_me, M.Apellido_me
+        ORDER BY 
+            cant_atenciones DESC;
+    END
+END
+GO
+
+
+CREATE OR ALTER PROCEDURE SP_MedicoEspecialidadQueMasSeUso
+AS
+BEGIN
+	SELECT TOP 1
+		e.Nombre_esp,
+		COUNT(e.Nombre_esp) AS cantidad
+	FROM
+		Especialidad e
+	INNER JOIN
+		Medico m ON m.Especialidad_me = e.ID_esp
+	INNER JOIN
+		Turnos t ON t.Legajo_tu = m.Legajo_me
+	GROUP BY
+		e.Nombre_esp
+	ORDER BY
+		cantidad DESC;
+END
+GO
+
+CREATE OR ALTER PROCEDURE SP_MedicoMesConMayorConcurrenciaPorEspecialidad
+AS
+BEGIN
+	SELECT
+		e.Nombre_esp, MONTH(t.Fecha_tu) mes
+	FROM
+		Turnos t
+	INNER JOIN
+		Medico m ON t.Legajo_tu = m.Legajo_me
+	INNER JOIN
+		Especialidad e ON m.Especialidad_me = e.ID_esp
+	GROUP BY
+		e.Nombre_esp, MONTH(t.Fecha_tu)
+END
+GO
+
+-- Pacientes:
+CREATE OR ALTER PROCEDURE SP_PacienteConMasTurnosCancelados
+AS
+BEGIN
+    DECLARE @FechaActual DATE = GETDATE();
+
+    SELECT TOP 1 
+        P.DNI_pc,
+        P.Nombre_pc,
+        P.Apellido_pc,
+        COUNT(T.DniPaciente_tu) AS TurnosCancelados
+    FROM 
+        Turnos T
+    INNER JOIN 
+        Paciente P ON T.DniPaciente_tu = P.DNI_pc
+    WHERE 
+        T.Fecha_tu < @FechaActual AND T.Asistencia_tu = 0
+    GROUP BY 
+        P.DNI_pc, P.Nombre_pc, P.Apellido_pc
+    ORDER BY 
+        TurnosCancelados DESC;
+END
+GO
+
+CREATE OR ALTER PROCEDURE SP_PacienteLocalidadConMasPacientes
+AS
+BEGIN
+	SELECT TOP 1
+		l.Nombre_loca,
+		COUNT(l.ID_loca) cantidad
+	FROM
+		Localidad l
+	INNER JOIN
+		Paciente p ON p.Localidad_pc = l.ID_loca
+	GROUP BY
+		l.Nombre_loca
+	ORDER BY
+		cantidad DESC
+END
+GO
+CREATE OR ALTER PROCEDURE ACTUALIZAR_ESTADO_TURNO
+    @Asistencia bit,
+    @Fecha date,
+    @Estado bit
+AS
+BEGIN
+    UPDATE Turnos
+    SET
+        Asistencia_tu = @Asistencia,
+        Estado_ha = @Estado
+    WHERE Fecha_tu = @Fecha;
+END
+
 -- FIN SPs
 
+create or alter trigger TR_carga_turnos
+on HorarioAtencion 
+after insert
+AS
+BEGIN
+    DECLARE @Legajo_ha INT;
+    DECLARE @DiaAtencion_ha VARCHAR(20);
+    DECLARE @HorarioAtencion INT;
+    DECLARE @FechaActual DATE;
+    DECLARE @DiaSemana INT;
+
+    SELECT @Legajo_ha = Legajo_ha, 
+           @DiaAtencion_ha = DiaAtencion_ha, 
+           @HorarioAtencion = HorarioAtencion
+    FROM inserted;
 
 
-
-INSERT INTO Provincia (Nombre_prov)
-VALUES 
-('Buenos Aires'),
-('Córdoba'),
-('Santa Fe');
-
--- Insertar datos en la tabla Localidad
-INSERT INTO Localidad (IDProv_loca, Nombre_loca)
-VALUES 
-(1, 'La Plata'),
-(1, 'Mar del Plata'),
-(2, 'Córdoba'),
-(2, 'Villa Carlos Paz'),
-(3, 'Rosario'),
-(3, 'Santa Fe');
-
--- Insertar datos en la tabla Especialidad
-INSERT INTO Especialidad (Nombre_esp)
-VALUES 
-('Cardiología'),
-('Pediatría'),
-('Neurología'),
-('Dermatología');
+    SET @DiaSemana = CASE 
+                        WHEN @DiaAtencion_ha = 'Lunes' THEN 1
+                        WHEN @DiaAtencion_ha = 'Martes' THEN 2
+                        WHEN @DiaAtencion_ha = 'Miércoles' THEN 3
+                        WHEN @DiaAtencion_ha = 'Jueves' THEN 4
+                        WHEN @DiaAtencion_ha = 'Viernes' THEN 5
+                        WHEN @DiaAtencion_ha = 'Sábado' THEN 6
+                        
+                     END;
 
 
--- Insertar datos en la tabla Paciente
-INSERT INTO Paciente (DNI_pc, Nombre_pc, Apellido_pc, Sexo_pc, Nacionalidad_pc, FechaNacimiento_pc, Direccion_pc, Localidad_pc, CorreoElectronico_pc, Telefono_pc)
-VALUES 
-('12345678', 'Juan', 'Pérez', 'Masculino', 'Argentino', '1980-01-15', 'Calle Falsa 123', 1, 'juan.perez@example.com', '1234567890'),
-('87654321', 'María', 'García', 'Femenino', 'Argentino', '1990-05-20', 'Av. Siempre Viva 456', 3,  'maria.garcia@example.com', '0987654321');
+    SET @FechaActual = GETDATE();
 
--- Insertar datos en la tabla Medico
-INSERT INTO Medico (DNI_me, Nombre_me, Apellido_me, Sexo_me, Nacionalidad_me, FechaNacimiento_me, Direccion_me, Localidad_me, CorreoElectronico_me, Telefono_me, Especialidad_me)
-VALUES 
-('11223344', 'Carlos', 'Fernández', 'Masculino', 'Argentino', '1975-08-30', 'Calle Salud 789', 2,  'carlos.fernandez@example.com', '1122334455', 1),
-('55667788', 'Ana', 'Martínez', 'Femenino', 'Argentino', '1985-02-15', 'Av. Bienestar 101', 4,  'ana.martinez@example.com', '5566778899', 2);
+    SET @FechaActual = DATEADD(DAY, (@DiaSemana - DATEPART(WEEKDAY, @FechaActual) + 7) % 7, @FechaActual);
 
-INSERT INTO Usuario (Legajo_us, Usuario_us, Contrasenia_us, Administrador_us, Estado_us)
-VALUES 
-(10, 'cfernandez', 'password123', 1, 'Activo'),
-(11, 'amartinez', 'password456', 0, 'Activo');
+    DECLARE @i INT = 0;
+    WHILE @i < 10
+    BEGIN
+        INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Estado_ha)
+        VALUES (@Legajo_ha, @FechaActual, @DiaAtencion_ha, @HorarioAtencion, 1);
 
-INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Asistencia_tu, DniPaciente_tu, Descripcion_tu, Estado_ha)
-VALUES 
-(10, '2024-07-01', 'Lunes', 9, 0, '12345678', 'Consulta general', 1),
-(10, '2024-07-08', 'Lunes', 9, 0, '87654321', 'Chequeo de rutina', 1),
-(11, '2024-07-02', 'Martes', 14, 0, '12345678', 'Consulta especializada', 1),
-(11, '2024-07-09', 'Martes', 14, 0, '87654321', 'Consulta de seguimiento', 1),
-(11, '2024-07-10', 'Miércoles', 10, 0, '87654321', 'Consulta de seguimiento', 1);
+
+        SET @FechaActual = DATEADD(WEEK, 1, @FechaActual);
+        SET @i = @i + 1;
+		
+    END;
+END
+
+go
+
+-- Actualizar los turnos relacionados cuando el estado de HorarioAtencion cambia
+CREATE TRIGGER TRG_UpdateHorarioAtencion
+ON HorarioAtencion
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    
+    UPDATE t
+    SET t.Estado_ha = i.Estado_ha
+    FROM Turnos t
+    INNER JOIN inserted i ON t.Legajo_tu = i.Legajo_ha AND t.DiaAtencion_ha = i.DiaAtencion_ha AND t.Horario_tu = i.HorarioAtencion
+    WHERE t.Fecha_tu > GETDATE(); -- Solo afectar los turnos posteriores a la fecha actual
+END
 GO
+-- Actualizar los horarios relacionados cuando el estado del médico cambia
+CREATE TRIGGER trg_UpdateMedico
+ON Medico
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    
+    UPDATE ha
+    SET ha.Estado_ha = i.Estado_me
+    FROM HorarioAtencion ha
+    INNER JOIN inserted i ON ha.Legajo_ha = i.Legajo_me;
+END
+GO
+
+CREATE TRIGGER TRG_AfterInsert_Medico
+ON Medico
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO Usuario (Legajo_us, Usuario_us, Contrasenia_us, Administrador_us, Estado_us)
+    SELECT 
+        i.Legajo_me,
+        i.Nombre_me,
+        CONCAT(i.DNI_me, '.med'),
+        0,
+        'Activo'
+    FROM 
+        inserted i
+    WHERE
+        i.Estado_me = 1 
+END
+GO
+--crea el ususrio y da de baja o alta si es q este cambia--
+CREATE TRIGGER TRG_AfterUpdate_Medico
+ON Medico
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    DECLARE @CountMedicos INT;
+
+    SELECT @CountMedicos = COUNT(*)
+    FROM inserted i
+    INNER JOIN deleted d ON i.Legajo_me = d.Legajo_me
+    WHERE i.Estado_me = 1 AND d.Estado_me = 0;
+
+
+    IF @CountMedicos > 0
+    BEGIN
+        INSERT INTO Usuario (Legajo_us, Usuario_us, Contrasenia_us, Administrador_us, Estado_us)
+        SELECT 
+            i.Legajo_me,
+            i.Nombre_me,
+            CONCAT(i.DNI_me, '.med'),
+            0, 
+            'Activo' 
+        FROM 
+            inserted i
+        WHERE
+            NOT EXISTS (
+                SELECT 1 FROM Usuario WHERE Legajo_us = i.Legajo_me
+            );
+
+        UPDATE u
+        SET 
+            Estado_us = CASE WHEN i.Estado_me = 1 THEN 'Activo' ELSE 'Inactivo' END
+        FROM 
+            Usuario u
+        INNER JOIN inserted i ON u.Legajo_us = i.Legajo_me;
+    END
+    ELSE
+    BEGIN
+        UPDATE u
+        SET 
+            Estado_us = CASE WHEN i.Estado_me = 1 THEN 'Activo' ELSE 'Inactivo' END
+        FROM 
+            Usuario u
+        INNER JOIN inserted i ON u.Legajo_us = i.Legajo_me;
+    END
+END
+GO
+
+--FIN TRIGGERS
+
+
+
 
 SELECT * FROM Turnos
 -- Insertar datos en la tabla HorarioAtencion

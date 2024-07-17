@@ -113,6 +113,8 @@
                             <SortedDescendingCellStyle BackColor="#D6DFDF" />
                             <SortedDescendingHeaderStyle BackColor="#002876" />
                         </asp:GridView>
+                        <br />
+                        <asp:HyperLink ID="hplMenuMedico" runat="server" NavigateUrl="~/MenuMedico.aspx">Volver al Menu Medico</asp:HyperLink>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
