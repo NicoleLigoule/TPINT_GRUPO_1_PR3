@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditarMedico.aspx.cs" Inherits="Vistas.EditarMedico" %>
+<%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -6,9 +7,18 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Editar Medico</title>
+    <%-- FUENTES ÍCONOS --%>
+    <script src="https://kit.fontawesome.com/db0f6946ee.js" crossorigin="anonymous"></script>
+    <%-- BOOTSTRAP --%>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <%-- SCRIPTS --%>
+    <script src="./utils.js" type="text/javascript"></script>
+    <%-- ESTILOS DE  EditarMedico--%>
     <link href="./Resources/estilos/styles.EditarMedico.css" rel="stylesheet" />
 </head>
 <body>
+    <%-- Incluye el Header --%>
+    <%--<uc:Header runat="server" />--%>
     <form id="form1" runat="server">
       <div class="card">
                     <h3 class="text-center">EDITAR MEDICO</h3>
