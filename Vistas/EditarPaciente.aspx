@@ -60,9 +60,9 @@
                                 <asp:TextBox ID="txtApellidoPac" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                             <td class="auto-style3">
-                                <asp:RequiredFieldValidator ID="rfvapellido" runat="server" ControlToValidate="txtApellidoPac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revapellido" runat="server" ControlToValidate="txtApellidoPac" ErrorMessage="Solo letras" ForeColor="Red" ValidationExpression="^[a-zA-Z]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
-                            </td>
+                            <asp:RequiredFieldValidator ID="rfvapellido" runat="server" ControlToValidate="txtApellidoPac" ErrorMessage="campo obligatorio" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="revapellido" runat="server" ControlToValidate="txtApellidoPac" ErrorMessage="Solo letras" ForeColor="Red" ValidationExpression="^[a-zA-Z\u00C0-\u017F]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+                        </td>
                         </tr>
                         <tr>
                             <td class="auto-style2">Sexo:</td>
@@ -87,13 +87,12 @@
                         <tr>
                             <td class="auto-style2">Fecha de nacimiento:</td>
                             <td class="auto-style1">
-                                <asp:TextBox ID="txtFechaNac" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px" 
-                                    Text="DD/MM/AAAA" 
-                                    onfocus="clearTextBoxOnClick(this)" CssClass="auto-style11"></asp:TextBox>
+                                <asp:TextBox ID="txtFechaNac" runat="server" ForeColor="Gray" MaxLength="30" ViewStateMode="Enabled" Wrap="False" Width="230px"
+                                    CssClass="auto-style11"></asp:TextBox>
                             </td>
                             <td class="auto-style3">
-                                <asp:RequiredFieldValidator ID="rfvfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="ingerse yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+                                <asp:RequiredFieldValidator ID="rfvfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="Campo obligatorio" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revfecha" runat="server" ControlToValidate="txtFechaNac" ErrorMessage="Ingrese yyyy-mm-dd" ForeColor="Red" ValidationExpression="^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|1\d|2\d|3[01])$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>

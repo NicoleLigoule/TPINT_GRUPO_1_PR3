@@ -33,7 +33,13 @@ namespace Vistas
                     CargarDropDownLocalidad(ddlProvincia.SelectedItem.Value);
                     ddlLocalidad.SelectedIndex = 5; /*paciente.getLocaPac();*/
                     txtNacionalidad.Text = paciente.getNacionalidadPac();
-                    txtFechaNac.Text = paciente.getFechaPac();
+                    //txtFechaNac.Text = paciente.getFechaPac();
+                    // txtFechaNac.Text = fechaNacimiento.ToString("yyyy-MM-dd"); no borrar -nicole
+                    DateTime fechaNacimiento;
+                    if (DateTime.TryParse(paciente.getFechaPac(), out fechaNacimiento))
+                    {
+                        txtFechaNac.Text = fechaNacimiento.ToString("yyyy-MM-dd");
+                    }
                     txtDireccionPac.Text = paciente.getDireccionPac();
                     txtCorreoElectronicoPac.Text = paciente.getCorreoPac();
                     txtTelefonoPac.Text = paciente.getTelefonoPac();
@@ -103,6 +109,11 @@ namespace Vistas
             {
                 lblMensaje.Text = "No se pudo actualizar el paciente";
             }
+
+        }
+
+        protected void txtFechaNac_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
