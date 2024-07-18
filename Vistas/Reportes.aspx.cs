@@ -22,6 +22,15 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                cargarLblReportes();
+            }
+        }
+
+
+        private void cargarLblReportes()
+        {
             lblMedicoConMasAtenciones.Text = reportes.MedicoConMasAtenciones();
             lblEspecialidadQueMasSeUso.Text = reportes.especialidadQueMasSeUso();
             lblapcienteConMasCancelaciones.Text = reportes.pacienteConMasCancelaciones();
