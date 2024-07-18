@@ -39,8 +39,10 @@
                             <asp:Label ID="lblContrase" runat="server" Text="Nueva Contraseña"></asp:Label>
                             <asp:TextBox ID="txtContrasenia" runat="server"></asp:TextBox>
                             <asp:Label ID="lblContra" runat="server" Text="Repita Contraseña"></asp:Label>
-                            <asp:TextBox ID="txtRContrasenia" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtRContrasenia" runat="server"></asp:TextBox><asp:CompareValidator ID="cvcontrasenia" runat="server" ErrorMessage="La contraseña no conicide " ControlToCompare="txtContrasenia" ControlToValidate="txtRContrasenia" ForeColor="Red">*</asp:CompareValidator>
+                            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             <asp:Button ID="btnAsignar" style="margin-top: 20px" runat="server" Text="Confirmar" OnClick="btnAsignar_Click" />
+                            <asp:ValidationSummary ID="vs" runat="server" />
                     </div>
                  </div>
                 <div class="col-md-4"></div>

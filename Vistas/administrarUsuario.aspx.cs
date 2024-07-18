@@ -13,12 +13,16 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           Negocio.Login log = new Negocio.Login();
-            string usuario;
-            if (Session["nombreUsuario"] != null) 
+            if (!IsPostBack)
             {
-                usuario = Session["nombreUsuario"].ToString();
-                txtUsuario.Text = usuario;
+                ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+                Negocio.Login log = new Negocio.Login();
+                string usuario;
+                if (Session["nombreUsuario"] != null)
+                {
+                    usuario = Session["nombreUsuario"].ToString();
+                    txtUsuario.Text = usuario;
+                }
             }
         }
 
@@ -30,16 +34,31 @@ namespace Vistas
             if (Session["nombreUsuario"] != null)
             {
                 usuario = Session["nombreUsuario"].ToString();
+         
                 leg = log.obtener_legajo(usuario);
             }
            
             if(log.VerificarNombreUsuario(txtUsuario.Text, leg) == 0)
             {
                 Usuario usuari = new Usuario(leg, txtUsuario.Text, txtRContrasenia.Text);
-                log.ACtualizarUs(usuari);
+                if (log.ACtualizarUs(usuari))
+                {
+                    lblMensaje.Text = "se cambio correctamente";
+                }
             }
-            ///aca tengo que hacer la logica que informe q el nombre se repite
+            else
+            {
+                lblMensaje.Text = "El nombre de usuario ya esta en uso!";
+            }
+            limpiarCampos();
 
         }
+        protected void limpiarCampos()
+        {
+            txtUsuario.Text = "";
+            txtContrasenia.Text = "";
+            txtRContrasenia.Text = "";
+        }
+
     }
 }

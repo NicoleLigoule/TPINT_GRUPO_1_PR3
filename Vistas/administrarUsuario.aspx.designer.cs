@@ -78,6 +78,24 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.TextBox txtRContrasenia;
 
         /// <summary>
+        /// Control cvcontrasenia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator cvcontrasenia;
+
+        /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+
+        /// <summary>
         /// Control btnAsignar.
         /// </summary>
         /// <remarks>
@@ -85,5 +103,14 @@ namespace Vistas
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAsignar;
+
+        /// <summary>
+        /// Control vs.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vs;
     }
 }
