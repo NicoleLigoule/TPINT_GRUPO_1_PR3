@@ -9,6 +9,18 @@
     <title>Reportes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link href="./Resources/estilos/styles.Reportes.css" rel="stylesheet" />
+    <style>
+        .report-label {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .beige {
+            background-color: beige;
+        }
+    </style>
 </head>
 <body>
     <%-- Incluye el Header --%>
@@ -32,18 +44,28 @@
                     </ul>
                 </div>
                 <div class="col-sm-9">
-                    <ul>
-                        <li><asp:Label ID="lblMedicoConMasAtenciones" BackColor="White" runat="server"></asp:Label></li>
-                        <li><asp:Label ID="lblEspecialidadQueMasSeUso" BackColor="White" runat="server"></asp:Label></li>
-                        <li><asp:Label ID="lblapcienteConMasCancelaciones" BackColor="White" runat="server"></asp:Label></li>
-                        <li><asp:Label ID="lblLocalidadConMasPacientes" BackColor="White" runat="server"></asp:Label></li>
-                        <li><asp:Label ID="lblEspecialidadMes" BackColor="White" runat="server"></asp:Label>
+                    <ul class="list-unstyled">
+                        <li class="mb-4">
+                            <asp:Label ID="lblMedicoConMasAtenciones" CssClass="report-label beige" runat="server"></asp:Label>
+                        </li>
+                        <li class="mb-4">
+                            <asp:Label ID="lblEspecialidadQueMasSeUso" CssClass="report-label" runat="server"></asp:Label>
+                        </li>
+                        <li class="mb-4">
+                            <asp:Label ID="lblapcienteConMasCancelaciones" CssClass="report-label beige" runat="server"></asp:Label>
+                        </li>
+                        <li class="mb-4">
+                            <asp:Label ID="lblLocalidadConMasPacientes" CssClass="report-label" runat="server"></asp:Label>
+                        </li>
+                        <li class="mb-5">
+                            <asp:Label ID="lblEspecialidadMes" CssClass="report-label beige" runat="server"></asp:Label>
                             <br />
-                            <asp:Label ID="lblEspecialidadMesdata" BackColor="White" runat="server"></asp:Label>
-                            </li>
-                        <li>
-                            <asp:HyperLink ID="hplMenuAdmin" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
-                            </li>
+                            <br />
+                            <asp:Label ID="lblEspecialidadMesdata" CssClass="report-label beige" runat="server"></asp:Label>
+                        </li>
+                        <li class="mb-4">
+                            <asp:HyperLink ID="hplMenuAdmin" CssClass="btn btn-primary" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
+                        </li>
                     </ul>
                 </div>               
             </div>
