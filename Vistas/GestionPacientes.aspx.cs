@@ -35,11 +35,11 @@ namespace Vistas
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 DateTime fechaNacimiento = Convert.ToDateTime(DataBinder.Eval(e.Row.DataItem, "FechaNacimiento_pc"));
-                //e.Row.Cells[7].Text = fechaNacimiento.ToString("dd/MM/yyyy");
+                //e.Row.Cells[7].Text = fechaNacimiento.ToString("yyyy-MM-dd");
                 Label lblFechaNac = e.Row.FindControl("lbl_Fechapc") as Label;
                 if (lblFechaNac != null)
                 {
-                    lblFechaNac.Text = fechaNacimiento.ToString("dd/MM/yyyy");
+                    lblFechaNac.Text = fechaNacimiento.ToString("yyyy-MM-dd");
                 }
             }
         }
