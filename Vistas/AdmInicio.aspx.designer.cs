@@ -69,6 +69,15 @@ namespace Vistas
         protected global::System.Web.UI.WebControls.HyperLink hplReportes;
 
         /// <summary>
+        /// Control hplUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplUsuario;
+
+        /// <summary>
         /// Control GridViewMed.
         /// </summary>
         /// <remarks>

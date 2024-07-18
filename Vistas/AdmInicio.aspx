@@ -47,6 +47,7 @@
                     <tr>
                         <td class="auto-style3">
                             <asp:HyperLink ID="hplReportes" class="menu-link" runat="server" NavigateUrl="~/Reportes.aspx">Reportes</asp:HyperLink>
+                            <asp:HyperLink ID="hplUsuario" class="menu-link" runat="server" NavigateUrl="~/administrarUsuario.aspx">Administrar Usuario</asp:HyperLink>
                         </td>
                     </tr>
                 </table>

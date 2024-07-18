@@ -40,6 +40,11 @@
                     <asp:HyperLink ID="hplEliminarMedico" runat="server" NavigateUrl="~/EliminarMedico.aspx" CssClass="menu-link">Eliminar Medico</asp:HyperLink>
                 </td>
             </tr>
+            <tr>
+                <td class="auto-style7">
+                            <asp:HyperLink ID="hplUsuario" class="menu-link" runat="server" NavigateUrl="~/administrarUsuario.aspx">Administrar Usuario</asp:HyperLink>
+                </td>
+            </tr>
         </table>
         <div class="back-link">
             <asp:HyperLink ID="hlMenuAdministrador" runat="server" NavigateUrl="~/AdmInicio.aspx" CssClass="menu-link">Volver a Menu de Administrador</asp:HyperLink>
