@@ -109,18 +109,17 @@
                                 <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="ddlLocalidades" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="auto-style2">Dirección:</td>
+                       <tr>
+                        <td class="auto-style2">Dirección:</td>
                             <td class="auto-style3">
                                 <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                             <td class="auto-style1">
-                                <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Campo Obligatorio" ForeColor="Red">*</asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Campo Obligatorio" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
                                 <br />
-                                <asp:RegularExpressionValidator ID="revDire" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo números y letras" ForeColor="Red" ValidationExpression="^[A-Za-zÁ-Úá-ú ]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9 ]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
-
                         <tr>
                             <td class="auto-style2">Correo electronico:</td>
                             <td class="auto-style3">
