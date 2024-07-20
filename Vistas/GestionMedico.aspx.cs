@@ -32,6 +32,7 @@ namespace Vistas
         {
             Session["Editar"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblDni")).Text;
             Session["LegajoMedico"] = ((Label)GridViewMedicos1.Rows[e.NewSelectedIndex].FindControl("lblLegajo")).Text;
+            hplEditarSeleccionado.Visible = true;
         }
 
         protected void GridViewMedicos1_RowDataBound(object sender, GridViewRowEventArgs e)
