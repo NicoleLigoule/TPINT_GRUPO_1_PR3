@@ -23,12 +23,19 @@ namespace Vistas
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            ABMLMedico alta = new ABMLMedico();
-            int legajo = int.Parse(ddlMedico.SelectedItem.Value);
-            if (alta.bajaMedico(legajo))
+            if (ddlMedico.SelectedItem != null)
             {
-                lblMensaje.Text = "Medico dado de baja correctamente";
-                CargarDropDown();
+                ABMLMedico alta = new ABMLMedico();
+                int legajo = int.Parse(ddlMedico.SelectedItem.Value);
+                if (alta.bajaMedico(legajo))
+                {
+                    lblMensaje.Text = "Medico dado de baja correctamente";
+                    CargarDropDown();
+                }
+            }
+            else
+            {
+                lblMensaje.Text = "No hay registros seleciconados, intentelo más tarde.";
             }
         }
 
