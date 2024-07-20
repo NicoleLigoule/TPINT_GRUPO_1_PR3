@@ -28,6 +28,7 @@ namespace Vistas
         protected void grvPacientes_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
             Session["Editar"] = ((Label)grvPacientes.Rows[e.NewSelectedIndex].FindControl("lbl_DNIpc")).Text;
+            hplEditarSeleccionado.Visible = true;
         }
 
         protected void grvPacientes_RowDataBound(object sender, GridViewRowEventArgs e)
