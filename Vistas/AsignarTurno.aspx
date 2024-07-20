@@ -29,6 +29,25 @@
         .auto-style6 {
             width: 156px;
         }
+        .auto-style7 {
+            width: 97px;
+            height: 26px;
+        }
+        .auto-style8 {
+            width: 159px;
+            height: 26px;
+        }
+        .auto-style9 {
+            width: 158px;
+            height: 26px;
+        }
+        .auto-style10 {
+            width: 156px;
+            height: 26px;
+        }
+        .auto-style11 {
+            height: 26px;
+        }
     </style>
 </head>
 <body>
@@ -46,12 +65,12 @@
                     <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style10"></td>
+                    <td class="auto-style11"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
@@ -77,17 +96,20 @@
                         <asp:DropDownList ID="ddlMedico" runat="server" AutoPostBack="True">
                         </asp:DropDownList>
                     </td>
-                    <td>&nbsp;</td>
+                    <td>
+                        &nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style4">&nbsp;</td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td class="auto-style6">
+                    <td class="auto-style7"></td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style9">
+                        <asp:Label ID="lblespecialidades" runat="server" Text=""></asp:Label>
+                        </td>
+                    <td class="auto-style8"></td>
+                    <td class="auto-style10">
                         <asp:Label ID="lblMedicos" runat="server"></asp:Label>
                     </td>
-                    <td>&nbsp;</td>
+                    <td class="auto-style11"></td>
                 </tr>
                 <tr>
                     <td class="auto-style3">&nbsp;</td>

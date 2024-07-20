@@ -87,6 +87,7 @@ namespace Vistas
         }
         private void verificarCarga()
         {
+            lblespecialidades.Text = "";
             lblMedicos.Text = "";
             lblFechas.Text = "";
             lblHorarios.Text = "";
@@ -126,18 +127,25 @@ namespace Vistas
         }
         protected void btnAsignar_Click(object sender, EventArgs e)
         {
-            TurnoAtencion carga = new TurnoAtencion();
-            Turno turnoAs = new Turno(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value, ddlHorario.SelectedItem.Text, ddlPaciente.SelectedItem.Value);
-
-            if (carga.AsignarPaciente_Turno(turnoAs))
+            if(ddlMedico.SelectedItem != null)
             {
-                lblMensajes.Text = "se asigno correctamente";
+                TurnoAtencion carga = new TurnoAtencion();
+                Turno turnoAs = new Turno(ddlMedico.SelectedItem.Value, ddlDiaDeAtencion.SelectedItem.Value, ddlHorario.SelectedItem.Text, ddlPaciente.SelectedItem.Value);
+
+                if (carga.AsignarPaciente_Turno(turnoAs))
+                {
+                    lblMensajes.Text = "se asigno correctamente";
+                }
+                else
+                {
+                    lblMensajes.Text = "no se pudo asignar";
+                }
+                verificarCarga();
             }
             else
             {
-                lblMensajes.Text = "no se pudo asignar";
+                lblespecialidades.Text = "Debe elegir una especialidad con profesionales disponibles.";
             }
-            verificarCarga();
         }
     }
 }
