@@ -23,16 +23,22 @@ namespace Vistas
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (ABMLPaciente.eliminarPaciente(ddlPacientes.SelectedItem.Value))
+            if(ddlPacientes.SelectedItem != null)
             {
-                lblMensaje.Text = "El paciente se elimino correctamente";
+                if (ABMLPaciente.eliminarPaciente(ddlPacientes.SelectedItem.Value))
+                {
+                    lblMensaje.Text = "El paciente se elimino correctamente";
+                }
+                else
+                {
+                    lblMensaje.Text = "El paciente no se pudo eliminar, verifique los datos ingresados o intentelo luego.";
+                }
+                CargarDropDown();
             }
             else
             {
-                lblMensaje.Text = "El paciente no se pudo eliminar, verifique los datos ingresados o intentelo luego.";
+                lblMensaje.Text = "No hay registros seleciconados, intentelo más tarde.";
             }
-            CargarDropDown();
-           
         }
         private void CargarDropDown()
         {
