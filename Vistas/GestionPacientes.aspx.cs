@@ -35,21 +35,27 @@ namespace Vistas
 
         protected void cargarGrvPacientes()
         {
-            if(ddlTipoFiltro.SelectedValue == "Sexo")
+            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
+           
+            switch (eleccionDelFiltrado)
             {
-                String sexo = DdlSexo.SelectedValue;
-                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+                case "Sexo":
+                    String sexo = DdlSexo.SelectedValue;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+                    break;
+                case "Nombre":
+                    String nombre = txtBusqueda.Text;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
+                    break;
+                case "Provincia":
+                    String provincia = txtBusqueda.Text;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunProvincia(provincia);
+                    break;
+                default:
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+                    break;
             }
-            if (ddlTipoFiltro.SelectedValue == "Nombre")
-            {
-                String nombre = txtBusqueda.Text;
-                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
-            }
-            else
-            {
-                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
-            }
-            
+
             grvPacientes.DataBind();
         }
 
