@@ -25,6 +25,8 @@
                 &nbsp;<asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
                 &nbsp;<asp:DropDownList ID="DdlSexo" runat="server" Visible="False">
                 </asp:DropDownList>
+                &nbsp;<asp:DropDownList ID="ddlProvincias" runat="server" Visible="False">
+                </asp:DropDownList>
                 &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar"/>
             </div>
             <br />

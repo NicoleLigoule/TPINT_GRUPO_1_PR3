@@ -27,6 +27,7 @@ namespace Vistas
             {
                 cargarddlTipoFiltro();
                 cargarddSexo();
+                cargarDdlProvincias();
             }
             vistaDdlSexo();
 
@@ -48,7 +49,7 @@ namespace Vistas
                     grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
                     break;
                 case "Provincia":
-                    String provincia = txtBusqueda.Text;
+                    String provincia = ddlProvincias.SelectedValue;
                     grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunProvincia(provincia);
                     break;
                 default:
@@ -111,10 +112,19 @@ namespace Vistas
             DdlSexo.Items.Add("Otros");
         }
 
+        protected void cargarDdlProvincias()
+        {
+            ddlProvincias.DataSource = ABMLPaciente.cargartablaPaciente();
+            ddlProvincias.DataTextField = "Nombre_loca";
+            ddlProvincias.DataBind();
+        }
+
         protected void vistaDdlSexo()
         {
+
             if(ddlTipoFiltro.SelectedValue == "")
             {
+                ddlProvincias.Visible = false;
                 DdlSexo.Visible = false;
                 txtBusqueda.Visible = false;
                 btnBuscar.Visible = false;
@@ -125,8 +135,16 @@ namespace Vistas
                 txtBusqueda.Visible = false;
                 btnBuscar.Visible = true;
             }
+            else if (ddlTipoFiltro.SelectedValue == "Provincia")
+            {
+                ddlProvincias.Visible = true;
+                DdlSexo.Visible = false;
+                txtBusqueda.Visible = false;
+                btnBuscar.Visible = true;
+            }
             else
             {
+                ddlProvincias.Visible = false;
                 DdlSexo.Visible = false;
                 txtBusqueda.Visible = true;
                 btnBuscar.Visible = true;
