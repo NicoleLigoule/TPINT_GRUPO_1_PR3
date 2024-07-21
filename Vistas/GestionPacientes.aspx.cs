@@ -30,17 +30,37 @@ namespace Vistas
             }
             vistaDdlSexo();
 
-            //ABMLPaciente pac = new ABMLPaciente();
-            grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
-            grvPacientes.DataBind();
+            cargarGrvPacientes();
+        }
 
+        protected void cargarGrvPacientes()
+        {
+            if(ddlTipoFiltro.SelectedValue == "Sexo")
+            {
+                String sexo = DdlSexo.SelectedValue;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+            }
+            else
+            {
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+            }
+            
+            grvPacientes.DataBind();
         }
 
         protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grvPacientes.PageIndex = e.NewPageIndex;
-            //ABMLPaciente tabla = new ABMLPaciente();
-            grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+
+            if (ddlTipoFiltro.SelectedValue == "Sexo")
+            {
+                String sexo = DdlSexo.SelectedValue;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+            }
+            else
+            {
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+            }
             grvPacientes.DataBind();
         }
 
