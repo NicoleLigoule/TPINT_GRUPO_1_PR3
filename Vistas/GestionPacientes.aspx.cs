@@ -85,17 +85,6 @@ namespace Vistas
                     break;
             }
 
-
-            //if (ddlTipoFiltro.SelectedValue == "Sexo")
-            //{
-            //    String sexo = DdlSexo.SelectedValue;
-            //    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
-            //}
-
-            //else
-            //{
-            //    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
-            //}
             grvPacientes.DataBind();
         }
 
@@ -143,34 +132,34 @@ namespace Vistas
 
         protected void vistaDdlSexo()
         {
+            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
 
-            if(ddlTipoFiltro.SelectedValue == "")
+            switch (eleccionDelFiltrado)
             {
-                ddlProvincias.Visible = false;
-                DdlSexo.Visible = false;
-                txtBusqueda.Visible = false;
-                btnBuscar.Visible = false;
-            }
-            else if (ddlTipoFiltro.SelectedValue == "Sexo")
-            {
-                ddlProvincias.Visible = false;
-                DdlSexo.Visible = true;
-                txtBusqueda.Visible = false;
-                btnBuscar.Visible = true;
-            }
-            else if (ddlTipoFiltro.SelectedValue == "Provincia")
-            {
-                ddlProvincias.Visible = true;
-                DdlSexo.Visible = false;
-                txtBusqueda.Visible = false;
-                btnBuscar.Visible = true;
-            }
-            else
-            {
-                ddlProvincias.Visible = false;
-                DdlSexo.Visible = false;
-                txtBusqueda.Visible = true;
-                btnBuscar.Visible = true;
+                case "":
+                    ddlProvincias.Visible = false;
+                    DdlSexo.Visible = false;
+                    txtBusqueda.Visible = false;
+                    btnBuscar.Visible = false;
+                    break;
+                case "Sexo":
+                    ddlProvincias.Visible = false;
+                    DdlSexo.Visible = true;
+                    txtBusqueda.Visible = false;
+                    btnBuscar.Visible = true;
+                    break;
+                case "Provincia":
+                    ddlProvincias.Visible = true;
+                    DdlSexo.Visible = false;
+                    txtBusqueda.Visible = false;
+                    btnBuscar.Visible = true;
+                    break;
+                default:
+                    ddlProvincias.Visible = false;
+                    DdlSexo.Visible = false;
+                    txtBusqueda.Visible = true;
+                    btnBuscar.Visible = true;
+                    break;
             }
         }
     }
