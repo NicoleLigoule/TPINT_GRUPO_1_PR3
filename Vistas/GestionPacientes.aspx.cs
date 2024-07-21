@@ -64,16 +64,38 @@ namespace Vistas
         {
             grvPacientes.PageIndex = e.NewPageIndex;
 
-            if (ddlTipoFiltro.SelectedValue == "Sexo")
+            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
+
+            switch (eleccionDelFiltrado)
             {
-                String sexo = DdlSexo.SelectedValue;
-                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+                case "Sexo":
+                    String sexo = DdlSexo.SelectedValue;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+                    break;
+                case "Nombre":
+                    String nombre = txtBusqueda.Text;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
+                    break;
+                case "Provincia":
+                    String provincia = ddlProvincias.SelectedValue;
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunProvincia(provincia);
+                    break;
+                default:
+                    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+                    break;
             }
 
-            else
-            {
-                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
-            }
+
+            //if (ddlTipoFiltro.SelectedValue == "Sexo")
+            //{
+            //    String sexo = DdlSexo.SelectedValue;
+            //    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+            //}
+
+            //else
+            //{
+            //    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+            //}
             grvPacientes.DataBind();
         }
 
@@ -131,6 +153,7 @@ namespace Vistas
             }
             else if (ddlTipoFiltro.SelectedValue == "Sexo")
             {
+                ddlProvincias.Visible = false;
                 DdlSexo.Visible = true;
                 txtBusqueda.Visible = false;
                 btnBuscar.Visible = true;
