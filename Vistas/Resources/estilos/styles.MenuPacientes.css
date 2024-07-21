@@ -11,7 +11,7 @@ body.paciente {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
 }
 
 #form1 {
