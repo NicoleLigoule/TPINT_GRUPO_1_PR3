@@ -40,6 +40,11 @@ namespace Vistas
                 String sexo = DdlSexo.SelectedValue;
                 grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
             }
+            if (ddlTipoFiltro.SelectedValue == "Nombre")
+            {
+                String nombre = txtBusqueda.Text;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
+            }
             else
             {
                 grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
@@ -57,6 +62,7 @@ namespace Vistas
                 String sexo = DdlSexo.SelectedValue;
                 grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
             }
+
             else
             {
                 grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
@@ -86,6 +92,7 @@ namespace Vistas
 
         protected void cargarddlTipoFiltro()
         {
+            ddlTipoFiltro.Items.Add("");
             ddlTipoFiltro.Items.Add("Nombre");
             ddlTipoFiltro.Items.Add("Provincia");
             ddlTipoFiltro.Items.Add("Sexo");

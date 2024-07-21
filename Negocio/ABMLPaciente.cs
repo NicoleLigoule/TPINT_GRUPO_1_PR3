@@ -33,6 +33,14 @@ namespace Negocio
             }
             return dato.Todos_Los_PacientesSegunSexo(sexo);
         }
+        public DataTable cargartablaPacienteSegunNombre(String nombre)
+        {
+            if (nombre == null)
+            {
+                nombre = "";
+            }
+            return dato.Todos_Los_PacientesSegunNombre(nombre);
+        }
 
         public bool agregarPaciente(Paciente paciente)
         {
