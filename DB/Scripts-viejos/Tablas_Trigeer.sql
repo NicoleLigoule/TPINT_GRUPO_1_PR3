@@ -133,10 +133,10 @@ BEGIN
     SET @DiaSemana = CASE 
                         WHEN @DiaAtencion_ha = 'Lunes' THEN 1
                         WHEN @DiaAtencion_ha = 'Martes' THEN 2
-                        WHEN @DiaAtencion_ha = 'Miércoles' THEN 3
+                        WHEN @DiaAtencion_ha = 'MiÃ©rcoles' THEN 3
                         WHEN @DiaAtencion_ha = 'Jueves' THEN 4
                         WHEN @DiaAtencion_ha = 'Viernes' THEN 5
-                        WHEN @DiaAtencion_ha = 'Sábado' THEN 6
+                        WHEN @DiaAtencion_ha = 'SÃ¡bado' THEN 6
                         
                      END;
 
@@ -146,7 +146,7 @@ BEGIN
     SET @FechaActual = DATEADD(DAY, (@DiaSemana - DATEPART(WEEKDAY, @FechaActual) + 7) % 7, @FechaActual);
 
     DECLARE @i INT = 0;
-    WHILE @i < 10
+    WHILE @i < 4
     BEGIN
         INSERT INTO Turnos (Legajo_tu, Fecha_tu, DiaAtencion_ha, Horario_tu, Estado_ha)
         VALUES (@Legajo_ha, @FechaActual, @DiaAtencion_ha, @HorarioAtencion, 1);
@@ -176,7 +176,7 @@ BEGIN
     WHERE t.Fecha_tu > GETDATE(); -- Solo afectar los turnos posteriores a la fecha actual
 END
 GO
--- Actualizar los horarios relacionados cuando el estado del médico cambia
+-- Actualizar los horarios relacionados cuando el estado del mÃ©dico cambia
 CREATE TRIGGER trg_UpdateMedico
 ON Medico
 AFTER UPDATE

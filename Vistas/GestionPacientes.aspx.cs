@@ -10,6 +10,16 @@ namespace Vistas
 {
     public partial class GestionPacientes : System.Web.UI.Page
     {
+        private ABMLPaciente ABMLPaciente;
+
+        public GestionPacientes()
+        {
+            if(ABMLPaciente == null)
+            {
+                ABMLPaciente = new ABMLPaciente();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,17 +30,43 @@ namespace Vistas
             }
             vistaDdlSexo();
 
-            ABMLPaciente pac = new ABMLPaciente();
-            grvPacientes.DataSource = pac.cargartablaPaciente();
-            grvPacientes.DataBind();
+            cargarGrvPacientes();
+        }
 
+        protected void cargarGrvPacientes()
+        {
+            if(ddlTipoFiltro.SelectedValue == "Sexo")
+            {
+                String sexo = DdlSexo.SelectedValue;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+            }
+            if (ddlTipoFiltro.SelectedValue == "Nombre")
+            {
+                String nombre = txtBusqueda.Text;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
+            }
+            else
+            {
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+            }
+            
+            grvPacientes.DataBind();
         }
 
         protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grvPacientes.PageIndex = e.NewPageIndex;
-            ABMLPaciente tabla = new ABMLPaciente();
-            grvPacientes.DataSource = tabla.cargartablaPaciente();
+
+            if (ddlTipoFiltro.SelectedValue == "Sexo")
+            {
+                String sexo = DdlSexo.SelectedValue;
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+            }
+
+            else
+            {
+                grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+            }
             grvPacientes.DataBind();
         }
 
@@ -56,6 +92,7 @@ namespace Vistas
 
         protected void cargarddlTipoFiltro()
         {
+            ddlTipoFiltro.Items.Add("");
             ddlTipoFiltro.Items.Add("Nombre");
             ddlTipoFiltro.Items.Add("Provincia");
             ddlTipoFiltro.Items.Add("Sexo");
