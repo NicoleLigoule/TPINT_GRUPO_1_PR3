@@ -113,15 +113,23 @@ namespace Vistas
 
         protected void vistaDdlSexo()
         {
-            if (ddlTipoFiltro.SelectedValue == "Sexo")
+            if(ddlTipoFiltro.SelectedValue == "")
+            {
+                DdlSexo.Visible = false;
+                txtBusqueda.Visible = false;
+                btnBuscar.Visible = false;
+            }
+            else if (ddlTipoFiltro.SelectedValue == "Sexo")
             {
                 DdlSexo.Visible = true;
                 txtBusqueda.Visible = false;
+                btnBuscar.Visible = true;
             }
             else
             {
                 DdlSexo.Visible = false;
                 txtBusqueda.Visible = true;
+                btnBuscar.Visible = true;
             }
         }
     }
