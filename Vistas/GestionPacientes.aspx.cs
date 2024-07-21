@@ -10,6 +10,16 @@ namespace Vistas
 {
     public partial class GestionPacientes : System.Web.UI.Page
     {
+        private ABMLPaciente ABMLPaciente;
+
+        public GestionPacientes()
+        {
+            if(ABMLPaciente == null)
+            {
+                ABMLPaciente = new ABMLPaciente();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,8 +30,8 @@ namespace Vistas
             }
             vistaDdlSexo();
 
-            ABMLPaciente pac = new ABMLPaciente();
-            grvPacientes.DataSource = pac.cargartablaPaciente();
+            //ABMLPaciente pac = new ABMLPaciente();
+            grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
             grvPacientes.DataBind();
 
         }
@@ -29,8 +39,8 @@ namespace Vistas
         protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grvPacientes.PageIndex = e.NewPageIndex;
-            ABMLPaciente tabla = new ABMLPaciente();
-            grvPacientes.DataSource = tabla.cargartablaPaciente();
+            //ABMLPaciente tabla = new ABMLPaciente();
+            grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
             grvPacientes.DataBind();
         }
 
