@@ -29,12 +29,12 @@ namespace Vistas
         protected void cargarGrvMedicos()
         {
             String eleccionDelFiltrado =  FiltradoPor.eleccionDelFiltrado;
+            String parametro = null;
 
             switch (eleccionDelFiltrado)
             {
                 case "Sexo":
-                    String sexo = FiltradoPor.sexo;
-                    GridViewMedicos1.DataSource = ABMLMedico.cargartablaMedicosPorSexo(sexo);
+                    parametro = FiltradoPor.sexo;
                     break;
                 case "Nombre":
                     String nombre = FiltradoPor.textoBusqueda;
@@ -45,10 +45,11 @@ namespace Vistas
                     //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunProvincia(provincia);
                     break;
                 default:
-                    GridViewMedicos1.DataSource = ABMLMedico.cargartabla();
+                    parametro = "";
                     break;
             }
 
+            GridViewMedicos1.DataSource = ABMLMedico.cargartabla(eleccionDelFiltrado, parametro);
             //GridViewMedicos1.DataBind();
         }
 
@@ -56,7 +57,7 @@ namespace Vistas
         {
             GridViewMedicos1.PageIndex = e.NewPageIndex;
             ABMLMedico tabla = new ABMLMedico();
-            GridViewMedicos1.DataSource = tabla.cargartabla();
+            //GridViewMedicos1.DataSource = tabla.cargartabla();
             GridViewMedicos1.DataBind();
         }
 

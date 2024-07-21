@@ -23,6 +23,25 @@ namespace Negocio
         {
            return datos.Todos_Los_Medicos_Alta();
         }
+        public DataTable cargartabla(String eleccionDelFiltrado, String parametro)
+        {
+            switch (eleccionDelFiltrado)
+            {
+                case "Sexo":
+                    return datos.Todos_Los_Medicos_AltaPorSexo(parametro);
+                case "Nombre":
+                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunNombre(nombre);
+                    break;
+                case "Provincia":
+                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunProvincia(provincia);
+                    break;
+                default:
+                    break;
+            }
+
+            return datos.Todos_Los_Medicos_Alta();
+        }
+
         public DataTable cargartablaMedicosPorSexo(String sexo)
         {
             return datos.Todos_Los_Medicos_AltaPorSexo(sexo);
