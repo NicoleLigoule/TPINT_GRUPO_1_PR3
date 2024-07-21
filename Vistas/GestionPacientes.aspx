@@ -30,7 +30,7 @@
                 &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar"/>
             </div>
             <br />
-            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" PageSize="1" AutoGenerateSelectButton="True" OnRowDataBound="grvPacientes_RowDataBound" OnSelectedIndexChanging="grvPacientes_SelectedIndexChanging">
+            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" PageSize="8" AutoGenerateSelectButton="True" OnRowDataBound="grvPacientes_RowDataBound" OnSelectedIndexChanging="grvPacientes_SelectedIndexChanging">
                 <Columns>
                     <asp:TemplateField HeaderText="DNI">
                         <EditItemTemplate>
