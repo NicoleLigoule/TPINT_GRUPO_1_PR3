@@ -11,6 +11,8 @@ namespace Vistas
     public partial class GestionMedico : System.Web.UI.Page
     {
         private ABMLMedico ABMLMedico;
+        private String eleccionDelFiltrado;
+        private String parametro;
 
         public GestionMedico()
         {
@@ -23,13 +25,12 @@ namespace Vistas
         protected void Page_Load(object sender, EventArgs e)
         {
             cargarGrvMedicos(); 
-            GridViewMedicos1.DataBind();
         }
 
         protected void cargarGrvMedicos()
         {
-            String eleccionDelFiltrado =  FiltradoPor.eleccionDelFiltrado;
-            String parametro = null;
+            eleccionDelFiltrado =  FiltradoPor.eleccionDelFiltrado;
+            parametro = null;
 
             switch (eleccionDelFiltrado)
             {
@@ -48,13 +49,12 @@ namespace Vistas
             }
 
             GridViewMedicos1.DataSource = ABMLMedico.cargartabla(eleccionDelFiltrado, parametro);
+            GridViewMedicos1.DataBind();
         }
 
         protected void GridViewMedicos1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridViewMedicos1.PageIndex = e.NewPageIndex;
-            ABMLMedico tabla = new ABMLMedico();
-            //GridViewMedicos1.DataSource = tabla.cargartabla();
             GridViewMedicos1.DataBind();
         }
 
@@ -78,8 +78,5 @@ namespace Vistas
                 }
             }
         }
-
-
-
     }
 }

@@ -39,11 +39,6 @@ namespace Negocio
 
             return datos.Todos_Los_Medicos_Alta();
         }
-
-        public DataTable cargartablaMedicosPorSexo(String sexo)
-        {
-            return datos.Todos_Los_Medicos_AltaPorSexo(sexo);
-        }
         public bool agregarMedico(Medico medico)
         {
             int cantFilas = 0;

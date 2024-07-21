@@ -41,33 +41,6 @@ namespace Negocio
 
             return dato.Todos_Los_Pacientes();
         }
-
-        public DataTable cargartablaPacienteSegunSexo(String sexo)
-        {
-            if(sexo == null) 
-            {
-                sexo = "Masculino";
-            }
-            return dato.Todos_Los_PacientesSegunSexo(sexo);
-        }
-        public DataTable cargartablaPacienteSegunNombre(String nombre)
-        {
-            if (nombre == null)
-            {
-                nombre = "";
-            }
-            return dato.Todos_Los_PacientesSegunNombre(nombre);
-        }
-        public DataTable cargartablaPacienteSegunProvincia(String provincia)
-        {
-            if (provincia == null)
-            {
-                provincia = "";
-            }
-            return dato.Todos_Los_PacientesSegunProvincia(provincia);
-        }
-
-
         public bool agregarPaciente(Paciente paciente)
         {
             int cantFilas = 0;
