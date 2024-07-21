@@ -43,7 +43,7 @@ namespace Datos
         }
         public DataTable Todos_Los_PacientesSegunNombre(String nombre)
         {
-            String consulta = $"SELECT P.DNI_pc, P.Nombre_pc, P.Apellido_pc, P.Sexo_pc, P.Nacionalidad_pc, P.FechaNacimiento_pc, P.Direccion_pc,Nombre_prov, l.Nombre_loca AS Nombre_loca, P.CorreoElectronico_pc, P.Telefono_pc FROM Paciente P INNER JOIN Localidad L ON p.Localidad_pc = l.ID_loca inner join Provincia on L.IDProv_loca= Provincia.ID_prov WHERE P.Nombre_pc = '{nombre}'";
+            String consulta = $"SELECT P.DNI_pc, P.Nombre_pc, P.Apellido_pc, P.Sexo_pc, P.Nacionalidad_pc, P.FechaNacimiento_pc, P.Direccion_pc,Nombre_prov, l.Nombre_loca AS Nombre_loca, P.CorreoElectronico_pc, P.Telefono_pc FROM Paciente P INNER JOIN Localidad L ON p.Localidad_pc = l.ID_loca inner join Provincia on L.IDProv_loca= Provincia.ID_prov WHERE P.Nombre_pc LIKE '{nombre}%'";
 
             return Traer_tablaPaciente("Medicos", consulta);
         }
