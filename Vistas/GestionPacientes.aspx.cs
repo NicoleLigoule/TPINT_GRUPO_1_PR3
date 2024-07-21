@@ -12,9 +12,18 @@ namespace Vistas
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (!IsPostBack)
+            {
+                cargarddlTipoFiltro();
+                cargarddSexo();
+            }
+            vistaDdlSexo();
+
             ABMLPaciente pac = new ABMLPaciente();
             grvPacientes.DataSource = pac.cargartablaPaciente();
             grvPacientes.DataBind();
+
         }
 
         protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -42,6 +51,34 @@ namespace Vistas
                 {
                     lblFechaNac.Text = fechaNacimiento.ToString("yyyy-MM-dd");
                 }
+            }
+        }
+
+        protected void cargarddlTipoFiltro()
+        {
+            ddlTipoFiltro.Items.Add("Nombre");
+            ddlTipoFiltro.Items.Add("Provincia");
+            ddlTipoFiltro.Items.Add("Sexo");
+        }
+
+        protected void cargarddSexo()
+        {
+            DdlSexo.Items.Add("Masculino");
+            DdlSexo.Items.Add("Femenino");
+            DdlSexo.Items.Add("Otros");
+        }
+
+        protected void vistaDdlSexo()
+        {
+            if (ddlTipoFiltro.SelectedValue == "Sexo")
+            {
+                DdlSexo.Visible = true;
+                txtBusqueda.Visible = false;
+            }
+            else
+            {
+                DdlSexo.Visible = false;
+                txtBusqueda.Visible = true;
             }
         }
     }
