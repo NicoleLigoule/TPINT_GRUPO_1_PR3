@@ -25,6 +25,23 @@ namespace Negocio
             return dato.Todos_Los_Pacientes();
         }
 
+        public DataTable cargartablaPaciente(String eleccionDelFiltrado, String parametro)
+        {
+            switch (eleccionDelFiltrado)
+            {
+                case "Sexo":
+                    return dato.Todos_Los_PacientesSegunSexo(parametro);
+                case "Nombre":
+                    return dato.Todos_Los_PacientesSegunNombre(parametro);
+                case "Provincia":
+                    return dato.Todos_Los_PacientesSegunProvincia(parametro);
+                default:
+                    break;
+            }
+
+            return dato.Todos_Los_Pacientes();
+        }
+
         public DataTable cargartablaPacienteSegunSexo(String sexo)
         {
             if(sexo == null) 

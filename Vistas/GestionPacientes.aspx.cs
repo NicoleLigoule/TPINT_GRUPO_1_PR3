@@ -11,7 +11,8 @@ namespace Vistas
     public partial class GestionPacientes : System.Web.UI.Page
     {
         private ABMLPaciente ABMLPaciente;
-
+        private String eleccionDelFiltrado;
+        private String parametro;
         public GestionPacientes()
         {
             if(ABMLPaciente == null)
@@ -22,69 +23,37 @@ namespace Vistas
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            if (!IsPostBack)
-            {
-                cargarddlTipoFiltro();
-                cargarddSexo();
-                cargarDdlProvincias();
-            }
-            vistaDdlSexo();
-
             cargarGrvPacientes();
         }
 
         protected void cargarGrvPacientes()
         {
-            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
-           
+            eleccionDelFiltrado = FiltradoPor.eleccionDelFiltrado;
+            parametro = null;
+
             switch (eleccionDelFiltrado)
             {
                 case "Sexo":
-                    String sexo = DdlSexo.SelectedValue;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
+                    parametro = FiltradoPor.sexo;
                     break;
                 case "Nombre":
-                    String nombre = txtBusqueda.Text;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
+                    parametro = FiltradoPor.textoBusqueda;
                     break;
                 case "Provincia":
-                    String provincia = ddlProvincias.SelectedValue;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunProvincia(provincia);
+                    parametro = FiltradoPor.provincia;
                     break;
                 default:
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
+                    parametro = "";
                     break;
             }
 
+            grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente(eleccionDelFiltrado, parametro);
             grvPacientes.DataBind();
         }
 
         protected void grvPacientes_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             grvPacientes.PageIndex = e.NewPageIndex;
-
-            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
-
-            switch (eleccionDelFiltrado)
-            {
-                case "Sexo":
-                    String sexo = DdlSexo.SelectedValue;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunSexo(sexo);
-                    break;
-                case "Nombre":
-                    String nombre = txtBusqueda.Text;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunNombre(nombre);
-                    break;
-                case "Provincia":
-                    String provincia = ddlProvincias.SelectedValue;
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPacienteSegunProvincia(provincia);
-                    break;
-                default:
-                    grvPacientes.DataSource = ABMLPaciente.cargartablaPaciente();
-                    break;
-            }
-
             grvPacientes.DataBind();
         }
 
@@ -108,59 +77,59 @@ namespace Vistas
             }
         }
 
-        protected void cargarddlTipoFiltro()
-        {
-            ddlTipoFiltro.Items.Add("");
-            ddlTipoFiltro.Items.Add("Nombre");
-            ddlTipoFiltro.Items.Add("Provincia");
-            ddlTipoFiltro.Items.Add("Sexo");
-        }
+        //protected void cargarddlTipoFiltro()
+        //{
+        //    ddlTipoFiltro.Items.Add("");
+        //    ddlTipoFiltro.Items.Add("Nombre");
+        //    ddlTipoFiltro.Items.Add("Provincia");
+        //    ddlTipoFiltro.Items.Add("Sexo");
+        //}
 
-        protected void cargarddSexo()
-        {
-            DdlSexo.Items.Add("Masculino");
-            DdlSexo.Items.Add("Femenino");
-            DdlSexo.Items.Add("Otros");
-        }
+        //protected void cargarddSexo()
+        //{
+        //    DdlSexo.Items.Add("Masculino");
+        //    DdlSexo.Items.Add("Femenino");
+        //    DdlSexo.Items.Add("Otros");
+        //}
 
-        protected void cargarDdlProvincias()
-        {
-            ddlProvincias.DataSource = ABMLPaciente.cargartablaPaciente();
-            ddlProvincias.DataTextField = "Nombre_loca";
-            ddlProvincias.DataBind();
-        }
+        //protected void cargarDdlProvincias()
+        //{
+        //    ddlProvincias.DataSource = ABMLPaciente.cargartablaPaciente();
+        //    ddlProvincias.DataTextField = "Nombre_loca";
+        //    ddlProvincias.DataBind();
+        //}
 
-        protected void vistaDdlSexo()
-        {
-            String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
+        //protected void vistaDdlSexo()
+        //{
+        //    String eleccionDelFiltrado = ddlTipoFiltro.SelectedValue;
 
-            switch (eleccionDelFiltrado)
-            {
-                case "":
-                    ddlProvincias.Visible = false;
-                    DdlSexo.Visible = false;
-                    txtBusqueda.Visible = false;
-                    btnBuscar.Visible = false;
-                    break;
-                case "Sexo":
-                    ddlProvincias.Visible = false;
-                    DdlSexo.Visible = true;
-                    txtBusqueda.Visible = false;
-                    btnBuscar.Visible = true;
-                    break;
-                case "Provincia":
-                    ddlProvincias.Visible = true;
-                    DdlSexo.Visible = false;
-                    txtBusqueda.Visible = false;
-                    btnBuscar.Visible = true;
-                    break;
-                default:
-                    ddlProvincias.Visible = false;
-                    DdlSexo.Visible = false;
-                    txtBusqueda.Visible = true;
-                    btnBuscar.Visible = true;
-                    break;
-            }
-        }
+        //    switch (eleccionDelFiltrado)
+        //    {
+        //        case "":
+        //            ddlProvincias.Visible = false;
+        //            DdlSexo.Visible = false;
+        //            txtBusqueda.Visible = false;
+        //            btnBuscar.Visible = false;
+        //            break;
+        //        case "Sexo":
+        //            ddlProvincias.Visible = false;
+        //            DdlSexo.Visible = true;
+        //            txtBusqueda.Visible = false;
+        //            btnBuscar.Visible = true;
+        //            break;
+        //        case "Provincia":
+        //            ddlProvincias.Visible = true;
+        //            DdlSexo.Visible = false;
+        //            txtBusqueda.Visible = false;
+        //            btnBuscar.Visible = true;
+        //            break;
+        //        default:
+        //            ddlProvincias.Visible = false;
+        //            DdlSexo.Visible = false;
+        //            txtBusqueda.Visible = true;
+        //            btnBuscar.Visible = true;
+        //            break;
+        //    }
+        //}
     }
 }

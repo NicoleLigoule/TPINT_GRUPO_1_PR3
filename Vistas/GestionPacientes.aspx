@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GestionPacientes.aspx.cs" Inherits="Vistas.GestionPacientes" %>
 <%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
+<%@ Register Src="~/FiltradoPor.ascx" TagName="FiltradoPor" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -17,20 +18,10 @@
     <%-- Incluye el Header --%>
     <uc:Header runat="server" />
     <form id="form1" runat="server">
-        <div class="GridViewPacientes">
-            <h2>Gestión Pacientes</h2>
-            <div id="Filtrar-por">
-                <asp:Label ID="lblFiltrarPor" runat="server" Text="Filtrar por"></asp:Label>
-                &nbsp;<asp:DropDownList ID="ddlTipoFiltro" runat="server" AutoPostBack="True"></asp:DropDownList>
-                &nbsp;<asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
-                &nbsp;<asp:DropDownList ID="DdlSexo" runat="server" Visible="False">
-                </asp:DropDownList>
-                &nbsp;<asp:DropDownList ID="ddlProvincias" runat="server" Visible="False">
-                </asp:DropDownList>
-                &nbsp;<asp:Button ID="btnBuscar" runat="server" Text="Buscar"/>
-            </div>
+            <%-- Incluye el Filtro --%>
+            <uc:FiltradoPor ID="FiltradoPor" runat="server" />
             <br />
-            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" PageSize="8" AutoGenerateSelectButton="True" OnRowDataBound="grvPacientes_RowDataBound" OnSelectedIndexChanging="grvPacientes_SelectedIndexChanging">
+            <asp:GridView ID="grvPacientes" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" OnPageIndexChanging="grvPacientes_PageIndexChanging" PageSize="4" AutoGenerateSelectButton="True" OnRowDataBound="grvPacientes_RowDataBound" OnSelectedIndexChanging="grvPacientes_SelectedIndexChanging">
                 <Columns>
                     <asp:TemplateField HeaderText="DNI">
                         <EditItemTemplate>
