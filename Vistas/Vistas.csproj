@@ -75,6 +75,7 @@
     <Content Include="EditarPaciente.aspx" />
     <Content Include="EliminarMedico.aspx" />
     <Content Include="EliminarPaciente.aspx" />
+    <Content Include="FiltradoPor.ascx" />
     <Content Include="Footer.ascx" />
     <Content Include="GestionMedico.aspx" />
     <Content Include="GestionPacientes.aspx" />
@@ -160,6 +161,13 @@
     </Compile>
     <Compile Include="EliminarPaciente.aspx.designer.cs">
       <DependentUpon>EliminarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FiltradoPor.ascx.cs">
+      <DependentUpon>FiltradoPor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FiltradoPor.ascx.designer.cs">
+      <DependentUpon>FiltradoPor.ascx</DependentUpon>
     </Compile>
     <Compile Include="Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>

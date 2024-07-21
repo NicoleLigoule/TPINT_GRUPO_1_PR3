@@ -10,14 +10,46 @@ namespace Vistas
 {
     public partial class GestionMedico : System.Web.UI.Page
     {
+        private ABMLMedico ABMLMedico;
+
+        public GestionMedico()
+        {
+            if (ABMLMedico == null)
+            {
+                ABMLMedico = new ABMLMedico();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            ABMLMedico tabla = new ABMLMedico();
-            GridViewMedicos1.DataSource = tabla.cargartabla();
+            cargarGrvMedicos(); 
             GridViewMedicos1.DataBind();
+        }
 
+        protected void cargarGrvMedicos()
+        {
+            String eleccionDelFiltrado =  FiltradoPor.eleccionDelFiltrado;
 
+            switch (eleccionDelFiltrado)
+            {
+                case "Sexo":
+                    String sexo = FiltradoPor.sexo;
+                    GridViewMedicos1.DataSource = ABMLMedico.cargartablaMedicosPorSexo(sexo);
+                    break;
+                case "Nombre":
+                    String nombre = FiltradoPor.textoBusqueda;
+                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunNombre(nombre);
+                    break;
+                case "Provincia":
+                    String provincia = FiltradoPor.provincia;
+                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunProvincia(provincia);
+                    break;
+                default:
+                    GridViewMedicos1.DataSource = ABMLMedico.cargartabla();
+                    break;
+            }
 
+            //GridViewMedicos1.DataBind();
         }
 
         protected void GridViewMedicos1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -48,5 +80,8 @@ namespace Vistas
                 }
             }
         }
+
+
+
     }
 }

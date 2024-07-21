@@ -11,10 +11,21 @@ namespace Negocio
 {
     public class ABMLMedico
     {
+        private AccesoDatosMedico datos;
+        public ABMLMedico() 
+        {
+            if(datos == null)
+            {
+                datos = new AccesoDatosMedico();
+            }
+        }
         public DataTable cargartabla()
         {
-           AccesoDatosMedico datos = new AccesoDatosMedico();
            return datos.Todos_Los_Medicos_Alta();
+        }
+        public DataTable cargartablaMedicosPorSexo(String sexo)
+        {
+            return datos.Todos_Los_Medicos_AltaPorSexo(sexo);
         }
         public bool agregarMedico(Medico medico)
         {

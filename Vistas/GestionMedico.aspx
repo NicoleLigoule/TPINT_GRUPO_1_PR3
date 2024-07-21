@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="GestionMedico.aspx.cs" Inherits="Vistas.GestionMedico" %>
 <%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
+<%@ Register Src="~/FiltradoPor.ascx" TagName="FiltradoPor" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -25,6 +26,9 @@
     <form id="form1" runat="server">
         <div class="GridViewMedico">
             <h2>Gestión Medico</h2>
+            <%-- Incluye el Filtro --%>
+            <uc:FiltradoPor ID="FiltradoPor" runat="server" />
+            <br />
             <asp:GridView ID="GridViewMedicos1" runat="server" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" AllowPaging="True" AutoGenerateColumns="False" OnPageIndexChanging="GridViewMedicos1_PageIndexChanging" PageSize="1" AutoGenerateSelectButton="True" CssClass="auto-style3" OnRowDataBound="GridViewMedicos1_RowDataBound" OnSelectedIndexChanging="GridViewMedicos1_SelectedIndexChanging">
                 <Columns>
                     <asp:TemplateField HeaderText="Legajo">
