@@ -11,7 +11,7 @@ namespace Vistas
 {
 
 
-    public partial class Reportes
+    public partial class Reporte_CPDS
     {
 
         /// <summary>
@@ -24,67 +24,94 @@ namespace Vistas
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control lblMedicoConMasAtenciones.
+        /// Control lblConsultasPorDiaSemana.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMedicoConMasAtenciones;
+        protected global::System.Web.UI.WebControls.Label lblConsultasPorDiaSemana;
 
         /// <summary>
-        /// Control lblEspecialidadQueMasSeUso.
+        /// Control lblFechaDesdeConsultaDiaSemana.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEspecialidadQueMasSeUso;
+        protected global::System.Web.UI.WebControls.Label lblFechaDesdeConsultaDiaSemana;
 
         /// <summary>
-        /// Control lblapcienteConMasCancelaciones.
+        /// Control txtFechaDesde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblapcienteConMasCancelaciones;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaDesde;
 
         /// <summary>
-        /// Control lblLocalidadConMasPacientes.
+        /// Control revFechaDesde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLocalidadConMasPacientes;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFechaDesde;
 
         /// <summary>
-        /// Control lblEspecialidadMes.
+        /// Control lblFechaHastaConsultaDiaSemana.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEspecialidadMes;
+        protected global::System.Web.UI.WebControls.Label lblFechaHastaConsultaDiaSemana;
 
         /// <summary>
-        /// Control lblEspecialidadMesdata.
+        /// Control txtFechaHasta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEspecialidadMesdata;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaHasta;
 
         /// <summary>
-        /// Control hplConsultaPorDiaDeSemana.
+        /// Control revFechaHasta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton hplConsultaPorDiaDeSemana;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revFechaHasta;
+
+        /// <summary>
+        /// Control btnConsultar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConsultar;
+
+        /// <summary>
+        /// Control lblConsultasPorDiaSemanaData.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConsultasPorDiaSemanaData;
+
+        /// <summary>
+        /// Control hplMenuReportes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink hplMenuReportes;
 
         /// <summary>
         /// Control hplMenuAdmin.

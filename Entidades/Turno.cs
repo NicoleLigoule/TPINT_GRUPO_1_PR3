@@ -135,5 +135,10 @@ namespace Entidades
 
         }
 
+        public class ConsultaPorDiaSemana
+        {
+            public int DiaSemana { get; set; }
+            public int NumeroDeConsultas { get; set; }
+        }
     }
 }

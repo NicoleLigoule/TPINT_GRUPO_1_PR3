@@ -35,7 +35,6 @@ namespace Vistas
             lblEspecialidadQueMasSeUso.Text = reportes.especialidadQueMasSeUso();
             lblapcienteConMasCancelaciones.Text = reportes.pacienteConMasCancelaciones();
             lblLocalidadConMasPacientes.Text = reportes.pacienteLocalidadConMasPacientes();
-
             lblEspecialidadMes.Text = "Especialidades con mayor concurrencia por mes:";
             lblEspecialidadMesdata.Text = reportes.mesConMayorConcurrenciaPorEspecialidad();
         }

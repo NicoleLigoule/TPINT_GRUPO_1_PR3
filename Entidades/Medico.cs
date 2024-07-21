@@ -174,7 +174,7 @@ namespace Entidades
 
         public string getDireccionMed()
         {
-            return CorreoElectronico_me;
+            return Direccion_me;
         }
 
         public void setCorreoMed(string correo)

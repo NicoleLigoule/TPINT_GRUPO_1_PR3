@@ -21,20 +21,24 @@ namespace Datos
         //    return dts.Tables[Nombre];
 
         //}
+        private readonly AccesoDatos _accesoDatos;
+
+        public AccesoDatosTurno()
+        {
+            _accesoDatos = new AccesoDatos();
+        }
 
         public DataTable Todos_Los_Turnos(string leg)
         {
-            AccesoDatos Datos = new AccesoDatos();
-            return Datos.getSimpleTable("Turnos wHERE Legajo_tu ="+leg+ " and Estado_ha = 1 and (DniPaciente_tu IS NOT NULL OR LEN(DniPaciente_tu) != 0)");
+            return _accesoDatos.getSimpleTable("Turnos WHERE Legajo_tu =" + leg + " and Estado_ha = 1 and (DniPaciente_tu IS NOT NULL OR LEN(DniPaciente_tu) != 0)");
         }
 
 
         public int AsignarTurno(Turno turno)
         {
-            AccesoDatos ds = new AccesoDatos();
             SqlCommand comando = new SqlCommand();
             ArmarParametrosTurno(ref comando, turno);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_Registar_Tunro");
+            return _accesoDatos.EjecutarProcedimientoAlmacenado(comando, "SP_Registar_Tunro");
         }
 
         private void ArmarParametrosTurno(ref SqlCommand Comando, Turno turno)
@@ -73,11 +77,40 @@ namespace Datos
 
         public int ActualizarTurnoDatos(Turno turno)
         {
-            AccesoDatos ds = new AccesoDatos();
             SqlCommand cmd = new SqlCommand();
 
             ArmarParametrosModificarTurno(ref cmd, turno);
-            return ds.EjecutarProcedimientoAlmacenado(cmd, "ACTUALIZAR_ESTADO_TURNO");
+            return _accesoDatos.EjecutarProcedimientoAlmacenado(cmd, "ACTUALIZAR_ESTADO_TURNO");
+        }
+
+        public List<Turno.ConsultaPorDiaSemana> SP_ConsultasPorDiaDeLaSemanaEntreFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            List<Turno.ConsultaPorDiaSemana> consultasList = new List<Turno.ConsultaPorDiaSemana>();
+
+            using (SqlConnection conn = _accesoDatos.ObtenerConexion())
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_ConsultasPorDiaDeLaSemanaEntreFechas", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+
+                   // conn.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            consultasList.Add(new Turno.ConsultaPorDiaSemana
+                            {
+                                DiaSemana = reader.GetInt32(0),
+                                NumeroDeConsultas = reader.GetInt32(1)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return consultasList;
         }
     }
 }

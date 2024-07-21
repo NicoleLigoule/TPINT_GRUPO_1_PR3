@@ -20,6 +20,12 @@
         .beige {
             background-color: beige;
         }
+        .report-container {
+            margin-top: 20px;
+        }
+        .report-item {
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -35,30 +41,33 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8 card" style="background-color:antiquewhite">
-                    <ul class="list-unstyled">
-                        <li class="mb-4">
+                    <div class="report-container">
+                        <div class="report-item">
                             <asp:Label ID="lblMedicoConMasAtenciones" CssClass="report-label beige" runat="server"></asp:Label>
-                        </li>
-                        <li class="mb-4">
+                        </div>
+                        <div class="report-item">
                             <asp:Label ID="lblEspecialidadQueMasSeUso" CssClass="report-label" runat="server"></asp:Label>
-                        </li>
-                        <li class="mb-4">
+                        </div>
+                        <div class="report-item">
                             <asp:Label ID="lblapcienteConMasCancelaciones" CssClass="report-label beige" runat="server"></asp:Label>
-                        </li>
-                        <li class="mb-4">
+                        </div>
+                        <div class="report-item">
                             <asp:Label ID="lblLocalidadConMasPacientes" CssClass="report-label" runat="server"></asp:Label>
-                        </li>
-                        <li class="mb-5">
+                        </div>
+                        <div class="report-item">
                             <asp:Label ID="lblEspecialidadMes" CssClass="report-label beige" runat="server"></asp:Label>
                             <br />
                             <br />
-                            <asp:Label ID="lblEspecialidadMesdata" CssClass="report-label beige" runat="server"></asp:Label>
-                        </li>
-                        <li class="mb-4">
+                            <asp:Label ID="lblEspecialidadMesdata" CssClass="report-label" runat="server"></asp:Label>
+                        </div>
+                        <div class="report-item">
+                        <asp:LinkButton ID="hplConsultaPorDiaDeSemana" runat="server" NavigateUrl="~/Reporte-CPDS.aspx" BackColor="Beige" BorderColor="Beige" BorderStyle="Solid" ForeColor="Black" PostBackUrl="~/Reporte-CPDS.aspx">Consultas por Dia de Semana</asp:LinkButton>
+                        </div>
+                        <div class="report-item">
                             <asp:HyperLink ID="hplMenuAdmin" CssClass="btn btn-primary" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
-                        </li>
-                    </ul>
-                </div>       
+                        </div>
+                    </div>
+                </div>
                 <div class="col-sm-2"></div>
             </div>
         </div>

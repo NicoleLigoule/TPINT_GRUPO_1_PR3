@@ -12,6 +12,8 @@ namespace Negocio
     {
         private AccesoDatosMedico accesoDatosMedico;
         private AccesoDatosPacientes accesoDatosPacientes;
+        private AccesoDatosTurno accesoDatosTurno;
+
         public Reportes()
         { 
             if(accesoDatosMedico == null)
@@ -22,6 +24,10 @@ namespace Negocio
             {
                 accesoDatosPacientes = new AccesoDatosPacientes();
             }
+            if (accesoDatosTurno == null)
+            {
+                accesoDatosTurno = new AccesoDatosTurno();
+            }
         }
 
         /**
@@ -30,7 +36,7 @@ namespace Negocio
 
         public String MedicoConMasAtenciones()
         {
-            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
 
             Medico mdReporte = accesoDatosMedico.SP_medicoConMasAtencionesReportes();
 
@@ -46,7 +52,7 @@ namespace Negocio
 
         public String especialidadQueMasSeUso()
         {
-            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
 
             Especialidad esReporte = accesoDatosMedico.SP_MedicoEspecialidadQueMasSeUso();
 
@@ -61,7 +67,7 @@ namespace Negocio
 
         public String mesConMayorConcurrenciaPorEspecialidad()
         {
-            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
 
             List<Especialidad> especialidadList = accesoDatosMedico.SP_MedicoMesConMayorConcurrenciaPorEspecialidad();
             int tamList = especialidadList.Count();
@@ -90,7 +96,7 @@ namespace Negocio
 
         public String pacienteConMasCancelaciones()
         {
-            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
 
             Paciente pcReporte = accesoDatosPacientes.SP_pacienteConMasCancelacionesReportes();
 
@@ -106,7 +112,7 @@ namespace Negocio
 
         public String pacienteLocalidadConMasPacientes()
         {
-            String respuesta = "No hay registros en la base de datos, intentelo luego.";
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
 
             Localidad loReporte = accesoDatosPacientes.SP_PacienteLocalidadConMasPacientes();
 
@@ -114,6 +120,39 @@ namespace Negocio
             {
                 respuesta = $"La localidad con más pacientes es {loReporte.getNombre_localidad()}" +
                     $", cantidad de pacientes: {loReporte.getId_localidad()}";
+            }
+
+            return respuesta;
+        }
+
+        /**
+         * REPORTES TURNOS
+         */
+
+        public String ConsultasPorDiaDeLaSemanaEntreFechas(DateTime fechaInicio, DateTime fechaFin)
+        {
+            String respuesta = "No hay registros en la base de datos, por favor intentelo luego.";
+
+            List<Turno.ConsultaPorDiaSemana> consultasList = accesoDatosTurno.SP_ConsultasPorDiaDeLaSemanaEntreFechas(fechaInicio, fechaFin);
+
+            if (consultasList.Count > 0)
+            {
+                respuesta = "<div class='consultas-header'>Consulta por dia de la semana entre fechas:</div><br/>";
+                foreach (var consulta in consultasList)
+                {
+                    string diaSemana = "";
+                    switch (consulta.DiaSemana)
+                    {
+                        case 1: diaSemana = "Domingo"; break;
+                        case 2: diaSemana = "Lunes"; break;
+                        case 3: diaSemana = "Martes"; break;
+                        case 4: diaSemana = "Miércoles"; break;
+                        case 5: diaSemana = "Jueves"; break;
+                        case 6: diaSemana = "Viernes"; break;
+                        case 7: diaSemana = "Sábado"; break;
+                    }
+                    respuesta += $"<div class='consulta-item'>Día: {diaSemana} Número de consultas: {consulta.NumeroDeConsultas}</div>";
+                }
             }
 
             return respuesta;

@@ -1,0 +1,26 @@
+﻿body {
+}
+
+.report-label {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.beige {
+    background-color: beige;
+}
+
+.report-container {
+    margin-top: 20px;
+}
+
+.report-item {
+    margin-bottom: 20px;
+}
+
+.wrap-text {
+    white-space: pre-wrap;
+}

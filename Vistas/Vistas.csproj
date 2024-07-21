@@ -86,6 +86,7 @@
     <Content Include="NoAutorizado.aspx" />
     <Content Include="AgregarPaciente.aspx" />
     <Content Include="AgregarMedico.aspx" />
+    <Content Include="Reporte-CPDS.aspx" />
     <Content Include="Reportes.aspx" />
     <Content Include="Resources\estilos\Footer.css" />
     <Content Include="Resources\estilos\img\background\clinicaUTN-portadaLogin.jpg" />
@@ -101,6 +102,7 @@
     <Content Include="Resources\estilos\styles.MenuPacientes.css" />
     <Content Include="Resources\estilos\styles.Pacientes.css" />
     <Content Include="Resources\estilos\styles.AgregarMedico.css" />
+    <Content Include="Resources\estilos\styles.Reportes-CPDS.css" />
     <Content Include="Resources\estilos\styles.Reportes.css" />
     <Content Include="Resources\estilos\styles.EditarMedico.css" />
     <Content Include="Resources\estilos\styles.EditarPaciente.css" />
@@ -236,6 +238,13 @@
     </Compile>
     <Compile Include="AgregarMedico.aspx.designer.cs">
       <DependentUpon>AgregarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte-CPDS.aspx.cs">
+      <DependentUpon>Reporte-CPDS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reporte-CPDS.aspx.designer.cs">
+      <DependentUpon>Reporte-CPDS.aspx</DependentUpon>
     </Compile>
     <Compile Include="Reportes.aspx.cs">
       <DependentUpon>Reportes.aspx</DependentUpon>
