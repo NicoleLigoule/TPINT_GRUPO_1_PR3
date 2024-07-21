@@ -62,7 +62,13 @@
                         </div>
                         <div class="report-item">
                         <asp:LinkButton ID="hplConsultaPorDiaDeSemana" runat="server" NavigateUrl="~/Reporte-CPDS.aspx" BackColor="Beige" BorderColor="Beige" BorderStyle="Solid" ForeColor="Black" PostBackUrl="~/Reporte-CPDS.aspx">Consultas por Dia de Semana</asp:LinkButton>
+                            <br />
+                            <br />
+                            <asp:Label ID="lblMedicoConMasCancelaciones" CssClass="report-label" runat="server"></asp:Label>
                         </div>
+                        <br />
+                        <br />
+                        <br />
                         <div class="report-item">
                             <asp:HyperLink ID="hplMenuAdmin" CssClass="btn btn-primary" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
                         </div>

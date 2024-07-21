@@ -12,8 +12,7 @@ namespace Datos
 {
     public class AccesoDatosMedico
     {
-
-
+        readonly AccesoDatos accesoDatos = new AccesoDatos();
         private DataTable Traer_tabla(string Nombre, string SQl)
         {
             DataSet dts = new DataSet();
@@ -317,6 +316,35 @@ namespace Datos
 
 
             return especialidadList;
+        }
+
+        public String SP_MedicoConMasTurnosCancelados()
+        {
+            string resultado = "No hay registros en la base de datos, por favor intente luego.";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("SP_MedicoConMasTurnosCancelados", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    connection.Open();
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string nombreMedico = reader["NombreMedico"].ToString();
+                            string apellidoMedico = reader["ApellidoMedico"].ToString();
+                            int cantidadTurnosCancelados = Convert.ToInt32(reader["CantidadTurnosCancelados"]);
+
+                            resultado = $"El médico con más turnos cancelados es {nombreMedico} {apellidoMedico}\t |" +
+                                        $"\nCantidad de turnos cancelados: {cantidadTurnosCancelados}";
+                        }
+                    }
+                }
+            }
+
+            return resultado;
         }
     }
 }

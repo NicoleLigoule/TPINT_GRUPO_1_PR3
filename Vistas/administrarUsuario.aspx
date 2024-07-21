@@ -60,6 +60,8 @@
                             <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             <asp:Button ID="btnAsignar" CssClass="boton" style="margin-top: 20px" runat="server" Text="Confirmar" OnClick="btnAsignar_Click" />
                             <asp:ValidationSummary ID="vs" runat="server" />
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AdmInicio.aspx">Volver al menu Administrador</asp:HyperLink>
+                            <br />
                     </div>
                  </div>
                 <div class="col-md-4"></div>

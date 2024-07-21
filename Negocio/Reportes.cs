@@ -89,6 +89,12 @@ namespace Negocio
             return respuesta;
         }
 
+        public String MedicoConMasTurnosCancelados()
+        {
+            return accesoDatosMedico.SP_MedicoConMasTurnosCancelados();
+        }
+
+
 
         /**
          * REPORTES PACIENTE
