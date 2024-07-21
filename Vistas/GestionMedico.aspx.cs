@@ -37,12 +37,10 @@ namespace Vistas
                     parametro = FiltradoPor.sexo;
                     break;
                 case "Nombre":
-                    String nombre = FiltradoPor.textoBusqueda;
-                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunNombre(nombre);
+                    parametro = FiltradoPor.textoBusqueda;
                     break;
                 case "Provincia":
-                    String provincia = FiltradoPor.provincia;
-                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunProvincia(provincia);
+                    parametro = FiltradoPor.provincia;
                     break;
                 default:
                     parametro = "";
@@ -50,7 +48,6 @@ namespace Vistas
             }
 
             GridViewMedicos1.DataSource = ABMLMedico.cargartabla(eleccionDelFiltrado, parametro);
-            //GridViewMedicos1.DataBind();
         }
 
         protected void GridViewMedicos1_PageIndexChanging(object sender, GridViewPageEventArgs e)
