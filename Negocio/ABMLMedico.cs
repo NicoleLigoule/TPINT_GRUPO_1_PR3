@@ -30,11 +30,9 @@ namespace Negocio
                 case "Sexo":
                     return datos.Todos_Los_Medicos_AltaPorSexo(parametro);
                 case "Nombre":
-                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunNombre(nombre);
-                    break;
+                    return datos.Todos_Los_Medicos_AltaPorNombre(parametro);
                 case "Provincia":
-                    //GridViewMedicos1.DataSource = ABMLMedico.cargartablaPacienteSegunProvincia(provincia);
-                    break;
+                    return datos.Todos_Los_Medicos_AltaPorProvincia(parametro);
                 default:
                     break;
             }
