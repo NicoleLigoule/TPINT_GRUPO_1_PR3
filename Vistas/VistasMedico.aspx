@@ -38,7 +38,7 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:GridView ID="grdTurnoMedico" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="2" Width="992px" AutoGenerateEditButton="True" OnRowEditing="grdTurnoMedico_RowEditing" OnPageIndexChanging="grdTurnoMedico_PageIndexChanging" OnRowCancelingEdit="grdTurnoMedico_RowCancelingEdit" OnRowUpdating="grdTurnoMedico_RowUpdating" DataKeyNames="Legajo_tu,Fecha_tu,Horario_tu">
+                        <asp:GridView ID="grdTurnoMedico" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="4" Width="992px" AutoGenerateEditButton="True" OnRowEditing="grdTurnoMedico_RowEditing" OnPageIndexChanging="grdTurnoMedico_PageIndexChanging" OnRowCancelingEdit="grdTurnoMedico_RowCancelingEdit" OnRowUpdating="grdTurnoMedico_RowUpdating" DataKeyNames="Legajo_tu,Fecha_tu,Horario_tu">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo Medico">
                                     <EditItemTemplate>
