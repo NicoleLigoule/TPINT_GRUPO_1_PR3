@@ -2,6 +2,7 @@
 using System.Web.UI.WebControls;
 using Negocio;
 using Entidades;
+using System.Data;
 
 namespace Vistas
 {
@@ -86,5 +87,32 @@ namespace Vistas
             grdTurnoMedico.PageIndex = e.NewPageIndex;
             UpdateGridView();
         }
+
+        protected void btnFiltrarPorDni_Click(object sender, EventArgs e)
+        {
+            Negocio.Login log = new Negocio.Login();
+            string usuario;
+            int leg = 0;
+            if (Session["nombreUsuario"] != null)
+            {
+                usuario = Session["nombreUsuario"].ToString();
+                leg = log.obtener_legajo(usuario);
+            }
+
+            TurnoAtencion tabla = new TurnoAtencion();
+
+            DataView dataView = new DataView(tabla.cargartablaTurnos(leg));
+
+            if (!string.IsNullOrEmpty(txtDni.Text))
+            {
+                dataView.RowFilter = $"DniPaciente_tu LIKE '%{txtDni.Text}%'";
+            }
+
+            grdTurnoMedico.DataSource = dataView;
+            grdTurnoMedico.DataBind();
+
+        }
+
+       
     }
 }

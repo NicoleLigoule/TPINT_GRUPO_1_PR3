@@ -28,8 +28,9 @@
             <table class="auto-style1">
                 <tr>
                     <td>&nbsp;</td>
-                    <td>  <%-- Incluye el Filtro --%>
-                    <uc:FiltradoPor ID="FiltradoPor" runat="server" />
+                    <td>
+                        <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
+                        <asp:Button ID="btnFiltrarPorDni" runat="server" OnClick="btnFiltrarPorDni_Click" Text="Button" />
                     <br />
                     </td>
                     <td>&nbsp;</td>
