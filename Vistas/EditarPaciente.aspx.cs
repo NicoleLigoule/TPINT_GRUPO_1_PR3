@@ -43,7 +43,7 @@ namespace Vistas
                     txtDireccionPac.Text = paciente.getDireccionPac();
                     txtCorreoElectronicoPac.Text = paciente.getCorreoPac();
                     txtTelefonoPac.Text = paciente.getTelefonoPac();
-                    lblMensaje.Text = paciente.getProvPac().ToString() + paciente.getLocaPac().ToString();
+                    
                 }
 
             }
