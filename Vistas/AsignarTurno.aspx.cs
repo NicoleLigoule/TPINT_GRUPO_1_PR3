@@ -87,6 +87,7 @@ namespace Vistas
         }
         private void verificarCarga()
         {
+            btnAsignar.Enabled = true;
             lblespecialidades.Text = "";
             lblMedicos.Text = "";
             lblFechas.Text = "";
@@ -111,6 +112,7 @@ namespace Vistas
             {
 
                 lblFechas.Text = "No se encuentran Fecha desponible para ese medico";
+                btnAsignar.Enabled = false;
             }
             if (ddlMedico.SelectedItem != null && !string.IsNullOrEmpty(ddlMedico.SelectedItem.Value) && ddlDiaDeAtencion.SelectedItem != null && !string.IsNullOrEmpty(ddlDiaDeAtencion.SelectedItem.Value))
             {
@@ -123,6 +125,7 @@ namespace Vistas
             else
             {
                 lblHorarios.Text = "No se encuentran horario disponible para esa fecha";
+                btnAsignar.Enabled = false;
             }
         }
         protected void btnAsignar_Click(object sender, EventArgs e)
