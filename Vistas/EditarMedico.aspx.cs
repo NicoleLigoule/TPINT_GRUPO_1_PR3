@@ -113,6 +113,7 @@ namespace Vistas
             if (med.ActuMed(medico))
             {
                 lblMensaje.Text = "El medico se ha actualizado con exito";
+                limpiarCamposMed();
             }
             else
             {
@@ -120,20 +121,19 @@ namespace Vistas
             }
         }
 
-        //protected void limpiarcampos()
-        //{
-        //    txtDni.Text = "";
-        //    txtNombre.Text = "";
-        //    txtApellido.Text = "";
-        //    ddlProvincia.SelectedIndex = 0;
-        //    ddlLocalidades.SelectedIndex = 0;
-        //    ddlEspecialidad.SelectedIndex = 0;
-        //    ddlSexo.SelectedItem.Text = "";
-        //    txtNacionalidad.Text = "";
-        //    txtFechaNac.Text = "";
-        //    txtDireccion.Text = "";
-        //    txtCorreoElectronico.Text = "";
-        //    txtTelefono.Text = "";
-        //}
+        protected void limpiarCamposMed()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtNacionalidad.Text = "";
+            txtFechaNac.Text = "";
+            txtDireccion.Text = "";
+            txtCorreoElectronico.Text = "";
+            txtTelefono.Text = "";
+            ddlSexo.SelectedIndex = 1;
+            ddlProvincia.SelectedIndex = 1;
+            ddlLocalidades.SelectedIndex = 1;
+            ddlEspecialidad.SelectedIndex = 1;
+        }
     }
 }

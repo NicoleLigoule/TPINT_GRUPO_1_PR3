@@ -54,9 +54,9 @@
                             <asp:Label ID="lblUsuario" runat="server" Text="Ingrese Nuevo Usuario"></asp:Label>
                             <asp:TextBox ID="txtUsuario" CssClass="txt" runat="server"></asp:TextBox>
                             <asp:Label ID="lblContrase" runat="server" Text="Nueva Contraseña"></asp:Label>
-                            <asp:TextBox ID="txtContrasenia" CssClass="txt" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="txtContrasenia" CssClass="txt" TextMode="Password" runat="server"></asp:TextBox>
                             <asp:Label ID="lblContra" runat="server" Text="Repita Contraseña"></asp:Label>
-                            <asp:TextBox ID="txtRContrasenia" CssClass="txt" runat="server"></asp:TextBox><asp:CompareValidator ID="cvcontrasenia" runat="server" ErrorMessage="La contraseña no conicide " ControlToCompare="txtContrasenia" ControlToValidate="txtRContrasenia" ForeColor="Red">*</asp:CompareValidator>
+                            <asp:TextBox ID="txtRContrasenia" CssClass="txt" TextMode="Password" runat="server"></asp:TextBox><asp:CompareValidator ID="cvcontrasenia" runat="server" ErrorMessage="La contraseña no conicide " ControlToCompare="txtContrasenia" ControlToValidate="txtRContrasenia" ForeColor="Red">*</asp:CompareValidator>
                             <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             <asp:Button ID="btnAsignar" CssClass="boton" style="margin-top: 20px" runat="server" Text="Confirmar" OnClick="btnAsignar_Click" />
                             <asp:ValidationSummary ID="vs" runat="server" />

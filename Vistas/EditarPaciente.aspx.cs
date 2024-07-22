@@ -82,6 +82,19 @@ namespace Vistas
             }
         }
 
+        protected void limpiarCamposPac()
+        {
+            txtNombrePac.Text = "";
+            txtApellidoPac.Text = "";
+            txtNacionalidad.Text = "";
+            txtFechaNac.Text = "";
+            txtDireccionPac.Text = "";
+            txtCorreoElectronicoPac.Text = "";
+            txtTelefonoPac.Text = "";
+            ddlSexoPac.SelectedIndex = 1;
+            ddlProvincia.SelectedIndex = 1;
+            ddlLocalidad.SelectedIndex = 1;
+        }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -102,19 +115,20 @@ namespace Vistas
 
             if (pac.ActuPac(paciente))
             {
-
                 lblMensaje.Text = "El paciente se ha actualizado con exito";
+                limpiarCamposPac();
             }
             else
             {
                 lblMensaje.Text = "No se pudo actualizar el paciente";
             }
-
         }
 
         protected void txtFechaNac_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

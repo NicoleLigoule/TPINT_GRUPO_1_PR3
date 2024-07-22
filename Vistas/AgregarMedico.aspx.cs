@@ -92,28 +92,30 @@ namespace Vistas
             {
                 
                 lblMensaje.Text =  "Se agrego correctamente";
+                limpiarCamposMed();
             }
             else
             {
                 lblMensaje.Text = " No se pudo agregar";
             }
-            limpiarcapos();
+            
 
         }
-        protected void limpiarcapos()
+
+        protected void limpiarCamposMed()
         {
-            txtDni.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
-            ddlProvincia.SelectedIndex = 0;
-            ddlLocalidades.SelectedIndex = 0;
-            ddlEspecialidad.SelectedIndex = 0;
-            ddlSexo.SelectedItem.Text = "";
             txtNacionalidad.Text = "";
             txtFechaNac.Text = "";
             txtDireccion.Text = "";
             txtCorreoElectronico.Text = "";
             txtTelefono.Text = "";
+            ddlSexo.SelectedIndex = 1;
+            ddlProvincia.SelectedIndex = 1;
+            ddlLocalidades.SelectedIndex = 1;
+            ddlEspecialidad.SelectedIndex = 1;
         }
+
     }
 }
