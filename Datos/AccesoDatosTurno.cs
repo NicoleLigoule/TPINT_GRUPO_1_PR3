@@ -38,7 +38,7 @@ namespace Datos
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosTurno(ref comando, turno);
-            return _accesoDatos.EjecutarProcedimientoAlmacenado(comando, "SP_Registar_Tunro");
+            return _accesoDatos.EjecutarProcedimientoAlmacenado(comando, "sp_ActualizarTurnoDniPaciente");
         }
 
         private void ArmarParametrosTurno(ref SqlCommand Comando, Turno turno)
@@ -58,17 +58,24 @@ namespace Datos
             SqlParametros = Comando.Parameters.Add("@DniPaciente_tu", SqlDbType.VarChar);
             SqlParametros.Value = turno.GetDniPaciente_tu();
 
+
+
         }
 
         private void ArmarParametrosModificarTurno(ref SqlCommand Comando, Turno turno)
         {
             SqlParameter SqlParametros = new SqlParameter();
+            DateTime fecha;
+            DateTime.TryParse(turno.Getfecha(), out fecha);
 
             SqlParametros = Comando.Parameters.Add("@Asistencia", SqlDbType.Bit);
             SqlParametros.Value = turno.GetAsistencia();
 
             SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
-            SqlParametros.Value = turno.Getfecha();
+            SqlParametros.Value = fecha;
+
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.Date);
+            SqlParametros.Value = turno.GetDescripcion();
 
             SqlParametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
             SqlParametros.Value = turno.GetEstado();

@@ -85,7 +85,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Observaciones">
                                     <EditItemTemplate>
-                                        <asp:Label ID="lblObservaciones" runat="server" Text='<%# Bind("Descripcion_tu") %>'></asp:Label>
+                                        <asp:TextBox ID="txtObservaciones" runat="server" Text='<%# Bind("Descripcion_tu") %>'></asp:TextBox>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblDescripTurno" runat="server" Text='<%# Bind("Descripcion_tu") %>'></asp:Label>
@@ -93,7 +93,7 @@
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Estado">
                                     <EditItemTemplate>
-                                        <asp:TextBox ID="TxtEstado" runat="server" Text='<%# Bind("Estado_ha") %>'></asp:TextBox>
+                                        <asp:Label ID="lblEstado" runat="server" Text='<%# Bind("Estado_ha") %>'></asp:Label>
                                     </EditItemTemplate>
                                     <ItemTemplate>
                                         <asp:Label ID="lblEstadoTurno" runat="server" Text='<%# Bind("Estado_ha") %>'></asp:Label>

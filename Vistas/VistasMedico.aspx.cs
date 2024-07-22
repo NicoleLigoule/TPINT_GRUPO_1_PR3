@@ -56,9 +56,9 @@ namespace Vistas
             bool asistencia = asistenciaText.Trim().Equals("true", StringComparison.OrdinalIgnoreCase);
 
             string dniPaciente = ((Label)row.FindControl("lblDniPac")).Text;
-            string descripcion = ((Label)row.FindControl("lblObservaciones")).Text;
+            string descripcion = ((TextBox)row.FindControl("txtObservaciones")).Text;
 
-            string estadoText = ((TextBox)row.FindControl("TxtEstado")).Text;
+            string estadoText = ((Label)row.FindControl("lblEstado")).Text;
             bool estado = estadoText.Trim().Equals("true", StringComparison.OrdinalIgnoreCase);
 
             Turno tu = new Turno

@@ -122,7 +122,11 @@
                             </td>
                             <td class="auto-style3">
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
+<<<<<<< HEAD
+                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9\s.,]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+=======
                                 <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9. ]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
+>>>>>>> 572e26008aca301631fd419dbd053204f34494fa
                             </td>
                         </tr>
                         <tr>
