@@ -40,7 +40,6 @@ namespace Vistas
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-
             ABMLMedico AgregarMedico = new ABMLMedico();
             HorarioAtencion horario = new HorarioAtencion(ddlMedico.SelectedItem.Value ,ddlDia.SelectedItem.Text,txtHora.Text);
 
