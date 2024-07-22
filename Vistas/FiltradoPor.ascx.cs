@@ -11,6 +11,7 @@ namespace Vistas
     public partial class FiltradoPor : System.Web.UI.UserControl
     {
         private ABMLPaciente ABMLPaciente;
+        private ABMLMedico ABMLMedico;
 
         public FiltradoPor()
         {
@@ -26,6 +27,7 @@ namespace Vistas
                 cargarddlTipoFiltro();
                 cargarddSexo();
                 cargarDdlProvincias();
+
             }
             vistaDdlSexo();
 
@@ -49,7 +51,14 @@ namespace Vistas
         protected void cargarDdlProvincias()
         {
             ddlProvincias.DataSource = ABMLPaciente.cargartablaPaciente();
-            ddlProvincias.DataTextField = "Nombre_loca";
+            ddlProvincias.DataTextField = "Nombre_prov";
+            ddlProvincias.DataBind();
+        }
+
+        protected void cargarDdlProvinciasMedico()
+        {
+            ddlProvincias.DataSource = ABMLMedico.cargartabla();
+            ddlProvincias.DataTextField = "Nombre_prov";
             ddlProvincias.DataBind();
         }
 

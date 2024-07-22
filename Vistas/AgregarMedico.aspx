@@ -115,7 +115,7 @@
                                 <asp:TextBox ID="txtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
                             </td>
                             <td class="auto-style2">
-                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo deben ingresarse letras" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9]+$">*</asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Solo deben ingresarse letras" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9. ]+$">*</asp:RegularExpressionValidator>
                                 <br />
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ErrorMessage="Campo Obligatorio" ForeColor="#CC0000">*</asp:RequiredFieldValidator>
                             </td>

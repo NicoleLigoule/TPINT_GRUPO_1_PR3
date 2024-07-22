@@ -72,7 +72,6 @@
                             </td>
                         </tr>
                     </table>  
-                    <asp:HyperLink ID="hplRegistrarse" runat="server" NavigateUrl="~/RegistroMed.aspx">Crear nuevo usuario</asp:HyperLink>
                 </div>
             </form>  
         </div>
