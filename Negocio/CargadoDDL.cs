@@ -35,7 +35,7 @@ namespace Negocio
         {
             int especiali = int.Parse(especialida);
             AccesoDatos dp = new AccesoDatos();
-            return dp.ObtenerMEdicoCargaTunros(especiali);
+            return dp.ObtenerMedicoCargaTurnos(especiali);
         }
         public List<Turno> ObtenerFechas_Turnos(string Legmedico)
         {

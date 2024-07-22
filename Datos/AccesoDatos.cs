@@ -212,7 +212,7 @@ namespace Datos
             return medicos;
         }
 
-        public List<Medico> ObtenerMEdicoCargaTunros(int especialida)
+        public List<Medico> ObtenerMedicoCargaTurnos(int especialida)
         {
             List<Medico> medicos = new List<Medico>();
             string consulta = "SELECT Legajo_me,Nombre_me,Apellido_me FROM dbo.Medico where Estado_me=1 and Especialidad_me=" + especialida.ToString();
