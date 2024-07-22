@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Header.ascx.cs" Inherits="Vistas.Header" %>
 <link href="./Resources/estilos/Header.css" rel="stylesheet" />
-<%-- SCRIPTS --%>
-<script src="./utils.js" type="text/javascript"></script>
 <header>
     <nav class="navbar">
         <div id="hoverNav" class="container-fluid">
