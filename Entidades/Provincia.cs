@@ -41,5 +41,9 @@ namespace Entidades
         {
             descripcion_Provincia = descripcion;
         }
+        public string GetDescripcion
+        {
+            get { return GetDescripcionProvincia(); }
+        }
     }
 }

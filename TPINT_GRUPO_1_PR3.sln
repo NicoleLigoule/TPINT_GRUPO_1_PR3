@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución",
 		DB\Scripts-viejos\base.sql = DB\Scripts-viejos\base.sql
 		..\..\BDClinica.sql = ..\..\BDClinica.sql
 		DB\Scripts-viejos\Procedimientos.sql = DB\Scripts-viejos\Procedimientos.sql
+		DB\ScripClinica.sql = DB\ScripClinica.sql
+		DB\ScripClinica_INSERT.sql = DB\ScripClinica_INSERT.sql
 		DB\Scripts-viejos\Tablas_Trigeer.sql = DB\Scripts-viejos\Tablas_Trigeer.sql
 	EndProjectSection
 EndProject

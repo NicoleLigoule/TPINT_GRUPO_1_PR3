@@ -12,12 +12,20 @@ namespace Vistas
     {
         private ABMLPaciente ABMLPaciente;
         private ABMLMedico ABMLMedico;
-
+        private CargadoDDL Cargado;
         public FiltradoPor()
         {
             if (ABMLPaciente == null)
             {
                 ABMLPaciente = new ABMLPaciente();
+            }
+            if (ABMLMedico == null)
+            {
+                ABMLMedico = new ABMLMedico();
+            }
+            if (Cargado == null)
+            {
+                Cargado = new CargadoDDL();
             }
         }
         protected void Page_Load(object sender, EventArgs e)
@@ -50,15 +58,15 @@ namespace Vistas
 
         protected void cargarDdlProvincias()
         {
-            ddlProvincias.DataSource = ABMLPaciente.cargartablaPaciente();
-            ddlProvincias.DataTextField = "Nombre_prov";
+            ddlProvincias.DataSource = Cargado.ObtenerProvinciasDDL();
+            ddlProvincias.DataTextField = "GetDescripcion";
             ddlProvincias.DataBind();
         }
 
         protected void cargarDdlProvinciasMedico()
         {
-            ddlProvincias.DataSource = ABMLMedico.cargartabla();
-            ddlProvincias.DataTextField = "Nombre_prov";
+            ddlProvincias.DataSource = Cargado.ObtenerProvinciasDDL();
+            ddlProvincias.DataTextField = "GetDescripcion";
             ddlProvincias.DataBind();
         }
 
