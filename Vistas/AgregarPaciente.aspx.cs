@@ -53,6 +53,21 @@ namespace Vistas
                 ddlLocalidad.Items.Add(new ListItem(provincia.getNombre_localidad(), provincia.getId_localidad().ToString()));
             }
         }
+
+        protected void limpiarCamposPac()
+        {
+            txtNombrePac.Text = "";
+            txtApellidoPac.Text = "";
+            txtNacionalidad.Text = "";
+            txtFechaNac.Text = "";
+            txtDireccionPac.Text = "";
+            txtCorreoElectronicoPac.Text = "";
+            txtTelefonoPac.Text = "";
+            ddlSexoPac.SelectedIndex = 1;
+            ddlProvincia.SelectedIndex = 1;
+            ddlLocalidad.SelectedIndex = 1;
+        }
+
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             ABMLPaciente pac = new ABMLPaciente();
@@ -76,6 +91,7 @@ namespace Vistas
             if (pac.agregarPaciente(paciente))
             {
                 lblMensaje.Text = "El paciente se agregó correctamente.";
+                limpiarCamposPac();
             }
             else
             {
