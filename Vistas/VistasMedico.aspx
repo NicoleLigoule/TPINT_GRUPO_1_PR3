@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VistasMedico.aspx.cs" Inherits="Vistas.VistasMedico" %>
 <%@ Register Src="~/Header.ascx" TagName="Header" TagPrefix="uc" %>
+<%@ Register Src="~/FiltradoPor.ascx" TagName="FiltradoPor" TagPrefix="uc" %>
 
 <!DOCTYPE html>
 
@@ -27,7 +28,10 @@
             <table class="auto-style1">
                 <tr>
                     <td>&nbsp;</td>
-                    <td>&nbsp;</td>
+                    <td>  <%-- Incluye el Filtro --%>
+                    <uc:FiltradoPor ID="FiltradoPor" runat="server" />
+                    <br />
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
                 <tr>

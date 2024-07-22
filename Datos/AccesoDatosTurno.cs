@@ -61,24 +61,38 @@ namespace Datos
 
 
         }
+        /* @Asistencia bit,
+            @Fecha date,
+            @horario int,
+            @DniPac varchar(10),
+            @legMed int,
+	        @Descripcion varchar(300)*/
 
         private void ArmarParametrosModificarTurno(ref SqlCommand Comando, Turno turno)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            DateTime fecha;
-            DateTime.TryParse(turno.Getfecha(), out fecha);
 
             SqlParametros = Comando.Parameters.Add("@Asistencia", SqlDbType.Bit);
             SqlParametros.Value = turno.GetAsistencia();
 
-            SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
-            SqlParametros.Value = fecha;
+            DateTime fecha;
+            if(DateTime.TryParse(turno.Getfecha(), out fecha))
+            {
+                SqlParametros = Comando.Parameters.Add("@Fecha", SqlDbType.Date);
+                SqlParametros.Value = fecha;
+            }
 
-            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.Date);
+            SqlParametros = Comando.Parameters.Add("@horario", SqlDbType.Int);
+            SqlParametros.Value = turno.GetHorario();
+
+            SqlParametros = Comando.Parameters.Add("@DniPac", SqlDbType.VarChar);
+            SqlParametros.Value = turno.GetDniPaciente_tu();
+
+            SqlParametros = Comando.Parameters.Add("@legMed", SqlDbType.Int);
+            SqlParametros.Value = turno.GetLegajo();
+
+            SqlParametros = Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar);
             SqlParametros.Value = turno.GetDescripcion();
-
-            SqlParametros = Comando.Parameters.Add("@Estado", SqlDbType.Bit);
-            SqlParametros.Value = turno.GetEstado();
         }
 
 
