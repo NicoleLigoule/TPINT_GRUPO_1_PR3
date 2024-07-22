@@ -30,7 +30,7 @@
                     <td>&nbsp;</td>
                     <td>
                         <asp:TextBox ID="txtDni" runat="server"></asp:TextBox>
-                        <asp:Button ID="btnFiltrarPorDni" runat="server" OnClick="btnFiltrarPorDni_Click" Text="Button" />
+                        <asp:Button ID="btnFiltrarPorDni" runat="server" OnClick="btnFiltrarPorDni_Click" Text="Button" UseSubmitBehavior="False" />
                     <br />
                     </td>
                     <td>&nbsp;</td>
@@ -38,7 +38,7 @@
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <asp:GridView ID="grdTurnoMedico" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="8" Width="992px" AutoGenerateEditButton="True" OnRowEditing="grdTurnoMedico_RowEditing" OnPageIndexChanging="grdTurnoMedico_PageIndexChanging" OnRowCancelingEdit="grdTurnoMedico_RowCancelingEdit" OnRowUpdating="grdTurnoMedico_RowUpdating" DataKeyNames="Legajo_tu,Fecha_tu,Horario_tu">
+                        <asp:GridView ID="grdTurnoMedico" runat="server" AllowPaging="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px" CellPadding="4" PageSize="2" Width="992px" AutoGenerateEditButton="True" OnRowEditing="grdTurnoMedico_RowEditing" OnPageIndexChanging="grdTurnoMedico_PageIndexChanging" OnRowCancelingEdit="grdTurnoMedico_RowCancelingEdit" OnRowUpdating="grdTurnoMedico_RowUpdating" DataKeyNames="Legajo_tu,Fecha_tu,Horario_tu">
                             <Columns>
                                 <asp:TemplateField HeaderText="Legajo Medico">
                                     <EditItemTemplate>
