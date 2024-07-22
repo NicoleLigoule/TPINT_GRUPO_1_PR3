@@ -123,7 +123,6 @@
                             <td class="auto-style3">
                                 <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="campo obligatorios" ForeColor="Red" ValidationGroup="grupo 1">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revDireccion" runat="server" ControlToValidate="txtDireccionPac" ErrorMessage="Solo letras y numeros" ForeColor="Red" ValidationExpression="^[a-zA-Z0-9. ]+$" ValidationGroup="grupo 1">*</asp:RegularExpressionValidator>
-
                             </td>
                         </tr>
                         <tr>
