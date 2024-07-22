@@ -1,4 +1,5 @@
 ﻿body {
+    place-self: center;
     background-color: #BBDEFB;
     height: 100vh;
     margin: 10%;

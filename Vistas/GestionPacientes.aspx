@@ -13,6 +13,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <%-- ESTILOS --%>
     <link href="./Resources/estilos/styles.GestionPacientes.css" rel="stylesheet" />
+        <style type="text/css">
+        .auto-style3 {
+            margin-right: 0px;
+        }
+    </style>
 </head>
 <body>
     <%-- Incluye el Header --%>
