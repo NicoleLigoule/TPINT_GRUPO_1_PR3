@@ -103,7 +103,9 @@
             <tr>
                 <td>&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
-                <td class="auto-style6">&nbsp;</td>
+                <td class="auto-style6">
+                    <asp:RequiredFieldValidator ID="rfvDia" runat="server" ControlToValidate="ddlDia" ErrorMessage="Seleccione un día" ForeColor="Red" ValidationGroup="g1">*</asp:RequiredFieldValidator>
+                </td>
                 <td class="auto-style5">
                     <asp:RequiredFieldValidator ID="rfvIngreseUnHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese un horario" ForeColor="Red" ValidationGroup="g1">*</asp:RequiredFieldValidator>
                 </td>
