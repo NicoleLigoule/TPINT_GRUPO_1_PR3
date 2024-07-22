@@ -96,7 +96,7 @@
                     <asp:TextBox ID="txtHora" runat="server"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RegularExpressionValidator ID="revHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="valor invalido" ForeColor="Red" ValidationExpression="^(0?[0-9]|1[0-9]|2[0-3])$">*</asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="revHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="valor invalido" ForeColor="Red" ValidationExpression="^(0?[0-9]|1[0-9]|2[0-3])$" ValidationGroup="g1">*</asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -104,9 +104,11 @@
                 <td>&nbsp;</td>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style6">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5">
+                    <asp:RequiredFieldValidator ID="rfvIngreseUnHorario" runat="server" ControlToValidate="txtHora" ErrorMessage="Ingrese un horario" ForeColor="Red" ValidationGroup="g1">*</asp:RequiredFieldValidator>
+                </td>
                 <td>
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click" ValidationGroup="g1" />
                 </td>
                 <td>&nbsp;</td>
             </tr>
@@ -145,7 +147,9 @@
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style2">
+                    <asp:ValidationSummary ID="ValidationSummary1" runat="server" ValidationGroup="g1" />
+                </td>
                 <td class="auto-style6">&nbsp;</td>
                 <td class="auto-style5">&nbsp;</td>
                 <td>&nbsp;</td>
