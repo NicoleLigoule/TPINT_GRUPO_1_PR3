@@ -15,7 +15,7 @@ namespace Entidades
         public bool _Asistencia;
         public string _DniPaciente_tu;
         public string _Descripcion;
-        public bool _Estado_ha;
+        public bool _Estado_ha_hola;
 
 
         public Turno() { }

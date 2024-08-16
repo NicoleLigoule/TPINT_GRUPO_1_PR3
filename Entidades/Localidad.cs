@@ -10,7 +10,7 @@ namespace Entidades
     {
         private int id_localidad;
         private int id_provincia;
-        private string nombre_localidad;
+        private string nombre_localidad_holahola;
 
         public Localidad(string id_localidad, string nombre_localidad)
         {
